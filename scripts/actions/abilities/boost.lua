@@ -5,27 +5,14 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
-    -- Add 20 evasion
-    player:addMod(xi.mod.EVASION, 20)
+    xi.job_utils.monk.useBoost(player, target, ability)
 
-    -- Add 5 vitality
-    player:addMod(xi.mod.VIT, 5)
-
-    -- Add 5 strength
-    player:addMod(xi.mod.STR, 5)
-
-    -- Add 5 attack
-    player:addMod(xi.mod.ATTACK, 5)
-
-    -- Set a timer to remove the modifications after 1 minute
-    local abilityDuration = 60 -- 1 minute duration
-    xi.timers.createTimer(player, "ability_duration", xi.timer.TYPE_ABILITY, abilityDuration, function()
-        -- Remove the modifications
-        player:addMod(xi.mod.EVASION, -20)
-        player:addMod(xi.mod.VIT, -5)
-        player:addMod(xi.mod.STR, -5)
-        player:addMod(xi.mod.ATTACK, -5)
-    end)
+    -- Add a 10% chance to add blink
+    if math.random() <= 0.1 then -- Change to 10% chance
+        local blinkDuration = 60 -- Adjust duration to 1 minute
+        local blinkCharges = 3 -- Adjust blink charges as needed
+        player:addStatusEffect(xi.effect.BLINK, blinkCharges, 3, blinkDuration, 0, 10, 1)
+    end
 end
 
 return abilityObject

@@ -6,9 +6,20 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
     -- Apply a temporary health increase effect
-    local healthIncreaseDuration = 60 -- 1 minute duration
+    local healthIncreaseDuration = 60 -- Default to 60 seconds if not properly initialized
     local healthIncreaseAmount = 100 -- Adjust health increase amount as needed
-    player:addStatusEffect(xi.effect.HEALTH_INCREASE, healthIncreaseAmount, 3, healthIncreaseDuration, 0, 10, 1)
+
+    if healthIncreaseDuration == nil then
+        print("Warning: healthIncreaseDuration is not properly initialized. Using default value.")
+        healthIncreaseDuration = 60
+    end
+
+    local statusEffectAdded, statusEffectError = player:addStatusEffect(xi.effect.HEALTH_INCREASE, healthIncreaseAmount, 3, healthIncreaseDuration, 0, 10, 1)
+
+    if not statusEffectAdded then
+        print("Error adding status effect:", statusEffectError)
+        return
+    end
 
     -- Schedule a delayed action to restore health and grant TP after 1 minute
     local startTime = os.time()

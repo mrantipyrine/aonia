@@ -1,10 +1,3 @@
------------------------------------
--- Ability: Focus
--- Enhances user's accuracy.
--- Obtained: Monk Level 25
--- Recast Time: 5:00
--- Duration: 2:00
------------------------------------
 local abilityObject = {}
 
 abilityObject.onAbilityCheck = function(player, target, ability)
@@ -13,6 +6,11 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.monk.useFocus(player, target, ability)
+
+    -- Add a 5% chance to use Raging Fist weapon skill
+    if math.random() <= 0.05 then
+        xi.job_utils.monk.useWeaponSkill(player, target, xi.weapon_skill.RAGING_FIST)
+    end
 end
 
 return abilityObject

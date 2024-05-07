@@ -13,14 +13,22 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
-    -- Add 500 TP
-    player:addTP(500)
+    -- Apply Regen II effect
+    local regenDuration = 120 -- 2 minutes duration
+    local regenAmount = 2 -- Adjust Regen amount as needed
+    player:addStatusEffect(xi.effect.REGEN_II, regenAmount, 3, regenDuration, 0, 10, 1)
 
     -- Add a 50% chance to grant haste
     if math.random() <= 0.5 then
         local hasteDuration = 180 -- Adjust duration as needed
         player:addStatusEffect(xi.effect.HASTE, 30, 3, hasteDuration, 0, 10, 1)
-    end 
+    end
+
+    -- Add a 10% chance to gain Drain Samba
+    if math.random() <= 0.2 then
+        local drainSambaDuration = 120 -- Adjust duration as needed
+        player:addStatusEffect(xi.effect.DRAIN_SAMBA, 1, 3, drainSambaDuration, 0, 10, 1)
+    end
 end
 
 return abilityObject

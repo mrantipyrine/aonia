@@ -18,6 +18,9 @@ abilityObject.onUseAbility = function(player, target, ability)
     local lostHP = player:getMaxHP() - player:getHP()
     local hpToRestore = math.floor(lostHP * 0.8)
     player:setHP(player:getHP() + hpToRestore)
+
+    -- Grant 500 TP
+    player:addTP(500)
 end
 
 return abilityObject

@@ -27,8 +27,16 @@ abilityObject.onWeaponSkillAttempt = function(player, target, ability, weaponski
     -- Check if Focus is active
     local focusActive = player:getTempData("focus_active")
 
-    -- If Focus is active and the weapon skill is Raging Fist, allow the use of the weapon skill
-    if focusActive and weaponskill == xi.weapon_skill.RAGING_FIST then
+    -- Check if player is engaged with a target and in range
+    local engaged = player:isEngaged()
+    local inRange = player:isInWeaponSkillRange(target)
+
+    -- Check for a 10% chance
+    local chance = math.random()
+    local chanceThreshold = 0.8
+
+    -- If Focus is active, player is engaged, and in range, and the weapon skill is Raging Fist, and the chance is met, allow the use of the weapon skill
+    if focusActive and engaged and inRange and weaponskill == xi.weapon_skill.RAGING_FIST and chance <= chanceThreshold then
         return true
     else
         return false

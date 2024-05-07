@@ -16,9 +16,8 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     -- Add a 50% chance to grant haste
     if math.random() <= 0.5 then
-        local blinkDuration = 60 -- Adjust duration to 1 minute
-        local blinkCharges = 3 -- Adjust blink charges as needed
-        player:addStatusEffect(xi.effect.BLINK, blinkCharges, 3, blinkDuration, 0, 10, 1)
+        local hasteDuration = 180 -- Adjust duration as needed
+        player:addStatusEffect(xi.effect.HASTE, 30, 3, hasteDuration, 0, 10, 1)
     end
 end 
 

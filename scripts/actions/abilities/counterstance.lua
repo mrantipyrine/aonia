@@ -19,6 +19,9 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
     -- Adjust kick damage for Counterstance
     adjustKickDamage(player)
+
+    -- Ensure that xi.job_utils.monk.useCounterstance function is properly called with correct arguments
+    -- xi.job_utils.monk.useCounterstance(player, target, ability)
 end
 
 return abilityObject

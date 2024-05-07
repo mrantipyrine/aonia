@@ -11,14 +11,6 @@ abilityObject.onAbilityCheck = function(player, target, ability)
     return 0, 0
 end
 
-local function useFocus(player, target)
-    -- Add logic to use the Focus ability
-end
-
-local function useDodge(player, target)
-    -- Add logic to use the Dodge ability
-end
-
 local function useBoost(player, target)
     -- Add logic to use the Boost ability
 end
@@ -36,16 +28,9 @@ abilityObject.onUseAbility = function(player, target, ability)
         player:addTP(tpAmount)
     end
 
-    -- 50% chance to use either Focus, Dodge, or Boost job ability
+    -- 50% chance to cast Boost job ability on the user
     if math.random() <= 0.5 then
-        local abilityIndex = math.random(1, 3) -- Randomly select ability index (1 for Focus, 2 for Dodge, 3 for Boost)
-        if abilityIndex == 1 then
-            useFocus(player, target)
-        elseif abilityIndex == 2 then
-            useDodge(player, target)
-        else
-            useBoost(player, target)
-        end
+        useBoost(player, player)
     end
 end
 

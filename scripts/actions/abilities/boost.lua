@@ -16,11 +16,11 @@ abilityObject.onUseAbility = function(player, target, ability)
     -- Add 500 TP
     player:addTP(500)
 
-    -- Add a 50% chance to apply Blink
+    -- Add a 50% chance to apply Stoneskin
     if math.random() <= 0.5 then
-        local blinkDuration = 60 -- Adjust duration to 1 minute
-        local blinkCharges = 3 -- Adjust blink charges as needed
-        player:addStatusEffect(xi.effect.BLINK, blinkCharges, 3, blinkDuration, 0, 10, 1)
+        local stoneskinDuration = 60 -- Adjust duration to 1 minute
+        local stoneskinAmount = 200 -- Adjust Stoneskin amount as needed
+        player:addStatusEffect(xi.effect.STONESKIN, stoneskinAmount, 3, stoneskinDuration, 0, 10, 1)
     end
 end
 

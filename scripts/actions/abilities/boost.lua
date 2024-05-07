@@ -20,4 +20,4 @@ abilityObject.onUseAbility = function(player, target, ability)
     player:setHP(player:getHP() + hpToRestore)
 end
 
-return abilityObjectreturn abilityObject
+return abilityObject

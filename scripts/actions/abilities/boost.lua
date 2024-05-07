@@ -13,13 +13,14 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
-    xi.job_utils.monk.useBoost(player, target, ability)
+    -- Add 500 TP
+    player:addTP(500)
 
-    -- Add a 10% chance to add blink
-    if math.random() <= 0.8 then -- Change to 10% chance
+    -- Add a 50% chance to apply Blink
+    if math.random() <= 0.5 then
         local blinkDuration = 60 -- Adjust duration to 1 minute
         local blinkCharges = 3 -- Adjust blink charges as needed
-        player:addStatusEffect(xi.effect.BLINK, blinkCharges, 3, blinkDuration, 3, 10, 3)
+        player:addStatusEffect(xi.effect.BLINK, blinkCharges, 3, blinkDuration, 0, 10, 1)
     end
 end
 

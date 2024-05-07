@@ -1,3 +1,11 @@
+-----------------------------------
+-- Ability: Boost
+-- Enhances user's next attack.
+-- Obtained: Monk Level 5
+-- Recast Time: 0:15
+-- Duration: 3:00
+-----------------------------------
+
 local abilityObject = {}
 
 abilityObject.onAbilityCheck = function(player, target, ability)
@@ -8,10 +16,10 @@ abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.monk.useBoost(player, target, ability)
 
     -- Add a 10% chance to add blink
-    if math.random() <= 0.8 then -- Change to 10% chance
+    if math.random() <= 0.1 then -- Change to 10% chance
         local blinkDuration = 60 -- Adjust duration to 1 minute
         local blinkCharges = 3 -- Adjust blink charges as needed
-        player:addStatusEffect(xi.effect.BLINK, blinkCharges, 1, blinkDuration, 0, 10, 1)
+        player:addStatusEffect(xi.effect.BLINK, blinkCharges, 3, blinkDuration, 3, 10, 1)
     end
 end
 

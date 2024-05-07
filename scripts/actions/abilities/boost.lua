@@ -14,18 +14,10 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.monk.useBoost(player, target, ability)
 
-    -- Add a 50% chance to gain Regen
-    if math.random() <= 0.5 then
-        local regenDuration = 180 -- 3 minutes duration
-        local regenAmount = 2 -- Adjust Regen amount as needed
-        player:addStatusEffect(xi.effect.REGEN, regenAmount, 3, regenDuration, 0, 10, 1)
-    end
-
-    -- Add a 20% chance to gain Haste
-    if math.random() <= 0.2 then
-        local hasteDuration = 180 -- 3 minutes duration
-        player:addStatusEffect(xi.effect.HASTE, 30, 3, hasteDuration, 0, 10, 1)
-    end
+    -- Restore 80% of lost HP
+    local lostHP = player:getMaxHP() - player:getHP()
+    local hpToRestore = math.floor(lostHP * 0.8)
+    player:setHP(player:getHP() + hpToRestore)
 end
 
-return abilityObject
+return abilityObjectreturn abilityObject

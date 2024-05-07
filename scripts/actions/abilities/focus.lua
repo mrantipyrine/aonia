@@ -23,7 +23,7 @@ abilityObject.onUseAbility = function(player, target, ability)
         end)
     else
         -- Log an error message if setTempData method is not available
-        xi.log("Error: player object does not have setTempData method")
+        print("Error: player object does not have setTempData method")
     end
 end
 
@@ -49,7 +49,7 @@ abilityObject.onWeaponSkillAttempt = function(player, target, ability, weaponski
         end
     else
         -- Log an error message if getTempData method is not available
-        xi.log("Error: player object does not have getTempData method")
+        print("Error: player object does not have getTempData method")
         return false
     end
 end

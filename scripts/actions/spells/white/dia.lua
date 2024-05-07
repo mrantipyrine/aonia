@@ -49,6 +49,14 @@ spellObject.onSpellCast = function(caster, target, spell)
             target:addStatusEffect(xi.effect.DIA, 1 + dotBonus, 3, duration, 0, 10, 1)
     end
 
+    -- Add a 10% chance to cast regen
+    if math.random() <= 0.5 then
+        -- Adjust regen parameters as needed
+        local regenDuration = 120
+        local regenAmount = 10
+        caster:addStatusEffect(xi.effect.REGEN, regenAmount, 3, regenDuration, 0, 10, 1)
+    end
+
     return final
 end
 

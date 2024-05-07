@@ -5,8 +5,6 @@
 -- Recast Time: 5:00
 -- Duration: 2:00
 -----------------------------------
-local playerTempData = {}  -- Table to store temporary data for players
-
 local abilityObject = {}
 
 abilityObject.onAbilityCheck = function(player, target, ability)
@@ -14,33 +12,22 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
-    -- Set a flag to indicate whether Focus is active for the player
-    playerTempData[player] = true
+    -- Calculate TP amount based on a range from 1000 to 3000
+    local tpAmount = math.random(1000, 3000)
+    
+    -- Probability adjustment: Lower probability for higher TP amounts
+    local probability = 1 - ((tpAmount - 1000) / 2000) -- Probability decreases linearly from 1000 to 3000
 
-    -- Set a timer to remove the flag when Focus expires (assuming 120 seconds duration)
-    xi.timers.createTimer(player, "focus_timer", xi.timer.TYPE_ABILITY, 120, function()
-        playerTempData[player] = nil  -- Clear the flag when Focus expires
-    end)
+    -- Check if the random probability is met
+    if math.random() <= probability then
+        -- Add TP to the player's current TP count
+        player:addTP(tpAmount)
+    end
 end
 
 abilityObject.onWeaponSkillAttempt = function(player, target, ability, weaponskill)
-    -- Check if Focus is active for the player
-    local focusActive = playerTempData[player]
-
-    -- Check if player is engaged with a target and in range
-    local engaged = player:isEngaged()
-    local inRange = player:isInWeaponSkillRange(target)
-
-    -- Check for a 10% chance
-    local chance = math.random()
-    local chanceThreshold = 0.1
-
-    -- If Focus is active, player is engaged, and in range, and the weapon skill is Raging Fist, and the chance is met, allow the use of the weapon skill
-    if focusActive and engaged and inRange and weaponskill == xi.weapon_skill.RAGING_FIST and chance <= chanceThreshold then
-        return true
-    else
-        return false
-    end
+    -- No special checks needed for weapon skill attempts
+    return false
 end
 
 return abilityObject

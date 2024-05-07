@@ -17,15 +17,24 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     local params = {}
     params.numHits = 3
     params.ftpMod = { 1.0, 1.5, 2.0 }
-    params.str_wsc = 0.2 params.dex_wsc = 0.2
+    params.str_wsc = 0.2
+    params.dex_wsc = 0.2
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
-        params.multiHitfTP = true -- http://wiki.ffo.jp/html/2416.html
+        params.multiHitfTP = true
         params.ftpMod = { 1.0, 2.4, 3.4 }
-        params.str_wsc = 0.3 params.dex_wsc = 0.3
+        params.str_wsc = 0.3
+        params.dex_wsc = 0.3
     end
 
+    -- Calculate HP restoration based on TP
+    local hpRestore = math.floor(tp / 1000) * 0.3 * player:getMaxHP()
+
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
+
+    -- Restore HP to the player
+    player:addHP(hpRestore)
+
     return tpHits, extraHits, criticalHit, damage
 end
 

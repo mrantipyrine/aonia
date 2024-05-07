@@ -5,6 +5,13 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
+    -- Check if player object exists
+    if not player then
+        print("Error: Player object is nil.")
+        return
+    end
+    
+    -- Use monk boost ability
     xi.job_utils.monk.useBoost(player, target, ability)
 
     -- Increase TP gain by 25%
@@ -18,4 +25,4 @@ abilityObject.onUseAbility = function(player, target, ability)
     end)
 end
 
-return abilityObject    
+return abilityObject

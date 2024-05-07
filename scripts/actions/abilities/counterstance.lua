@@ -11,17 +11,15 @@ abilityObject.onAbilityCheck = function(player, target, ability)
     return 0, 0
 end
 
-local function adjustKickDamage(player)
-    -- Increase kick attacks damage by 40%
-    player:addMod(xi.mod.KICK_DAMAGE, 0.4)
+local function adjustAttributes(player)
+    -- Increase evasion by 50 and defense by 50
+    player:addMod(xi.mod.EVASION, 80)
+    player:addMod(xi.mod.DEFENSE, 80)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
-    -- Adjust kick damage for Counterstance
-    adjustKickDamage(player)
-
-    -- Ensure that xi.job_utils.monk.useCounterstance function is properly called with correct arguments
-    -- xi.job_utils.monk.useCounterstance(player, target, ability)
+    -- Adjust attributes for Counterstance
+    adjustAttributes(player)
 end
 
 return abilityObject

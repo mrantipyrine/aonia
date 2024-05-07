@@ -12,10 +12,10 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
-    -- Add a 50% chance to grant Regen
+    -- Add a 50% chance to grant Regen II
     if math.random() <= 0.5 then
         local regenDuration = 120 -- Adjust duration as needed
-        player:addStatusEffect(xi.effect.REGEN, 0, 3, regenDuration, 0, 10, 1)
+        player:addStatusEffect(xi.effect.REGEN_II, 0, 3, regenDuration, 0, 10, 1)
     end
 end 
 

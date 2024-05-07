@@ -19,14 +19,16 @@ abilityObject.onUseAbility = function(player, target, ability)
     player:addStatusEffect(xi.effect.REGEN_II, regenAmount, 3, regenDuration, 0, 10, 1)
 
     -- Add a 50% chance to grant haste
-    if math.random() <= 0.5 then
+    if math.random() <= 0.2 then
         local hasteDuration = 180 -- Adjust duration as needed
         player:addStatusEffect(xi.effect.HASTE, 30, 3, hasteDuration, 0, 10, 1)
     end
 
-    -- Add a 10% chance to cast Drain Samba
-    if math.random() <= 0.1 then
-        xi.job_utils.monk.useDrainSamba(player, target, ability)
+    -- Add a 10% chance to gain Regen status effect
+    if math.random() <= 0.5 then
+        local regenEffectDuration = 120 -- 2 minutes duration
+        local regenEffectAmount = 2 -- Adjust Regen amount as needed
+        player:addStatusEffect(xi.effect.REGEN, regenEffectAmount, 3, regenEffectDuration, 0, 10, 1)
     end
 end
 

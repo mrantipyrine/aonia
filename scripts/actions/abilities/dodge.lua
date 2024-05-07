@@ -12,11 +12,9 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
-    -- Add a 50% chance to grant Regen
-    if math.random() <= 0.9 then
-        local regenDuration = 120 -- Adjust duration as needed
-        player:addStatusEffect(xi.effect.REGEN, 0, 3, regenDuration, 0, 10, 1)
-    end
+    -- Apply Blink effect
+    local blinkDuration = 120 -- Adjust duration as needed
+    player:addStatusEffect(xi.effect.BLINK, 0, 3, blinkDuration, 0, 10, 1)
 end 
 
 return abilityObject

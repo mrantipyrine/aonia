@@ -17,10 +17,20 @@ local function increaseStats(player)
     player:addMod(xi.mod.VIT, 30)
 end
 
+local function removeStats(player)
+    -- Remove the stat increases
+    player:addMod(xi.mod.STR, -30)
+    player:addMod(xi.mod.VIT, -30)
+end
+
 abilityObject.onUseAbility = function(player, target, ability)
     -- Increase STR and VIT by 30
     increaseStats(player)
+
+    -- Set up a timer to remove the stat increases after 2 minutes
+    xi.timers.createTimer(player, "ability_duration", xi.timer.TYPE_ABILITY, 120, function()
+        removeStats(player)
+    end)
 end
 
 return abilityObject
-

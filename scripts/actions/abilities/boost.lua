@@ -7,12 +7,15 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.monk.useBoost(player, target, ability)
 
-    -- Add a 10% chance to add blink
-    if math.random() <= 0.7 then -- Change to 10% chance
-        local blinkDuration = 60 -- Adjust duration to 1 minute
-        local blinkCharges = 3 -- Adjust blink charges as needed
-        player:addStatusEffect(xi.effect.BLINK, blinkCharges, 3, blinkDuration, 0, 10, 1)
-    end
+    -- Increase TP gain by 25%
+    local tpGainMultiplier = 1.25 -- 25% increase
+    player:addMod(xi.mod.TP_GAIN_MULTIPLIER, tpGainMultiplier)
+
+    -- Set a timer to remove the TP gain increase after the ability duration
+    local abilityDuration = 60 -- Adjust duration to 1 minute
+    xi.timers.createTimer(player, "ability_duration", xi.timer.TYPE_ABILITY, abilityDuration, function()
+        player:addMod(xi.mod.TP_GAIN_MULTIPLIER, -tpGainMultiplier) -- Remove the TP gain increase
+    end)
 end
 
-return abilityObject
+return abilityObject    

@@ -12,10 +12,9 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
-    xi.job_utils.monk.useBoost(player, target, ability)
 
     -- Add a 50% chance to grant haste
-    if math.random() <= 0.5 then
+    if math.random() <= 0.8 then
         local hasteDuration = 180 -- Adjust duration as needed
         player:addStatusEffect(xi.effect.HASTE, 30, 3, hasteDuration, 0, 10, 1)
     end

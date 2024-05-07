@@ -1,27 +1,20 @@
 local abilityObject = {}
 
+local abilityObject = {}
+
 abilityObject.onAbilityCheck = function(player, target, ability)
     return 0, 0
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
-    -- Check if player object exists
-    if not player then
-        print("Error: Player object is nil.")
-        return
-    end
-    
-    -- Use monk boost ability
-    xi.job_utils.monk.useBoost(player, target, ability)
+    -- Increase counter chance by 80%
+    local counterChanceIncrease = 0.8 -- 80% increase
+    player:addMod(xi.mod.COUNTER_CHANCE, counterChanceIncrease)
 
-    -- Increase TP gain by 25%
-    local tpGainMultiplier = 1.25 -- 25% increase
-    player:addMod(xi.mod.TP_GAIN_MULTIPLIER, tpGainMultiplier)
-
-    -- Set a timer to remove the TP gain increase after the ability duration
-    local abilityDuration = 60 -- Adjust duration to 1 minute
+    -- Set a timer to remove the counter chance increase after the ability duration
+    local abilityDuration = 60 -- Adjust duration as needed
     xi.timers.createTimer(player, "ability_duration", xi.timer.TYPE_ABILITY, abilityDuration, function()
-        player:addMod(xi.mod.TP_GAIN_MULTIPLIER, -tpGainMultiplier) -- Remove the TP gain increase
+        player:addMod(xi.mod.COUNTER_CHANCE, -counterChanceIncrease) -- Remove the counter chance increase
     end)
 end
 

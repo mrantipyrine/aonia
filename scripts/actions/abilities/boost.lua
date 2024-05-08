@@ -19,7 +19,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     local hpToRestore = math.floor(lostHP * 0.8)
     player:setHP(player:getHP() + hpToRestore)
 
-    local strIncrease = 20
+    local strIncrease = 40
     local strDuration = 25 -- Duration in seconds
 
     -- Increase strength

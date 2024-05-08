@@ -35,7 +35,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         criticalHit = true
     end
 
-    local tpGain = math.random(250, 1000)
+    local tpGain = math.random(300, 1500)
     player:addTP(tpGain)
 
     return tpHits, extraHits, criticalHit, damage

@@ -25,7 +25,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     end
     
     -- Generate a random TP gain between 500 and 1500
-    local tpGain = math.random(500, 1500)
+    local tpGain = math.random(300, 1500)
     player:addTP(tpGain)
 
     -- Apply Stoneskin for 2 minutes

@@ -21,11 +21,13 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     local vitIncrease = math.random(0,30)
     local vitDuration = 25
+
     local strIncrease =  math.random(10,90)
     local strDuration = 25 -- Duration in seconds
 
     -- Increase strength
     player:addStatusEffect(xi.effect.VIT_BOOST, vitIncrease, 3, vitDuration, 0, 10, 1)
+    
     player:addStatusEffect(xi.effect.STR_BOOST, strIncrease, 3, strDuration, 0, 10, 1)
     -- Grant 500 TP
     player:addTP(500)

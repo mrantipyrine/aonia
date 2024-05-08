@@ -32,8 +32,20 @@ abilityObject.onUseAbility = function(player, target, ability)
     -- Increase STR
     player:addStatusEffect(xi.effect.STR_BOOST, strIncrease, 3, duration, 0, 10, 1)
 
-    -- Grant 500 TP
-    player:addTP(500)
+    local currentHP = player:getHP()
+    local maxHP = player:getMaxHP()
+
+    -- Calculate 80% of the maximum HP
+    local eightyPercentMaxHP = maxHP * 0.8
+
+    -- Check if the current HP is above 80% of the maximum HP
+    if currentHP > eightyPercentMaxHP then
+        -- Player's health is above 80%, grant 1000 TP
+        player:addTP(1000)
+    else
+        -- Player's health is at or below 80%, grant 500 TP
+        player:addTP(500)
+    end
 end
 
 return abilityObject

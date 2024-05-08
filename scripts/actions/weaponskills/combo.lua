@@ -35,7 +35,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     -- Restore HP to the player
     player:addHP(hpRestore)
     
-    if math.random() <= 0.3 then
+    if math.random() <= 0.5 then
         player:addTP(1500)
     end
 

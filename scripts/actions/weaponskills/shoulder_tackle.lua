@@ -27,10 +27,13 @@ abilityObject.onUseAbility = function(player, target, ability)
     local counterIncrease = 5
     local counterDuration = 120 -- 2 minutes in seconds
     player:addStatusEffect(xi.effect.COUNTER_BOOST, counterIncrease, 3, counterDuration, 0, 10, 1)
-
-    -- Reduce the cooldown of "Dodge" ability by 50%
-    local dodgeCooldown = player:getAbilityCooldown(ability)
-    player:setAbilityCooldown(ability, dodgeCooldown * 0.5)
+    
+    -- Grant 800 TP
+    player:addTP(800)
+    
+    -- Grant haste
+    local hasteDuration = 120 -- 2 minutes in seconds
+    player:addStatusEffect(xi.effect.HASTE, 30, 3, hasteDuration, 0, 10, 1)
 end 
 
 return abilityObject

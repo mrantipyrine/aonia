@@ -8,36 +8,22 @@ abilityObject.onAbilityCheck = function(player, target, ability)
     return 0, 0
 end
 
-local function increaseAttack(player)
-    -- Increase attack by 100
-    player:addMod(xi.mod.ATTACK, 100)
-end
+abilityObject.onUseAbility = function(player, target, ability)
+    -- Restore 80% missing health
+    local missingHP = player:getMaxHP() - player:getHP()
+    local hpToRestore = math.floor(missingHP * 0.8)
+    player:addHP(hpToRestore)
 
-local function removeAttackIncrease(player)
-    -- Remove the attack increase
-    player:addMod(xi.mod.ATTACK, -100)
-end
+    local attackIncrease = 100
+    local attackDuration = 25 -- Duration in seconds
 
-abilityObject.onUseAbility = function(user, target, ability)
-    -- Apply Stoneskin
-    local stoneskinAmount = 100 -- Adjust Stoneskin amount as needed
-    local stoneskinDuration = attackDuration -- Stoneskin duration matches attack duration
-    
-    player:addStatusEffect(xi.effect.STONESKIN, stoneskinAmount, 3, stoneskinDuration, 0, 10, 1)
+    -- Increase attack power
+    player:addMod(xi.mod.ATTACK, attackIncrease)
 
-    -- Increase attack by 100
-    increaseAttack(player)
-
-    -- Set up a timer to remove the attack increase after 1 minute
-    local duration = 25 -- 25 seconds
-
-    xi.timers.createTimer(player, "ability_duration", xi.timer.TYPE_ABILITY, duration, function()
-        removeAttackIncrease(player)
+    -- Set up a timer to remove the attack increase after the duration
+    xi.timers.createTimer(player, "ability_duration", xi.timer.TYPE_ABILITY, attackDuration, function()
+        player:addMod(xi.mod.ATTACK, -attackIncrease)
     end)
-
-    local healthRestore = user:getMaxHP() * 0.8
-    user:setHP(user:getHP() + healthRestore)
-
 end
 
 return abilityObject

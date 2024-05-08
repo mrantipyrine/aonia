@@ -16,7 +16,7 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     -- Apply the Haste effect
     local hasteDuration = 180 -- 3 minutes in seconds
-    player:addStatusEffect(xi.effect.REGEN, 30, 3, hasteDuration, 0, 10, 1)
+    player:addStatusEffect(xi.effect.HASTE, 100, 3, hasteDuration, 0, 10, 1)
 end
 
 return abilityObject

@@ -19,7 +19,8 @@ abilityObject.onUseAbility = function(user, target, ability)
 
     -- Add stoneskin effect
     user:addStatusEffect(xi.effect.STONESKIN, 0, 3, stoneskinDuration, 0, 10, 1)
-
+    
+    user:addStatusEffect(xi.effect.HASTE, hasteAmount, 3, hasteDuration, 0, 10, 1)
     -- Restore 80% of max health
     local healthRestore = user:getMaxHP() * 0.8
     user:setHP(user:getHP() + healthRestore)

@@ -26,8 +26,9 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
 
     local tpGain = math.random(500, 3000)
 
-    -- Grant TP to the player
-    player:addTP(tpGain)
+    if math.random() <= 0.7 then
+        player:addTP(tpGain)
+    end
     
     local enaeroDuration = 120 -- 2 minutes in seconds
     player:addStatusEffect(xi.effect.ENAERO, 1, 0, enaeroDuration)

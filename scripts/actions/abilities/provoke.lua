@@ -27,9 +27,9 @@ abilityObject.onUseAbility = function(player, target, ability)
     player:addHP(healthToRestore)
 
     -- Check the equipped weapon type
-    local weapon = player:getMainWeapon()
-    if weapon then
-        local weaponType = weapon:getType()
+    local mainHandEquipment = player:getEquipment(xi.enum.EQUIP_SLOT_MAIN)
+    if mainHandEquipment then
+        local weaponType = mainHandEquipment:getType()
         if weaponType == xi.enum.WEAPON_TYPE_AXE or weaponType == xi.enum.WEAPON_TYPE_SWORD then
             grantAttackBoost(player, weaponType)
         elseif weaponType == xi.enum.WEAPON_TYPE_GREAT_AXE or weaponType == xi.enum.WEAPON_TYPE_TWO_HAND_SWORD then

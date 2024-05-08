@@ -4,17 +4,13 @@
 -----------------------------------
 local abilityObject = {}
 
-abilityObject.onAbilityCheck = function(player, target, ability)
-    return 0, 0
-end
-
 abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.warrior.useBerserk(player, target, ability)
 
     -- Increase HP by 30%
     local maxHP = player:getMaxHP()
     local hpIncrease = math.floor(maxHP * 0.3)
-    player:addMaxHP(hpIncrease)
+    player:addMod(xi.mod.MAX_HP, hpIncrease)
 
     -- Restore HP to 100%
     player:setHP(maxHP)

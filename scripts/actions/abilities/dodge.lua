@@ -20,7 +20,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     -- Enhance counter ability by +5 for 2 minutes
     local counterIncrease = 5
     local counterDuration = 120 -- 2 minutes in seconds
-    player:addTempMod(xi.mod.COUNTER, counterIncrease, counterDuration)
+    player:addStatusEffect(xi.effect.COUNTER_BOOST, counterIncrease, 3, counterDuration, 0, 10, 1)
 end 
 
 return abilityObject

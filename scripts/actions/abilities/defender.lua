@@ -13,7 +13,7 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     -- Increase evasion by 100
     local mods = require("scripts.utils.mods") -- Import the mods table
-    target:addMod(mods.EVA, 100)
+    target:addMod(mods.EVASION, 100)
 end
 
 return abilityObject

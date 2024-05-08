@@ -12,9 +12,14 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
-    -- Apply Blink effect
-    local blinkDuration = 240 -- Adjust duration as needed
-    player:addStatusEffect(xi.effect.BLINK, 0, 5, blinkDuration, 0, 10, 1)
+    -- Increase evasion by 50 for 2 minutes
+    local evasionIncrease = 50
+    local evasionDuration = 120 -- 2 minutes in seconds
+    player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
+
+    -- Enhance counter ability by +2
+    local counterIncrease = 2
+    player:addMod(xi.mod.COUNTER, counterIncrease)
 end 
 
 return abilityObject

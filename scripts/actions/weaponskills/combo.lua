@@ -27,13 +27,12 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         params.dex_wsc = 0.3
     end
 
-    -- Calculate HP restoration based on TP
-    local hpRestore = math.floor(tp / 1000) * 0.3 * player:getMaxHP()
-
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
 
-    -- Restore HP to the player
-    player:addHP(hpRestore)
+    -- Restore TP to the player with a 10% chance
+    if math.random() <= 0.1 then
+        player:addTP(1500)
+    end
 
     return tpHits, extraHits, criticalHit, damage
 end

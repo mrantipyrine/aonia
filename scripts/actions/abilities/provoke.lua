@@ -14,7 +14,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     local hpToRestore = math.floor(missingHP * 0.8)
     player:addHP(hpToRestore)
 
-    local vitIncrease = 50
+    local vitIncrease = 20
     local vitDuration = 25 -- Duration in seconds
 
     -- Increase strength

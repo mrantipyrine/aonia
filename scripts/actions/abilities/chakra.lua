@@ -6,12 +6,20 @@ end
 
 local function increaseAttack(player)
     -- Increase attack by 100
-    player:addMod(xi.mod.ATTACK, 100)
+    if player:getMainJob() == xi.job.MNK then
+        player:addMod(xi.mod.ATTACK, 100)
+    else 
+        player:addMod(xi.mod.ATTACK, 25)
+    end 
 end
 
 local function removeAttackIncrease(player)
     -- Remove the attack increase
-    player:addMod(xi.mod.ATTACK, -100)
+    if player:getMainJob() == xi.job.MNK then
+        player:addMod(xi.mod.ATTACK, -100)
+    else 
+        player:addMod(xi.mod.ATTACK, -25)
+    end
 end
 
 abilityObject.onUseAbility = function(player, target, ability)

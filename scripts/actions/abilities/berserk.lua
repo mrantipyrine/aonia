@@ -8,7 +8,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.warrior.useBerserk(player, target, ability)
 
     -- STR Increase 
-    local strIncrease = math.random(5, 20) 
+    local strIncrease = 10
     -- Duration in Seconds
     local duration = 300 
 
@@ -26,7 +26,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     if player:getMainJob() == xi.job.WAR then
         regenDuration = regenDuration * 5
     end
-    
+
     -- Incrase Haste 
     player:addStatusEffect(xi.effect.REGEN, 15, 6, regenDuration, 0, 10, 1)
 end

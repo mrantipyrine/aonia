@@ -20,11 +20,13 @@ abilityObject.onUseAbility = function(player, target, ability)
     player:setHP(player:getHP() + hpToRestore)
 
     -- Randomly generate values for VIT and STR increases
-    local strIncrease = math.random(10, 30)
-
+    local strIncrease = 10 
     -- Duration for both VIT and STR boosts
     local duration = 25 -- Duration in seconds
 
+    if player:getMainJob() == xi.job.MNK  then
+        strIncrease = math.random(10, 30) * 2
+    end 
     -- Increase STR
     player:addStatusEffect(xi.effect.STR_BOOST, strIncrease, 3, duration, 0, 10, 1)
 
@@ -34,14 +36,18 @@ abilityObject.onUseAbility = function(player, target, ability)
     -- Calculate 80% of the maximum HP
     local eightyPercentMaxHP = maxHP * 0.8
 
+    if player:getMainJob() == xi.job.MNK  then
     -- Check if the current HP is above 80% of the maximum HP
-    if currentHP > eightyPercentMaxHP then
+        if currentHP > eightyPercentMaxHP then
         -- Player's health is above 80%, grant 1000 TP
-        player:addTP(1000)
-    else
+            player:addTP(1000)
+        else
         -- Player's health is at or below 80%, grant 500 TP
-        player:addTP(500)
-    end
+            player:addTP(500)
+        end
+    else 
+        player:addTP(25)
+    end 
 end
 
 return abilityObject

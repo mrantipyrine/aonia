@@ -26,7 +26,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         params.vit_wsc = 1.0
     end
 
-    local tpGain = math.random(500, 1000)
+    local tpGain = math.random(500, 1500)
     
     -- Grant TP to the player
     player:addTP(tpGain)

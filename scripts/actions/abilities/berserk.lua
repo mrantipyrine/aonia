@@ -11,7 +11,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     local maxHP = player:getMaxHP()
     local hpIncrease = math.floor(maxHP * 0.3)
     if hpIncrease > 0 then
-        player:addMod(xi.mod.MAX_HP, hpIncrease)
+        player:addMod(xi.mod.MAX_HP, hpIncrease, 180) -- Increase HP for 3 minutes
     end
 
     -- Restore HP to 100%

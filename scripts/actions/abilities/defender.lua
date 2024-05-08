@@ -4,6 +4,14 @@
 -----------------------------------
 local abilityObject = {}
 
+-- Function to add evasion buff
+local function addEvasionBuff(target, amount, duration)
+    -- Increase evasion by the specified amount
+    target.evasion = target.evasion + amount
+    -- Schedule a timer to remove the evasion buff after the specified duration
+    Timer.after(duration, function() target.evasion = target.evasion - amount end)
+end
+
 abilityObject.onAbilityCheck = function(player, target, ability)
     return 0, 0
 end
@@ -11,7 +19,7 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.warrior.useDefender(player, target, ability)
     -- Increase evasion by 100 for 120 seconds
-    target:addEvasionBuff(100, 120)
+    addEvasionBuff(target, 100, 120)
 end
 
 return abilityObject

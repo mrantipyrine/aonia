@@ -9,27 +9,15 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(user, target, ability)
-    local tpRestore = 0
-    local healthRestore = 0
-    
-    -- Check if the main job is Warrior
-    if user:getMainJob() == 'WAR' then
-        tpRestore = 700
-        healthRestore = user:getMaxHP() * 0.8
-        print("Main job is Warrior. TP Restore:", tpRestore, "Health Restore:", healthRestore)
-    -- Check if Warrior is a subjob
-    elseif user:getSubJob() == 'WAR' then
-        tpRestore = 350
-        healthRestore = user:getMaxHP() * 0.45
-        print("Subjob is Warrior. TP Restore:", tpRestore, "Health Restore:", healthRestore)
-    end
-    
-    -- Restore TP
-    user:addTP(tpRestore)
-    
-    -- Restore health
+    local hasteDuration = 180 -- Haste duration in seconds
+    local hasteAmount = 30 -- Haste amount (percentage)
+
+    -- Add haste effect
+    user:addStatusEffect(xi.effect.HASTE, hasteAmount, 3, hasteDuration, 0, 10, 1)
+
+    -- Restore 80% of max health
+    local healthRestore = user:getMaxHP() * 0.8
     user:setHP(user:getHP() + healthRestore)
-    print("TP Restored:", tpRestore, "HP Restored:", healthRestore)
 end
 
 return abilityObject

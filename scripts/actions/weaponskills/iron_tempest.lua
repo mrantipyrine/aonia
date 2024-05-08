@@ -23,9 +23,17 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.6
     end
+    
+    local tpGain = math.random(500, 1500)
+
+    player:addTP(tpGain)
+
+    local stoneskinDuration = 120 -- 2 minutes in seconds
+    player:addStatusEffect(xi.effect.STONESKIN, 30, 3, hasteDuration, 0, 10, 1)
 
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
     return tpHits, extraHits, criticalHit, damage
+
 end
 
 return weaponskillObject

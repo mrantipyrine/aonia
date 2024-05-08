@@ -26,6 +26,10 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         params.str_wsc = 0.6 params.vit_wsc = 0.6
     end
 
+    if math.random() <= 0.5 then
+        player:addTP(1500)
+    end
+    
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
 
     if damage > 0 and not target:hasStatusEffect(xi.effect.EVASION_DOWN) then

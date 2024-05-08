@@ -24,20 +24,11 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         params.str_wsc = 0.6
     end
 
-    -- Add stun effect
-    local stunChance = 1.0 -- 100% chance to stun
-    local stunDuration = 5 -- Duration of stun in seconds
-
     -- Add critical hit chance
     local critChance = 1.0 -- 100% chance to crit
 
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
     
-    -- Check if stun occurs
-    if math.random() < stunChance then
-        target:addStatusEffect(EFFECT_STUN, 1, stunDuration, 0)
-    end
-
     -- Check if critical hit occurs
     if math.random() < critChance then
         criticalHit = true

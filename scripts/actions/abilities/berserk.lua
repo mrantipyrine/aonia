@@ -11,10 +11,13 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.warrior.useBerserk(player, target, ability)
 
-    -- Grant the defense bonus
-    local defenseBonus = 30
-    local defenseDuration = 150 -- 2 minutes and 30 seconds in seconds
-    player:addMod(xi.mod.DEFENSE, defenseBonus, defenseDuration)
+    -- Increase HP by 30%
+    local maxHP = player:getMaxHP()
+    local hpIncrease = math.floor(maxHP * 0.3)
+    player:addMaxHP(hpIncrease)
+
+    -- Restore HP to 100%
+    player:setHP(maxHP)
 
     -- Apply the Haste effect
     local hasteDuration = 180 -- 3 minutes in seconds

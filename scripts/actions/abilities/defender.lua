@@ -11,10 +11,7 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.warrior.useDefender(player, target, ability)
-    -- Apply the EVASION_BOOST effect directly to the target
-    target:addEffect(effectObject)
-
-    -- Increase evasion by 50 for 2 minutes
+    
     local evasionIncrease = 50
     local evasionDuration = 300 -- 2 minutes in seconds
     player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)

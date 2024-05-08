@@ -7,16 +7,13 @@ local abilityObject = {}
 abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.warrior.useBerserk(player, target, ability)
 
-    -- Increase HP by 30%
-    local maxHP = player:getMaxHP()
-    local hpIncrease = math.floor(maxHP * 0.3)
-    if hpIncrease > 0 then
-        player:addMod(xi.mod.MAX_HP, hpIncrease, 180) -- Increase HP for 3 minutes
+    -- Increase HP by 50%
+    abilityObject.onUseAbility = function(player, target, ability)
+        local healthIncrease = target:getMaxHealth() * 0.5
+        target:increaseHealth(healthIncrease)
+        xi.job_utils.warrior.useBerserk(player, target, ability)
     end
-
-    -- Restore HP to 100%
-    player:setHP(maxHP)
-
+    
     -- Apply the Haste effect
     local hasteDuration = 180 -- 3 minutes in seconds
     player:addStatusEffect(xi.effect.HASTE, 30, 3, hasteDuration, 0, 10, 1)

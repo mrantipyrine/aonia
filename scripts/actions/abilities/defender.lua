@@ -6,6 +6,8 @@ local abilityObject = {}
 
 -- Function to add evasion buff
 local function addEvasionBuff(target, amount, duration)
+    -- Initialize evasion attribute if it's not already defined
+    target.evasion = target.evasion or 0
     -- Increase evasion by the specified amount
     target.evasion = target.evasion + amount
     -- Schedule a timer to remove the evasion buff after the specified duration

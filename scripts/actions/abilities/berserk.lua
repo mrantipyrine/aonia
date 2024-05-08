@@ -17,7 +17,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     player:addMod(xi.mod.ATTACK, attackBonus, attackDuration)
 
     -- Apply the Haste effect instead of Advancing March
-    local hasteDuration = 300 -- 2 minutes and 30 seconds in seconds
+    local hasteDuration = 150 -- 2 minutes and 30 seconds in seconds
     player:addStatusEffect(xi.effect.HASTE, 30, 3, hasteDuration, 0, 10, 1)
 end
 

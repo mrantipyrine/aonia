@@ -20,11 +20,7 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
     -- Grant 800 TP
     player:addTP(800)
-    
-    -- Grant haste
-    local hasteDuration = 120 -- 2 minutes in seconds
-    player:addStatusEffect(xi.effect.HASTE, 30, 3, hasteDuration, 0, 10, 1)
-    
+
     -- Increase evasion by 50 for 2 minutes
     local evasionIncrease = 50
     local evasionDuration = 120 -- 2 minutes in seconds

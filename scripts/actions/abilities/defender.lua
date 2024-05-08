@@ -12,6 +12,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.warrior.useDefender(player, target, ability)
 
     -- Increase evasion by 100
+    local mods = require("scripts.utils.mods") -- Import the mods table
     target:addMod(mods.EVA, 100)
 end
 

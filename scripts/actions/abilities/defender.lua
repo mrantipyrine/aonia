@@ -1,7 +1,3 @@
------------------------------------
--- Ability: Defender
--- Job: Warrior
------------------------------------
 local abilityObject = {}
 
 -- Function to add evasion buff
@@ -20,8 +16,8 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.warrior.useDefender(player, target, ability)
-    -- Increase evasion by 100 for 120 seconds
-    addEvasionBuff(target, 100, 120)
+    -- Increase evasion by 100 for 3 minutes (180 seconds)
+    addEvasionBuff(target, 100, 180)
 end
 
 return abilityObject

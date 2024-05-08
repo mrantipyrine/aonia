@@ -18,12 +18,12 @@ abilityObject.onUseAbility = function(player, target, ability)
     end
 
     -- Randomly generate values for VIT and STR increases
-    local vitIncrease = 5
+    local vitIncrease = 10
     -- Duration for both VIT boosts
     local duration = 25 -- Duration in seconds
 
     if player:getMainJob() == xi.job.WAR then
-        vitIncrease = math.random(5, 30) * 2
+        vitIncrease = math.random(10, 30) * 2
     end 
         
     player:addStatusEffect(xi.effect.VIT_BOOST, vitIncrease, 3, duration, 0, 10, 1)

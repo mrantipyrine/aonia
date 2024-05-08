@@ -30,7 +30,6 @@ abilityObject.onUseAbility = function(player, target, ability)
     local counterIncrease = 5
     local counterDuration = 120 -- 2 minutes in seconds
     player:addStatusEffect(xi.effect.COUNTER_BOOST, counterIncrease, 3, counterDuration, 0, 10, 1)
-    
 
 end 
 

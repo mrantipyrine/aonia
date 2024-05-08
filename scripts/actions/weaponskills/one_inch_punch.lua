@@ -26,6 +26,11 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         params.vit_wsc = 1.0
     end
 
+    player:addTP(800)
+    
+    local hasteDuration = 120 -- 2 minutes in seconds
+    player:addStatusEffect(xi.effect.HASTE, 30, 3, hasteDuration, 0, 10, 1)
+
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
     return tpHits, extraHits, criticalHit, damage
 end

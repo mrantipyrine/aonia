@@ -5,7 +5,7 @@
 -- Recast Time: 5:00
 -- Duration: 2:00
 -----------------------------------
-llocal abilityObject = {}
+local abilityObject = {}
 
 abilityObject.onAbilityCheck = function(player, target, ability)
     return 0, 0

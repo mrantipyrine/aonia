@@ -10,6 +10,9 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.warrior.useDefender(player, target, ability)
+
+    -- Increase evasion by 100
+    target:addMod(mods.EVA, 100)
 end
 
 return abilityObject

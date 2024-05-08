@@ -15,8 +15,8 @@ abilityObject.onUseAbility = function(player, target, ability)
     player:setHP(player:getHP() + hpToRestore)
 
     -- Randomly generate values for VIT and STR increases
-    local vitIncrease = math.random(10, 90)
-    local strIncrease = math.random(5, 30)
+    local vitIncrease = math.random(10, 30)
+    local strIncrease = math.random(5, 15)
 
     -- Duration for both VIT and STR boosts
     local duration = 25 -- Duration in seconds

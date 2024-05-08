@@ -14,11 +14,13 @@ abilityObject.onUseAbility = function(player, target, ability)
     local hpToRestore = math.floor(missingHP * 0.8)
     player:addHP(hpToRestore)
 
-    local strIncrease = 100
-    local strDuration = 25 -- Duration in seconds
+    local vitIncrease = 50
+    local vitDuration = 25 -- Duration in seconds
 
     -- Increase strength
-    player:addStatusEffect(xi.effect.STR_BOOST, strIncrease, 3, strDuration, 0, 10, 1)
+    player:addStatusEffect(xi.effect.VIT_BOOST, vitIncrease, 3, vitDuration, 0, 10, 1)
+
+    player:addTP(500)
 end
 
 return abilityObject

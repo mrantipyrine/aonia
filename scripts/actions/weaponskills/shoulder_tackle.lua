@@ -18,8 +18,11 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
-    -- Grant 800 TP
-    player:addTP(800)
+    
+    local tpGain = math.random(500, 1500)
+    
+    -- Grant TP to the player
+    player:addTP(tpGain)
 
     -- Increase evasion by 50 for 2 minutes
     local evasionIncrease = 50

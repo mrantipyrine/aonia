@@ -13,7 +13,11 @@ abilityObject.onUseAbility = function(player, target, ability)
     local doubleAttackDuration = 120 -- Duration in seconds
 
     -- Add Double Attack +1 effect
-    player:addStatusEffect(xi.effect.DOUBLE_ATTACK, doubleAttackBonus, 3, doubleAttackDuration, 0, 10, 1)
+    if player then
+        player:addStatusEffect(xi.effect.DOUBLE_ATTACK, doubleAttackBonus, 3, doubleAttackDuration, 0, 10, 1)
+    else
+        log('Player object is nil!')
+    end
    
     -- Restore 80% of max health
     local healthRestore = user:getMaxHP() * 0.8

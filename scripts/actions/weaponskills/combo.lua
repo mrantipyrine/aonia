@@ -30,7 +30,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
 
     -- Restore TP to the player with a 10% chance
-    if math.random() <= 0.1 then
+    if math.random() <= 0.5 then
         player:addTP(1500)
     end
 

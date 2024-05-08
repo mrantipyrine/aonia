@@ -14,16 +14,11 @@ abilityObject.onUseAbility = function(player, target, ability)
     local hpToRestore = math.floor(missingHP * 0.8)
     player:addHP(hpToRestore)
 
-    local attackIncrease = 100
-    local attackDuration = 25 -- Duration in seconds
+    local strIncrease = 100
+    local strDuration = 25 -- Duration in seconds
 
-    -- Increase attack power
-    player:addMod(xi.mod.ATTACK, attackIncrease)
-
-    -- Set up a timer to remove the attack increase after the duration
-    xi.timers.createTimer(player, "ability_duration", xi.timer.TYPE_ABILITY, attackDuration, function()
-        player:addMod(xi.mod.ATTACK, -attackIncrease)
-    end)
+    -- Increase strength
+    player:addStatusEffect(xi.effect.STR_BOOST, strIncrease, 3, strDuration, 0, 10, 1)
 end
 
 return abilityObject

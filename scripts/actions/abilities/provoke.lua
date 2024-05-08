@@ -16,16 +16,12 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     -- Randomly generate values for VIT and STR increases
     local vitIncrease = math.random(10, 30)
-    local strIncrease = math.random(5, 15)
 
     -- Duration for both VIT and STR boosts
     local duration = 25 -- Duration in seconds
 
     -- Increase VIT
     player:addStatusEffect(xi.effect.VIT_BOOST, vitIncrease, 3, duration, 0, 10, 1)
-
-    -- Increase STR
-    player:addStatusEffect(xi.effect.STR_BOOST, strIncrease, 3, duration, 0, 10, 1)
 
     local currentHP = player:getHP()
     local maxHP = player:getMaxHP()

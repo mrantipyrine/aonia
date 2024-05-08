@@ -26,8 +26,11 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         params.vit_wsc = 1.0
     end
 
-    player:addTP(800)
-    
+    local tpGain = math.random(500, 3000)
+
+    -- Grant TP to the player
+    player:addTP(tpGain)
+
     local hasteDuration = 120 -- 2 minutes in seconds
     player:addStatusEffect(xi.effect.HASTE, 30, 3, hasteDuration, 0, 10, 1)
 

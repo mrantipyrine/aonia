@@ -9,19 +9,22 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(user, target, ability)
-    local hasteDuration = 180 -- Haste duration in seconds
-    local hasteAmount = 90 -- Haste amount (percentage)
+    local attackIncrease = 100
+    local attackDuration = 25 -- Duration in seconds
 
-    local stoneskinDuration = 120 -- Duration in seconds
+    -- Increase attack power
+    player:addMod(xi.mod.ATTACK, attackIncrease)
 
-    -- Add haste effect
-    -- user:addStatusEffect(xi.effect.HASTE, hasteAmount, 3, hasteDuration, 0, 10, 1)
+    -- Apply Stoneskin
+    local stoneskinAmount = 100 -- Adjust Stoneskin amount as needed
+    local stoneskinDuration = attackDuration -- Stoneskin duration matches attack duration
+    player:addStatusEffect(xi.effect.STONESKIN, stoneskinAmount, 3, stoneskinDuration, 0, 10, 1)
 
-    -- Add stoneskin effect
-    user:addStatusEffect(xi.effect.STONESKIN, 0, 3, stoneskinDuration, 0, 10, 1)
-
-    user:addStatusEffect(xi.effect.HASTE, hasteAmount, 3, hasteDuration, 0, 10, 1)
-    -- Restore 80% of max health
+    -- Set up a timer to remove the attack increase after the duration
+    xi.timers.createTimer(player, "ability_duration", xi.timer.TYPE_ABILITY, attackDuration, function()
+        player:addMod(xi.mod.ATTACK, -attackIncrease)
+    end)
+    
     local healthRestore = user:getMaxHP() * 0.8
     user:setHP(user:getHP() + healthRestore)
 

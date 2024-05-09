@@ -23,7 +23,7 @@ abilityObject.onUseAbility = function(player, target, ability, action)
 
     local dexMod = player:getStat(xi.mod.DEX) * 0.8
     
-    local hpDrain =  target:getHP()  * dexMod     
+    local hpDrain =  target:getHP()  / dexMod     
 
     player:setHP(player:getHP() + hpDrain)
 

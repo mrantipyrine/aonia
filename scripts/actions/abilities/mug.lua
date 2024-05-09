@@ -12,16 +12,16 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability, action)
 
-    if target:isEnemy() then
-        -- Calculate TP gain for the thief
-        local tpDrained = math.random(0, target:getTP())
+    local targetTP = target:getTP()
+    
+    target:addTP(-targetTP)
 
-        target:addTP(-tpDrained)
+    player.addTP(targetTP)
 
-    if player:getMainJob() == xi.job.THF then
+    --if player:getMainJob() == xi.job.THF then
         -- tpGain = math.random(0)   
-        player.addTP(tpDrained)
-    end 
+        
+    -- end 
 
 
     -- player:addTP(tpGain)

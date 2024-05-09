@@ -15,11 +15,16 @@ abilityObject.onUseAbility = function(player, target, ability)
     
     regenDuration = 60 
     regenAmount = 30
+
     if player:getMainJob() == xi.job.THF then
        regenDuration = regenDuration * 10
+       regainAmount = math.random(10, 25)
+       regainDuration = 60
     end
 
+    player:addStatusEffect(xi.effect.REGAIN, regainAmount, regainDuration, 0)
     player:addStatusEffect(xi.effect.REGEN, regenAmount, 3, regenDuration, 0, 10, 1)
+    
     xi.job_utils.thief.useFlee(player, target, ability)
 end
 

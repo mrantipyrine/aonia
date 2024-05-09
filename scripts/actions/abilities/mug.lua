@@ -15,16 +15,17 @@ abilityObject.onUseAbility = function(player, target, ability, action)
 
     local lostHP = player:getMaxHP() - player:getHP()
     local lostTP = 3000 - player:getTP()   
-    local dexMod = player:getStat(xi.mod.DEX) * 0.8
-    local agiMod = player:getStat(xi.mod.AGI) * 0.8
+    local dexMod = player:getStat(xi.mod.DEX) * 10
+    local agiMod = player:getStat(xi.mod.AGI) * 10 
 
     local targetHP = target:getHP()
     local targetTP = target:getTP()
     
 
-    hpDrain = targetHP / dexMod 
+    hpDrain = math.random(100, targetHP - dexMod)  
 
-    tpDrain = targetHP / agiMod
+    tpDrain = math.random(100), targetTP - agiMod) 
+
 
     player:setTP(player:getTP() + tpDrain)
 

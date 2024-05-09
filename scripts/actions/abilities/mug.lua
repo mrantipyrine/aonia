@@ -20,7 +20,8 @@ abilityObject.onUseAbility = function(player, target, ability, action)
     
 
     hpDrain = math.random(totalDex * 0.8 , targetHP)
-    tpDrain = math.random(totalAgi * 0.8 , targetTP)
+
+    tpDrain = math.random(totalAgi * 0.8 , targetTP * math.random(0, 3000))
 
     player:setTP(tpDrain)
 

@@ -21,6 +21,9 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     tpGain = math.random(250, 500)
 
+    evasionIncrease = 20
+    evasionDuration = 120 -- 2 minutes in seconds
+    
     --- maybe into their own if statements instead of one block?
     if player:getMainJob() == xi.job.TH then
         attIncrease = attIncrease * 2
@@ -30,8 +33,8 @@ abilityObject.onUseAbility = function(player, target, ability)
         dexDuration = dexDuration * 2
 
 
-        local evasionIncrease = 20
-        local evasionDuration = 120 -- 2 minutes in seconds
+        evasionIncrease = 20
+        evasionDuration = 120 -- 2 minutes in seconds
 
         tpGain = tpGain * 3
     end 
@@ -44,6 +47,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
 
     xi.job_utils.thief.useSneakAttack(player, target, ability)
+
 end
 
 return abilityObject

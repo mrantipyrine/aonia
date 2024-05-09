@@ -12,8 +12,8 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability, action)
 
-    totalDex = getPlayerTotalDexterity(player)
-    totalAgi = getPlayerTotalAgility(player)
+    totalDex = player:getStat(xi.mod.DEX)
+    totalAgi = player:getStat(xi.mod.AGI)
 
     targetHP = target:getHP()
     targetTP = target:getTP()

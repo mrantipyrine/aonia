@@ -16,7 +16,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     attIncrease = 20
     attDuration = 120 
 
-    dexIncrease = 10
+    dexIncrease = 20
     dexDuration = 120 -- 2 minutes in seconds  
 
     tpGain = math.random(250, 500)

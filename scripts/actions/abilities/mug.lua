@@ -21,7 +21,7 @@ abilityObject.onUseAbility = function(player, target, ability, action)
     local lostHP = player:getMaxHP() - player:getHP()
     local lostTP = 3000 - player:getTP()  
 
-    local dexMod = player:getStat(xi.mod.DEX) * math.random(0.8, 2)
+    local dexMod = player:getStat(xi.mod.DEX) * 0.8
     
     local hpDrain =  target:getHP() - dexMod 
 

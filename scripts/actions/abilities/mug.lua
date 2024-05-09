@@ -12,20 +12,23 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability, action)
 
-    totalDex = player:getStat(xi.mod.DEX)
-    totalAgi = player:getStat(xi.mod.AGI)
 
-    targetHP = target:getHP()
-    targetTP = target:getTP()
+    local lostHP = player:getMaxHP() - player:getHP()
+    local lostTP = player:getMaxTP() - player:getTP()
+    local dexMod = player:getStat(xi.mod.DEX) * 0.3
+    local agiMod = player:getStat(xi.mod.AGI) * 0.3
+
+    local targetHP = target:getHP()
+    local targetTP = target:getTP()
     
 
-    hpDrain = math.random(totalDex * 0.8 ,math.random(1, 1000))
+    hpDrain = math.random(0, targetHP / dexMod )
 
-    tpDrain = math.random(totalAgi * 0.8 , math.random(1, 1000))
+    tpDrain = math.random(0, targetHP / agiMod)
 
-    player:setTP(player:TP + tpDrain)
+    player:setTP(player:getTP() + tpDrain)
 
-    player:setHP(player:getHP + hpDrain)
+    player:setHP(player:getHP() + hpDrain)
 
     -- player:addHP(targetHP)
     target:addTP(-tpDrain)

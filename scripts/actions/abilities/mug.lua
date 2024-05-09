@@ -16,13 +16,6 @@ abilityObject.onUseAbility = function(player, target, ability, action)
     player:addHP(targetHP)
     return targetHP
 
-    --if player:getMainJob() == xi.job.THF then
-        -- tpGain = math.random(0)   
-        
-    -- end 
-
-
-    -- player:addTP(tpGain)
     return xi.job_utils.thief.useMug(player, target, ability, action)
 end
 

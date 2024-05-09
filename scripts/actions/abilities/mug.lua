@@ -12,13 +12,23 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability, action)
 
+    totalDex = getPlayerTotalDexterity(player)
+    totalAgi = getPlayerTotalAgility(player)
+
     targetHP = target:getHP()
     targetTP = target:getTP()
     
-    player:setTP(player:getTP + math.random(0, targetTP))
-    player:setHP(player:getHP() + math.random(0, targetHP ))
+
+    hpDrain = math.random(totalDex * 0.8 , targetHP)
+    tpDrain = math.random(totalAgi * 0.8 , targetTP)
+
+    player:setTP(tpDrain)
+
+    player:setHP(hpDrain)
+
     -- player:addHP(targetHP)
-   
+    target:addTP(-tpDrain)
+    target:addHP(-hpDrain)
 
     return xi.job_utils.thief.useMug(player, target, ability, action)
 end

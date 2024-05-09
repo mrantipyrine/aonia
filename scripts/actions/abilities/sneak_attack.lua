@@ -23,18 +23,17 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     evasionIncrease = 20
     evasionDuration = 120 -- 2 minutes in seconds
-    
+
     --- maybe into their own if statements instead of one block?
-    if player:getMainJob() == xi.job.TH then
+    if player:getMainJob() == xi.job.THF then
         attIncrease = attIncrease * 2
         attIncrease = attDuration * 2
 
-        dexIncrease = dexIncrease * 2
-        dexDuration = dexDuration * 2
+        dexIncrease = dexIncrease * 3
+        dexDuration = dexDuration * 3
 
-
-        evasionIncrease = 20
-        evasionDuration = 120 -- 2 minutes in seconds
+        evasionIncrease = evasionIncrease * 3
+        evasionDuration = evasionIncrease * 2
 
         tpGain = tpGain * 3
     end 
@@ -42,7 +41,6 @@ abilityObject.onUseAbility = function(player, target, ability)
     player:addTP(tpGain)
 
     player:addMod(xi.mod.ATT, attIncrease, 3, attDuration, 3, 10, 1)
-    
     player:addStatusEffect(xi.effect.DEX_BOOST, dexIncrease, 3, dexDuration, 0, 10, 1)
     player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
 

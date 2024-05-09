@@ -30,7 +30,7 @@ abilityObject.onUseAbility = function(player, target, ability, action)
     player:addMod(xi.mod.ACC, accIncrease, 3, accDuration, 3, 10, 1)
     player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
 
-    tpGain(tp)
+    player:addTP(tpGain)
 
     return xi.job_utils.thief.useSteal(player, target, ability, action)
 end

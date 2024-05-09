@@ -22,7 +22,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     tpGain = math.random(250, 500)
 
     evasionIncrease = 20
-    evasionDuration = 120 -- 2 minutes in seconds
+    evasionDuration = 59 -- 2 minutes in seconds
 
     --- maybe into their own if statements instead of one block?
     if player:getMainJob() == xi.job.THF then
@@ -31,8 +31,7 @@ abilityObject.onUseAbility = function(player, target, ability)
 
         dexIncrease = dexIncrease * 3
 
-        evasionIncrease = evasionIncrease * 3
-        evasionDuration = evasionIncrease * 2
+        evasionIncrease = evasionIncrease * 5
 
         tpGain = tpGain * 3
     end 

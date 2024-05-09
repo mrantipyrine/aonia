@@ -21,10 +21,10 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     tpGain = math.random(250, 500)
 
-    if player:getMainJob() == xi.job.WAR then
+    if player:getMainJob() == xi.job.MNK then
         tpGain = tpGain * 2
     end 
-    
+
     player:addTP(tpGain)
 
 end

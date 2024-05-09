@@ -19,7 +19,6 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
 
     if player:getMainJob() == xi.job.THF then
-        if math.random(0,100) >= .1 then
             xi.job_utils.thief.useSneakAttack(player, target, ability)
         end 
     end 

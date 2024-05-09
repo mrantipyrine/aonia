@@ -27,7 +27,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     if player:getMainJob() == xi.job.THF then
        regenDuration = regenDuration * 10
        regainAmount = math.random(10, 25)
-       regainDuration = 60
+       regainDuration = 240
     end
 
     player:addStatusEffect(xi.effect.REGAIN, regainAmount, 3, regainDuration, 0)

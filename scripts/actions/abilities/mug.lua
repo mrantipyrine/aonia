@@ -20,11 +20,12 @@ abilityObject.onUseAbility = function(player, target, ability, action)
 
     local targetHP = target:getHP()
     local targetTP = target:getTP()
-    
 
-    hpDrain = math.random(100, targetHP - dexMod)  
+    print(targetHP)
 
-    tpDrain = math.random(100), targetTP - agiMod) 
+    hpDrain = math.random(200, targetHP - dexMod)  
+
+    tpDrain = math.random(100, targetTP - agiMod) 
 
 
     player:setTP(player:getTP() + tpDrain)

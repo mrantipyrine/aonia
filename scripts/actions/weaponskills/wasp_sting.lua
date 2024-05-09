@@ -29,6 +29,8 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         target:addStatusEffect(xi.effect.POISON, 1, 0, duration)
     end
 
+    hpRestore = math.floor(tp / 1000) * 0.3 * player:getMaxHP()
+    
     player:addHP(hpRestore)
 
     -- Restore HP to the player

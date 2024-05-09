@@ -32,9 +32,9 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         local duration = (30 + (tp / 1000 * 60)) * applyResistanceAddEffect(player, target, xi.element.WATER, 0)
         target:addStatusEffect(xi.effect.POISON, 3, 0, duration)
 
-        skill:setMsg(xi.mobskills.mobStatusEffectMove(mob, target, xi.effect.BIO, 15, 0, 60))
+        target::addStatusEffect(xi.effect.BIO, 3, 0, duration)
 
-        return xi.effect.BIO
+        return xi.effect.BIO, xi.effect.POISON
     end
 
     return tpHits, extraHits, criticalHit, damage

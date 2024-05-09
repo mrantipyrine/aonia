@@ -12,10 +12,10 @@ xi.settings = xi.settings or {}
 xi.settings.main =
 {
     -- Server name (not longer than 15 characters)
-    SERVER_NAME = "Aonia",
+    SERVER_NAME = "Aonia", 
 
     SERVER_MESSAGE =
-        "One day...",
+        "One day...it will be fun",
 
     -- Setting to lock content more accurately to the expansions defined below.
     -- This generally results in a more accurate presentation of your selected expansions,

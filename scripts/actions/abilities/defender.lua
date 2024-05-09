@@ -12,15 +12,16 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.warrior.useDefender(player, target, ability)
 
-    local evasionIncrease = 10
-    local evasionDuration = 60
+    local maxHP = 100
+    local maxHPDuration = 60
 
     if player:getMainJob() == xi.job.WAR then
-        evasionIncrease = evasionIncrease * 5
-        evasionDuration = evasionDuration * 5
+        maxHP = math.random(100, 200) * 2 
+        --target:delStatusEffect(xi.effect.MAX_HP_BOOST) -- TODO: confirm which versions of HP boost mantra can overwrite
+        target:addStatusEffect(xi.effect.MAX_HP_BOOST, maxHp, 0, maxHPDuration)
     end 
 
-    player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
+    --player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
 
 end
 

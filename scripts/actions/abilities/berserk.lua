@@ -24,7 +24,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     local regenDuration = 60 -- 1 minutes in seconds
 
     if player:getMainJob() == xi.job.WAR then
-        regenDuration = regenDuration * 5
+        regenDuration = regenDuration * 10
     end
 
     -- Incrase Medidate

@@ -1,6 +1,7 @@
 -----------------------------------
 -- Ability: Warcry
 -- Job: Warrior
+-- Adds Att
 -----------------------------------
 local abilityObject = {}
 
@@ -10,14 +11,14 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
     
-    accDuration = 180
-    accIncrease = math.random(20, 50)
+    attDuration = 180
+    attIncrease = math.random(20, 50)
 
     if player:getMainJob() == xi.job.WAR then
         accIncrease = accIncrease * 2
     end 
 
-    player:addMod(xi.mod.ATT, accIncrease, 3, accDuration, 3, 10, 1)
+    player:addMod(xi.mod.ATT, attIncrease, 3, attDuration, 3, 10, 1)
     
     return xi.job_utils.warrior.useWarcry(player, target, ability)
 end

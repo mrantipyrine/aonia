@@ -1,6 +1,7 @@
 -----------------------------------
 -- Ability: Berserk
 -- Job: Warrior
+-- Adds Str and Acc 
 -----------------------------------
 local abilityObject = {}
 

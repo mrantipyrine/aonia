@@ -1,6 +1,7 @@
 -----------------------------------
 -- Ability: Defender
 -- Job: Warrior
+-- Adds Max HP 
 -----------------------------------
 local abilityObject = {}
 

@@ -1,6 +1,7 @@
 -----------------------------------
 -- Ability: Provoke
 -- Job: Warrior
+-- Restores Health / Gains TP 
 -----------------------------------
 local abilityObject = {}
 

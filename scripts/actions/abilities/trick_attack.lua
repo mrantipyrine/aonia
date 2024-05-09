@@ -21,7 +21,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     if player:getMainJob() == xi.job.THF then
         if math.random(0,100) >= .1 then
             xi.job_utils.thief.useSneakAttack(player, target, ability)
-            xi.job_utils.thief.useHide(player, target, ability)
+            xi.job_utils.thief.useAssinsCharge(player, target, ability)
         end 
     end 
 

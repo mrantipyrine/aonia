@@ -17,11 +17,13 @@ abilityObject.onAbilityCheck = function(player, target, ability)
     return 0, 0
 end
 
+
 abilityObject.onUseAbility = function(player, target, ability)
     
     regenDuration = 60 
     regenAmount = 30
 
+    -- Making Flee useful for solo play 
     if player:getMainJob() == xi.job.THF then
        regenDuration = regenDuration * 10
        regainAmount = math.random(10, 25)

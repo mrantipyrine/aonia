@@ -11,26 +11,18 @@ abilityObject.onAbilityCheck = function(player, target, ability)
     return 0, 0
 end
 
-local function adjustAttributes(player)
-    -- Increase evasion by 50 and defense by 50
-    player:addMod(xi.mod.EVASION, 50)
-    player:addMod(xi.mod.DEFENSE, 50)
-end
-
-local function removeAttributes(player)
-    -- Remove the adjustments made to evasion and defense
-    player:addMod(xi.mod.EVASION, -50)
-    player:addMod(xi.mod.DEFENSE, -50)
-end
-
 abilityObject.onUseAbility = function(player, target, ability)
-    -- Adjust attributes for Counterstance
-    adjustAttributes(player)
 
-    -- Set up cleanup function to remove attribute adjustments after ability duration
-    xi.timers.createTimer(player, "counterstance_cleanup", xi.timer.TYPE_ABILITY, ability:getDuration(), function()
-        removeAttributes(player)
-    end)
+    evasionIncrease = 150
+    evasionDuration = 270
+
+    attackIncrease = 180
+    attackDuration  = 270
+
+    player:addMod(xi.mod.ATT, attIncrease, 3, attDuration, 3, 10, 1)
+    player:addMod(xi.mod.ATT, evasionIncrease, 3, evaDuration, 3, 10, 1)
+
+    xi.job_utils.monk.useCounterstance(player, target, ability)
 end
 
 return abilityObject

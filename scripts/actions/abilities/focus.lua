@@ -14,11 +14,12 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
     -- Generate a random TP value between 1000 and 3000
 
+    tpGain = math.random(250, 500)
+
     if player:getMainJob() == xi.job.MNK then
-        local tpGain = math.random(1000, 3000)
-    else 
-        local tpGain = math.random(250, 1000)
+        local tpGain = tpGain * 3
     end 
+    
     -- Grant TP to the player
     player:addTP(tpGain)
 end

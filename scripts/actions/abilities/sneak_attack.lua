@@ -29,9 +29,10 @@ abilityObject.onUseAbility = function(player, target, ability)
         dexIncrease = dexIncrease * 2
         dexDuration = dexDuration * 2
 
-        evasionIncrease = 20
-        evasionDuration = 120 -- 2 minutes in seconds
-        
+
+        local evasionIncrease = 20
+        local evasionDuration = 120 -- 2 minutes in seconds
+
         tpGain = tpGain * 3
     end 
 

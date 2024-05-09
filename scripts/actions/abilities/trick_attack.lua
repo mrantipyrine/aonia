@@ -19,10 +19,10 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
 
     if player:getMainJob() == xi.job.THF then
-            xi.job_utils.thief.useSneakAttack(player, target, ability)
+            xi.job_utils.thief.useHide(player, target, ability)
         end 
     end 
-
+    
     xi.job_utils.thief.useTrickAttack(player, target, ability)
 end
 

@@ -31,7 +31,7 @@ abilityObject.onUseAbility = function(player, target, ability)
 
         evasionIncrease = 50
         evasionDuration = 130
-        
+
         tpGain = tpGain * 3
     end 
 
@@ -40,7 +40,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     player:addMod(xi.mod.ATT, attIncrease, 3, attDuration, 3, 10, 1)
     
     player:addStatusEffect(xi.effect.DEX_BOOST, dexIncrease, 3, dexDuration, 0, 10, 1)
-    player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 0, evasionDuration)
+    player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
 
     xi.job_utils.thief.useSneakAttack(player, target, ability)
 end

@@ -27,6 +27,8 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         params.multiHitfTP = true -- http://wiki.ffo.jp/html/688.html
     end
 
+    target:addStatusEffect(xi.effect.EVASION_DOWN, 50, 0, duration)
+
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
     return tpHits, extraHits, criticalHit, damage
 end

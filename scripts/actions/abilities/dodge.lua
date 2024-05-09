@@ -14,8 +14,8 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
     -- Increase evasion by 50 for 2 minutes
 
-    local evasionIncrease = 20
-    local evasionDuration = 120 -- 2 minutes in seconds
+    evasionIncrease = 20
+    evasionDuration = 120 -- 2 minutes in seconds
     
     if player:getMainJob() == xi.job.MNK then
         evasionIncrease = evasionIncrease * 4
@@ -23,10 +23,8 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
 
-    -- Enhance counter ability by +5 for 2 minutes
-    local counterIncrease = 5
-    local counterDuration = 120 -- 2 minutes in seconds
-    player:addStatusEffect(xi.effect.COUNTER_BOOST, counterIncrease, 3, counterDuration, 0, 10, 1)
+    xi.job_utils.monk.useCounterstance(player, target, ability)
+
 end 
 
 return abilityObject

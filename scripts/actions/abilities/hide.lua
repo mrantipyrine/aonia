@@ -12,9 +12,14 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
+
+    evasionIncrease = 20
+    evasionDuration = 120 -- 2 minutes in seconds
+    
     if player:getMainJob() == xi.job.THF then
-        xi.job_utils.thief.useWarcry(player, target, ability)
-    end 
+        player:addStatusEffect(xi.effect.HUNDRED_FISTS, 1, 35, 0)
+    end
+
     xi.job_utils.thief.useHide(player, target, ability)
 end
 

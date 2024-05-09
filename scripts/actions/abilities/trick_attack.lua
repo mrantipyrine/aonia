@@ -19,8 +19,7 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
 
     if player:getMainJob() == xi.job.THF then
-
-        player:reduceBurden(50, 10)
+        xi.job_utils.thief.useHide(player, target, ability)
     end 
 
     xi.job_utils.thief.useTrickAttack(player, target, ability)

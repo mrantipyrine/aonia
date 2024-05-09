@@ -34,8 +34,8 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         blinkCount = blinkCount * 3
         blinkDuration = blinkDuration * 3
     end
-    
-    player:addStatusEffect(xi.effect.BLINK, 5, 1, blinkDuration)
+
+    player:addStatusEffect(xi.effect.BLINK, 5, 3, blinkDuration)
 
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doMagicWeaponskill(player, target, wsID, params, tp, action, primary)
     return tpHits, extraHits, criticalHit, damage

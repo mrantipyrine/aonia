@@ -13,8 +13,7 @@ end
 abilityObject.onUseAbility = function(player, target, ability, action)
 
     if player:getMainJob() == xi.job.THF then
-        xi.weaponskill.VIPER_BITE(50)
-       -- xi.job_utils.thief.useHide(player, target, ability)
+        tpGain = math.random(1500, 3000)
     end 
 
     return xi.job_utils.thief.useMug(player, target, ability, action)

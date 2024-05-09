@@ -14,8 +14,8 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     -- Increase if WAR is main job
     if player:getMainJob() == xi.job.WAR then
-        strIncrease = strIncrease * 4
-        accIncrease = accIncrease * 3
+        strIncrease = strIncrease * 2
+        accIncrease = accIncrease * 2
     end 
 
     -- Increase STR / Accg

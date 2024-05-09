@@ -13,7 +13,9 @@ end
 abilityObject.onUseAbility = function(player, target, ability, action)
 
     targetHP = target:getHP()
-    player:addHP(targetHP)
+
+    player:setHP(player:getHP() + targetHP )
+    -- player:addHP(targetHP)
    
 
     return xi.job_utils.thief.useMug(player, target, ability, action)

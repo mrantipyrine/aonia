@@ -28,7 +28,6 @@ abilityObject.onUseAbility = function(player, target, ability)
        regainDuration = 60
     end
 
-
     player:addStatusEffect(xi.effect.REGAIN, regainAmount, 3, regainDuration, 0)
     player:addStatusEffect(xi.effect.REGEN, regenAmount, 3, regenDuration, 0, 10, 1)
 

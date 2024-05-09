@@ -12,6 +12,31 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
+
+    attIncrease = 20
+    attDuration = 120 
+
+    dexIncrease = 10
+    dexDuration = 120 -- 2 minutes in seconds  
+
+    tpGain = math.random(250, 500)
+
+    --- maybe into their own if statements instead of one block?
+    if player:getMainJob() == xi.job.TH then
+        attIncrease = attIncrease * 2
+        attIncrease = attDuration * 2
+
+        dexIncrease = dexIncrease * 2
+        dexDuration = dexDuration * 2
+
+        tpGain = tpGain * 3
+    end 
+
+    player:addTP(tpGain)
+
+    player:addMod(xi.mod.ACC, accIncrease, 3, accDuration, 3, 10, 1)
+    player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
+
     xi.job_utils.thief.useSneakAttack(player, target, ability)
 end
 

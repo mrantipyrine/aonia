@@ -25,14 +25,13 @@ abilityObject.onUseAbility = function(player, target, ability)
     evasionDuration = 59 -- 2 minutes in seconds
 
     --- maybe into their own if statements instead of one block?
+    --- is this providing too much?
     if player:getMainJob() == xi.job.THF then
+
         attIncrease = attIncrease * 5
         attIncrease = attDuration * 3
-
         dexIncrease = dexIncrease * 3
-
         evasionIncrease = evasionIncrease * 5
-
         tpGain = tpGain * 3
     end 
 

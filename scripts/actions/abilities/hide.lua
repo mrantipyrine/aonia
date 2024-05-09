@@ -12,6 +12,9 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
+    if player:getMainJob() == xi.job.THF then
+        xi.job_utils.thief.useWarcry(player, target, ability)
+    end 
     xi.job_utils.thief.useHide(player, target, ability)
 end
 

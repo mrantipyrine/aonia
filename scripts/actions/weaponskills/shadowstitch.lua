@@ -10,6 +10,7 @@
 -- Modifiers: CHR:100%
 -- 100%TP    200%TP    300%TP
 -- 1.00      1.00      1.00
+-- what to do here
 -----------------------------------
 local weaponskillObject = {}
 

@@ -11,6 +11,7 @@
 -- Modifiers: DEX:30%  CHR:40%
 -- 100%TP    200%TP    300%TP
 -- 1.19      1.19      1.19
+-- what to do here 
 -----------------------------------
 local weaponskillObject = {}
 

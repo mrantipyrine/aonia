@@ -12,6 +12,7 @@
 -- Modifiers: :
 -- 100%TP    200%TP    300%TP
 -- 1.00      1.00      1.00
+-- what to do here
 -----------------------------------
 local weaponskillObject = {}
 
@@ -30,6 +31,10 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     if damage > 0 and not target:hasStatusEffect(xi.effect.POISON) then
         local duration = (30 + (tp / 1000 * 60)) * applyResistanceAddEffect(player, target, xi.element.WATER, 0)
         target:addStatusEffect(xi.effect.POISON, 3, 0, duration)
+
+        skill:setMsg(xi.mobskills.mobStatusEffectMove(mob, target, xi.effect.POISON, 15, 0, 60))
+
+        return xi.effect.POISON
     end
 
     return tpHits, extraHits, criticalHit, damage

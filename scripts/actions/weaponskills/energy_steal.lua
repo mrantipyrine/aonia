@@ -1,5 +1,6 @@
 -----------------------------------
 -- Energy Steal
+-- this one screams of TP drain maybe adjust others based on level
 -----------------------------------
 local weaponskillObject = {}
 

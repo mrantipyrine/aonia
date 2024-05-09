@@ -11,6 +11,7 @@
 -- Modifiers: DEX:30%  INT:25%
 -- 100%TP    200%TP    300%TP
 -- 1.00      2.38      2.88
+-- what to do here
 -----------------------------------
 local weaponskillObject = {}
 

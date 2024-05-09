@@ -13,10 +13,10 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
 
-    attIncrease = 20
-    attDuration = 120 
+    attIncrease = 10
+    attDuration = 20
 
-    dexIncrease = 20
+    dexIncrease = 10
     dexDuration = 59 -- 2 minutes in seconds  
 
     tpGain = math.random(250, 500)
@@ -26,8 +26,8 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     --- maybe into their own if statements instead of one block?
     if player:getMainJob() == xi.job.THF then
-        attIncrease = attIncrease * 2
-        attIncrease = attDuration * 2
+        attIncrease = attIncrease * 5
+        attIncrease = attDuration * 3
 
         dexIncrease = dexIncrease * 3
 

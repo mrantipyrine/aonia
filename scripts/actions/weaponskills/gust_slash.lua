@@ -27,6 +27,16 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         params.ftpMod = { 1.0, 2.0, 3.0 }
     end
 
+    blinkCount = 5
+    blinkDuration = 120
+
+    if player:getMainJob() == xi.job.THF  then
+        blinkCount = blinkCount * 3
+        blinkDuration = blinkDuration * 3
+    end
+    
+    player:addStatusEffect(xi.effect.BLINK, 5, 1, blinkDuration)
+
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doMagicWeaponskill(player, target, wsID, params, tp, action, primary)
     return tpHits, extraHits, criticalHit, damage
 end

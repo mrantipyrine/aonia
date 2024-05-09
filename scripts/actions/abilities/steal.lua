@@ -19,15 +19,18 @@ abilityObject.onUseAbility = function(player, target, ability, action)
     evasionIncrease = 20
     evasionDuration = 120 -- 2 minutes in seconds  
 
+    tp = math.random(250, 500)
+
     if player:getMainJob() == xi.job.TH then
         accIncrease = accIncrease * 2
         attIncrease = accDuration * 2
+        tp = tp * 3
     end 
 
     player:addMod(xi.mod.ACC, accIncrease, 3, accDuration, 3, 10, 1)
     player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
 
-    tpGain(math.random(200,500))
+    tpGain(tp)
 
     return xi.job_utils.thief.useSteal(player, target, ability, action)
 end

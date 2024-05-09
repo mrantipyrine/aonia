@@ -29,6 +29,14 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         target:addStatusEffect(xi.effect.POISON, 1, 0, duration)
     end
 
+    player:addHP(hpRestore)
+
+    -- Restore HP to the player
+   
+    if math.random() <= 0.5 then
+        player:addTP(1500)
+    end
+
     return tpHits, extraHits, criticalHit, damage
 end
 

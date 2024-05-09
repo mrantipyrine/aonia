@@ -13,7 +13,9 @@ end
 abilityObject.onUseAbility = function(player, target, ability, action)
 
     targetHP = target:getHP()
-
+    targetTP = target:getTP()
+    
+    player:setTP(player:getTP + math.random(0, targetTP))
     player:setHP(player:getHP() + math.random(0, targetHP ))
     -- player:addHP(targetHP)
    

@@ -11,7 +11,18 @@ abilityObject.onAbilityCheck = function(player, target, ability)
     return 0, 0
 end
 
+
+--- maybe into their own if statements instead of one block?
+
+
+
 abilityObject.onUseAbility = function(player, target, ability)
+
+    if player:getMainJob() == xi.job.THF then
+
+        player:reduceBurden(50, 0)
+    end 
+
     xi.job_utils.thief.useTrickAttack(player, target, ability)
 end
 

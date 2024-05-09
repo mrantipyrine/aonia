@@ -4,6 +4,12 @@
 -- Obtained: Thief Level 25
 -- Recast Time: 5:00
 -- Duration: 0:30
+-- print to player 
+-- local function error(player, msg)
+-- player:printToPlayer(msg)
+-- player:printToPlayer('!reset (player)')
+-- end
+
 -----------------------------------
 local abilityObject = {}
 
@@ -22,7 +28,8 @@ abilityObject.onUseAbility = function(player, target, ability)
        regainDuration = 60
     end
 
-    player:addStatusEffect(xi.effect.REGAIN, regainAmount, 3,  regainDuration, 0, 10, 1)
+
+    player:addStatusEffect(xi.effect.REGAIN, regainAmount, 3, regainDuration, 0)
     player:addStatusEffect(xi.effect.REGEN, regenAmount, 3, regenDuration, 0, 10, 1)
 
     xi.job_utils.thief.useFlee(player, target, ability)

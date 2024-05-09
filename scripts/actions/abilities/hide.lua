@@ -17,9 +17,9 @@ abilityObject.onUseAbility = function(player, target, ability)
     evasionDuration = 120 -- 2 minutes in seconds
     
     if player:getMainJob() == xi.job.THF then
-        player:addStatusEffect(xi.effect.HUNDRED_FISTS, 1, 35, 0)
+        evasionIncrease = evasionIncrease * 4
     end
-
+     
     xi.job_utils.thief.useHide(player, target, ability)
 end
 

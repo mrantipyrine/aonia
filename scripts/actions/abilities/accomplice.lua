@@ -7,10 +7,10 @@
 -----------------------------------
 local abilityObject = {}
 
+return xi.job_utils.thief.checkAccomplice(player, target, ability)
+
 abilityObject.onAbilityCheck = function(player, target, ability)
     xi.job_utils.thief.useSteal(player, target, ability)
-
-    return xi.job_utils.thief.checkAccomplice(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)

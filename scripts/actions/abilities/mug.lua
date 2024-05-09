@@ -12,11 +12,9 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability, action)
 
-    local targetTP = target:getTP()
-    
-    target:addTP(-targetTP)
-
-    player.addTP(targetTP)
+    local targetHP = target:getHP()
+    player:addHP(targetHP)
+    return targetHP
 
     --if player:getMainJob() == xi.job.THF then
         -- tpGain = math.random(0)   

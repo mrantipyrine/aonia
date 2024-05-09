@@ -18,9 +18,9 @@ abilityObject.onUseAbility = function(player, target, ability)
         accIncrease = accIncrease * 3
     end 
 
-    -- Increase STR / Acc
+    -- Increase STR / Accg
     player:addStatusEffect(xi.effect.STR_BOOST, strIncrease, 3, duration, 0, 10, 1)
-    player:addMod(xi.mod.ACC, accIncrease, 3, duration, 0, 10, 1)
+    player:addMod(xi.mod.ACC, accIncrease, 3, duration, 3, 10, 1)
     
     -- Apply the Haste effect
    -- local regenDuration = 60 -- 1 minutes in seconds

@@ -19,13 +19,13 @@ abilityObject.onUseAbility = function(player, target, ability, action)
     targetTP = target:getTP()
     
 
-    hpDrain = math.random(totalDex * 0.8 , targetHP)
+    hpDrain = math.random(totalDex * 0.8 ,math.random(1, 1000))
 
-    tpDrain = math.random(totalAgi * 0.8 , targetTP * math.random(0, 3000))
+    tpDrain = math.random(totalAgi * 0.8 , math.random(1, 1000))
 
-    player:setTP(tpDrain)
+    player:setTP(player:TP + tpDrain)
 
-    player:setHP(hpDrain)
+    player:setHP(player:getHP + hpDrain)
 
     -- player:addHP(targetHP)
     target:addTP(-tpDrain)

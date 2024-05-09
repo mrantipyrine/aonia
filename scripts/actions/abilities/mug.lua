@@ -13,7 +13,7 @@ end
 abilityObject.onUseAbility = function(player, target, ability, action)
 
     if player:getMainJob() == xi.job.THF then
-        xi.weaponskill.VIPER_BITE(player, target, ability)
+        xi.weaponskill.VIPER_BITE 
        -- xi.job_utils.thief.useHide(player, target, ability)
     end 
 

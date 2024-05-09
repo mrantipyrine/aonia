@@ -14,12 +14,12 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     -- Increase if WAR is main job
     if player:getMainJob() == xi.job.WAR then
-        strIncrease = math.random(10, 30) * 2
+        strIncrease = math.random(30, 50) * 2
     end 
     -- Increase STR
     player:addStatusEffect(xi.effect.STR_BOOST, strIncrease, 3, duration, 0, 10, 1)
 
-
+    
     -- Apply the Haste effect
     local regenDuration = 60 -- 1 minutes in seconds
 
@@ -27,8 +27,8 @@ abilityObject.onUseAbility = function(player, target, ability)
         regenDuration = regenDuration * 5
     end
 
-    -- Incrase Haste 
-    player:addStatusEffect(xi.effect.REGEN, 15, 6, regenDuration, 0, 10, 1)
+    -- Incrase Medidate
+    player:addStatusEffect(xi.effect.MEDITATE, 15, 6, regenDuration, 0, 10, 1)
 end
 
 return abilityObject

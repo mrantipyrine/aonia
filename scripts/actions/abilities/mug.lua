@@ -12,32 +12,27 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability, action)
 
+    --- If Mob has less than 10% HP there is a 10% to kill it
+    --- This only applies to mobs under level 80
 
+    if player:getMainJob() == xi.job.THF then
+        if mobLevel >= 80 then 
+            if target:getHP() > 0.1 then
+                if math.random(0, 100) >= 10 then
+                    target:addHP(-target:getHP())
+                end
+            end 
+        end
+    end 
 
-    
-    local agiMod = player:getStat(xi.mod.AGI) * math.random(0.3, 0.8)
-
-
-    local lostHP = player:getMaxHP() - player:getHP()
+    -- The Amount of HP and TP to Mug
+    local hpSteal = target:getHP() - math.random(target:getHP() * 0.1 , target:getHP() * 0.2) 
+    local tpSteal = target:getTP() - math.random(target:getTP() * 0.1, target:getTP() * 0.2)
     local lostTP = 3000 - player:getTP()  
 
-    local dexMod = player:getStat(xi.mod.DEX) * 0.8
-    
-    local hpDrain =  target:getHP() - dexMod 
-
-    player:setHP(player:getHP() + hpDrain)
-
+    player:addHP(hpDrain)
+    player:addTP(lostTP)
    
-    --local targetTP = target:getTP() 
-
-    --hpDrain = targetHP * dexMod    
-
-    --tpDrain = targetTP / agiMod 
-
-    --player:setTP(player:getTP() + tpDrain)
-
-
-
     -- player:addHP(targetHP)
     target:addTP(-tpDrain)
     target:addHP(-hpDrain)

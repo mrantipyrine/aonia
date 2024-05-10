@@ -17,8 +17,8 @@ abilityObject.onUseAbility = function(player, target, ability)
     local tpGain = math.random(250, 500)
     
     -- This should be a modifier 
-
-    local strModifier =  player:getStat(xi.mod.STR) * 0.5
+    local strModifier =  player:getStat(xi.mod.STR)
+    
     if player:getMainJob() == xi.job.MNK then
         local tpGain = tpGain * strModifier
     end 

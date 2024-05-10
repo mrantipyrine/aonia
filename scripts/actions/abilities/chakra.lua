@@ -5,21 +5,22 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
-    
-    -- local attackIncrease = 50
-    -- local attackDuration = 120 
-    local duration = 20
 
+    local attIncrease = 50
+    local attDuration = 120 
+
+    -- Give 10% to grant Hundred Fists for 20 seconds. Maybe it should be 10 seconds 
     if player:getMainJob() == xi.job.MNK then
-        player:addStatusEffect(xi.effect.MIGHTY_STRIKES, 1, 0, 0)
-        local timer = Timer.after(duration, player:delStatusEffect(xi.effect.HUNDRED_FISTS))
-        timer 
-    end  
+        if math.random(0, 100) >= 0.1 then
+            player:addStatusEffect(xi.effect.HUNDRED_FISTS, 1, 1, 20)
+        end 
+    end 
 
-    player:addMod(xi.mod.ATT, 50, 120)
-    
-                                              
+    player:addMod(xi.mod.ATT, attIncrease, attDuration)
+
+
     return xi.job_utils.monk.useChakra(player, target, ability)
 end
 
 return abilityObject
+~                        return abilityObject

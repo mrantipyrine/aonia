@@ -23,10 +23,12 @@ abilityObject.onUseAbility = function(player, target, ability)
     local strIncrease =  math.random(5, 20)
     
     if player:getMainJob() == xi.job.MNK then
-        player:addStatusEffect(xi.effect.STR_BOOST, strIncrease * 2, 3, duration, 0, 10, 1)
+        strIncrease = strIncrease * 3
         tpGain = tpGain * 2
     end 
 
+    player:addStatusEffect(xi.effect.STR_BOOST, strIncrease * 2, 3, duration, 0, 10, 1)
+    
     player:addTP(tpGain)
 
 end

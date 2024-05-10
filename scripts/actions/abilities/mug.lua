@@ -30,12 +30,12 @@ abilityObject.onUseAbility = function(player, target, ability, action)
     local tpSteal = target:getTP() - math.random(target:getTP() * 0.1, target:getTP() * 0.2)
     local lostTP = 3000 - player:getTP()  
 
-    player:addHP(hpDrain)
-    player:addTP(lostTP)
+    player:addHP(hpSteal)
+    player:addTP(tpSteal)
    
     -- player:addHP(targetHP)
-    target:addTP(-tpDrain)
-    target:addHP(-hpDrain)
+    target:addTP(-tpSteal)
+    target:addHP(-hpSteal)
 
     return xi.job_utils.thief.useMug(player, target, ability, action)
 end

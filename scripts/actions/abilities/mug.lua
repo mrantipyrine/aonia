@@ -26,10 +26,9 @@ abilityObject.onUseAbility = function(player, target, ability, action)
     end 
 
     -- The Amount of HP and TP to Mug
-    targetHP = target:maxHP() - target:getHP()
-    local hpSteal = target:getHP() - math.random(targetHP * 0.1 ,targetHP * 0.2) 
+
+    local hpSteal = target:getHP() - math.random(target:getHP() * 0.1 ,target:getHP() * 0.2) 
     local tpSteal = target:getTP() - math.random(target:getTP() * 0.1, target:getTP() * 0.2)
-    local lostTP = 3000 - player:getTP()  
 
     player:addHP(hpSteal)
     player:addTP(tpSteal)

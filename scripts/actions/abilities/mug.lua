@@ -16,7 +16,7 @@ abilityObject.onUseAbility = function(player, target, ability, action)
     --- This only applies to mobs under level 80
 
     if player:getMainJob() == xi.job.THF then
-        if mobLevel >= 80 then 
+        if  target:getMainLvl() >= 80 then 
             if target:getHP() > 0.1 then
                 if math.random(0, 100) >= 10 then
                     target:addHP(-target:getHP())

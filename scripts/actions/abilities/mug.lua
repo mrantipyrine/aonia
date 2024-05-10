@@ -27,8 +27,8 @@ abilityObject.onUseAbility = function(player, target, ability, action)
 
     -- The Amount of HP and TP to Mug
     
-    local dexMod = target:getStat(xi.mod.DEX) * 0.2
-    local agiMod = target:getStat(xi.mod.AGI) * 0.2 
+    local dexMod = player:getStat(xi.mod.DEX) * 0.2
+    local agiMod = player:getStat(xi.mod.AGI) * 0.2 
 
     local hpSteal = target:getHP() - target:getHP() - dexMod
     local tpSteal = target:getTP() - target:getTP() - agiMod

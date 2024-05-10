@@ -17,7 +17,7 @@ abilityObject.onUseAbility = function(player, target, ability, action)
 
     if player:getMainJob() == xi.job.THF then
         if target:getMainLvl() >= 80 then 
-            if target:getHP() > 0.1 then
+            if target:getHP() >= 0.2 then
                 if math.random(0, 100) >= 10 then
                     target:addHP(-target:getHP())
                 end
@@ -26,9 +26,8 @@ abilityObject.onUseAbility = function(player, target, ability, action)
     end 
 
     -- The Amount of HP and TP to Mug
-    
-    local dexMod = player:getStat(xi.mod.DEX) * 0.2
-    local agiMod = player:getStat(xi.mod.AGI) * 0.2 
+    local dexMod = player:getStat(xi.mod.DEX) % 0.2
+    local agiMod = player:getStat(xi.mod.AGI) % 0.2 
 
     local hpSteal = target:getHP() - dexMod
     local tpSteal = target:getTP() - agiMod

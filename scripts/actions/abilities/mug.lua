@@ -16,7 +16,7 @@ abilityObject.onUseAbility = function(player, target, ability, action)
     --- This only applies to mobs under level 80
 
     if player:getMainJob() == xi.job.THF then
-        if  target:getMainLvl() >= 80 then 
+        if target:getMainLvl() >= 80 then 
             if target:getHP() > 0.1 then
                 if math.random(0, 100) >= 10 then
                     target:addHP(-target:getHP())
@@ -26,7 +26,8 @@ abilityObject.onUseAbility = function(player, target, ability, action)
     end 
 
     -- The Amount of HP and TP to Mug
-    local hpSteal = target:getHP() - math.random(target:getHP() * 0.1 , target:getHP() * 0.2) 
+    targetHP = target:maxHP() - target:getHP()
+    local hpSteal = target:getHP() - math.random(targetHP * 0.1 ,targetHP * 0.2) 
     local tpSteal = target:getTP() - math.random(target:getTP() * 0.1, target:getTP() * 0.2)
     local lostTP = 3000 - player:getTP()  
 

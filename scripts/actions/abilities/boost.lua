@@ -19,16 +19,15 @@ abilityObject.onUseAbility = function(player, target, ability)
     local hpToRestore = math.floor(lostHP * 0.8)
     player:setHP(player:getHP() + hpToRestore)
 
-    local tpGain = math.random(250, 500)
-    local strIncrease =  math.random(5, 20)
-    
+    local tpGain = math.random(100, 200)
+    local strIncrease = 5
+
     if player:getMainJob() == xi.job.MNK then
-        strIncrease = strIncrease * 3
-        tpGain = tpGain * 2
+        strIncrease = 15
+        tpGain = math.random(500, 1500)
     end 
 
     player:addStatusEffect(xi.effect.STR_BOOST, strIncrease * 2, 3, duration, 0, 10, 1)
-    
     player:addTP(tpGain)
 
 end

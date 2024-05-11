@@ -20,7 +20,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     local strModifier =  player:getStat(xi.mod.STR)
     
     if player:getMainJob() == xi.job.MNK then
-        local tpGain = tpGain * strModifier
+        tpGain = tpGain * strModifier
     end 
 
     -- Grant TP to the player

@@ -16,7 +16,7 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     local tpGain = math.random(250, 500)
 
-    local strIncrease player:getStat(xi.mod.STR) * 0.2
+    local strIncrease = math.random(10, 45)
   
     if player:getMainJob() == xi.job.MNK then
         tpGain = tpGain * math.random(1, 5)

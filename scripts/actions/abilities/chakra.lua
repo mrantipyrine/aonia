@@ -11,7 +11,7 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     -- Give 10% to grant Hundred Fists for 20 seconds. Maybe it should be 10 seconds 
     if player:getMainJob() == xi.job.MNK then
-        if math.random(0, 100) >= 0.1 then
+        if math.random(0, 100) >= 10 then
             player:addStatusEffect(xi.effect.HUNDRED_FISTS, 1, 1, 20)
         end 
     end 

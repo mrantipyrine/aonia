@@ -1,4 +1,3 @@
------------------------------------
 -- Ability: Mug
 -- Steal gil from enemy.
 -- Obtained: Thief Level 35
@@ -14,11 +13,10 @@ abilityObject.onUseAbility = function(player, target, ability, action)
 
     --- If Mob has less than 10% HP there is a 10% to kill it
     --- This only applies to mobs under level 80
-
     if player:getMainJob() == xi.job.THF then
         if target:getMainLvl() >= 80 then
-            if target:getHP() > 0.4 then
-                if math.random(0, 100) >= 10 then
+            if target:getHP() > 0.2 then
+                if math.random(0, 100) >= 20 then
                     target:addHP(-target:getHP())
                 end
             end
@@ -26,22 +24,22 @@ abilityObject.onUseAbility = function(player, target, ability, action)
     end
 
     -- The Amount of HP and TP to Mug
-    --local dexMod = player:getStat(xi.mod.DEX) * 0.4
-    --local agiMod = player:getStat(xi.mod.AGI) * 0.4
+    local hpSteal = math.random(300, 800)
+    local tpSteal = math.random(1000, 1500)
 
-    local hpSteal = target:getHP() * 0.5
-    local tpSteal = target:getTP() * 0.5
+    -- If main job above 40 then more HP and TP 
+    if player:getMainLvl() > 40 then
+        hpSteal = math.random(500, 1100)
+        tpSteal = math.random(1500, 2000)
+    end
 
     player:addHP(hpSteal)
     player:addTP(tpSteal)
 
-    -- player:addHP(targetHP)
     target:addTP(-tpSteal)
     target:addHP(-hpSteal)
 
-    abilityObject.onUseAbility = function(player, target, ability, action)
-        return xi.job_utils.thief.useMug(player, target, ability, action)
-    end
-end 
+    return xi.job_utils.thief.useMug(player, target, ability, action)
+end
 
-return abilityObjectß
+return abilityObject

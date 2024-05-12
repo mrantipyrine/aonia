@@ -18,18 +18,13 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     --attackIncrease = 180
     --attackDuration  = 270
-    if player:getMainJob() == xi.job.MNK then
-        effectObject.onEffectGain = function(target, effect)
-            player:addMod(xi.mod.TRIPLE_ATTACK, 50)
-        end
-
-        effectObject.onEffectLose = function(target, effect)    
-            player:delMod(xi.mod.TRIPLE_ATTACK, 50)
-        end
-    end 
+    
+ 
     --player:addMod(xi.mod.ATT, attIncrease, 3, attDuration, 3, 10, 1)
-    --player:addMod(xi.mod.ATT, evasionIncrease, 3, evaDuration, 3, 10, 1)
-
+    -- player:addMod(xi.mod.ATT, evasionIncrease, 3, evaDuration, 3, 10, 1)
+    if math.random(0, 1) >= 1 then
+        xi.weaponskill.RAGING_FISTS()
+    end 
     xi.job_utils.monk.useCounterstance(player, target, ability)
 end
 

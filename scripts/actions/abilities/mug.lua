@@ -29,8 +29,8 @@ abilityObject.onUseAbility = function(player, target, ability, action)
     --local dexMod = player:getStat(xi.mod.DEX) * 0.4
     --local agiMod = player:getStat(xi.mod.AGI) * 0.4
 
-    local hpSteal = target:getHP() * 0.2
-    local tpSteal = target:getTP() * 0.6
+    local hpSteal = target:getHP() * 0.5
+    local tpSteal = target:getTP() * 0.5
 
     player:addHP(hpSteal)
     player:addTP(tpSteal)

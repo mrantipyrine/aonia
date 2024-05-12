@@ -26,19 +26,18 @@ abilityObject.onUseAbility = function(player, target, ability, action)
     end
 
     -- The Amount of HP and TP to Mug
-
-    local dexMod = player:getStat(xi.mod.DEX) * 0.4
-    local agiMod = player:getStat(xi.mod.AGI) * 0.4
+    --local dexMod = player:getStat(xi.mod.DEX) * 0.4
+    --local agiMod = player:getStat(xi.mod.AGI) * 0.4
 
     local hpSteal = target:getHP() * 0.2
     local tpSteal = target:getTP() * 0.6
 
-    player:addHP(hpSteal + dexMod)
-    player:addTP(tpSteal + agiMod)
+    player:addHP(hpSteal)
+    player:addTP(tpSteal)
 
     -- player:addHP(targetHP)
-    target:addTP(-tpSteal + dexMod)
-    target:addHP(-hpSteal + agiMod)
+    target:addTP(-tpSteal)
+    target:addHP(-hpSteal)
 
     return xi.job_utils.thief.useMug(player, target, ability, action)
 end

@@ -39,7 +39,9 @@ abilityObject.onUseAbility = function(player, target, ability, action)
     target:addTP(-tpSteal)
     target:addHP(-hpSteal)
 
-    return xi.job_utils.thief.useMug(player, target, ability, action)
-end
+    abilityObject.onUseAbility = function(player, target, ability, action)
+        return xi.job_utils.thief.useMug(player, target, ability, action)
+    end
+    
 
 return abilityObjectß

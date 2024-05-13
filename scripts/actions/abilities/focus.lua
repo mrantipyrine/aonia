@@ -14,15 +14,14 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
     -- Generate a random TP value between 1000 and 3000
 
-    local tpGain = math.random(250, 500)
+    local tpGain = 250
+    local counterIncrease = 10
+    local counterDuration = 240 
 
-    local strIncrease = math.random(10, 45)
-  
     if player:getMainJob() == xi.job.MNK then
-        tpGain = tpGain * math.random(1, 5)
-        player:addStatusEffect(xi.effect.STR_BOOST, strIncrease * 2, 3, duration, 0, 10, 1)
+        tpGain = 1000
+        player:addStatusEffect(xi.effect.COUNTER_BOOST, counterIncrease, 3, counterDuration, 0, 10, 1)
     end 
-
     -- Grant TP to the player
     player:addTP(tpGain)
 end

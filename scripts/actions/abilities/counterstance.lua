@@ -13,19 +13,20 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
 
-    --evasionIncrease = 150
-    --evasionDuration = 270
+    local evasionIncrease = 110
+    local evasionDuration = 240
 
-    --attackIncrease = 180
-    --attackDuration  = 270
+    local kickDmg = 60
+    local kickRate = 60
+    local kickDuration = 240
+
+    player:addMod(xi.mod.KICK_ATTACK_RATE, kickRate, 3, kickDuration, 0, 10, 1)
+    player:addMod(xi.mod.KICK_DMG, kickDmg, 3, kickDuration, 0, 10, 1)
     
- 
-    --player:addMod(xi.mod.ATT, attIncrease, 3, attDuration, 3, 10, 1)
-    -- player:addMod(xi.mod.ATT, evasionIncrease, 3, evaDuration, 3, 10, 1)
-    if math.random(0, 1) >= 1 then
-        xi.weaponskill.RAGING_FISTS()
-    end 
+    player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
+    
     xi.job_utils.monk.useCounterstance(player, target, ability)
 end
 
 return abilityObject
+~                                      

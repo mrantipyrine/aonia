@@ -48,7 +48,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     if targetHP < dmg then
         dmg = targetHP
     end
-
+    
     player:addHP(targetHP)
     return targetHP
 end

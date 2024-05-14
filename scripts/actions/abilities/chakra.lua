@@ -14,14 +14,14 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
 
     -- Level depended att and haste increase 
-    local attIncrease = player:getMainJob() * 5
+    local attIncrease = player:getMainJob() * 2
     local attDuration = 120
     local regainAmount = player:getMainJob() * 2
     local regainDuration = 120
 
     -- Adjust values if main job is MNK 
     if player:getMainJob() == xi.job.MNK then
-        accIncrease = player:getMainJob() * 10
+        accIncrease = player:getMainJob() * 4
         accDuration = 240
         regainAmount = player:getMainJob() * 5
         regainDuration = 240

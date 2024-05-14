@@ -29,7 +29,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     end 
     
     -- Add triple attack mod and grant TP to the player
-    player:addMod(xi.mod.TRIPLE_ATTACK, tripleAttack, 3, 30, 0, 10, 1)
+    player:addMod(xi.mod.TRIPLE_ATTACK, 30, 3, 30, 0, 10, 1)
     player:addTP(tpGain)
 end
 

@@ -27,9 +27,9 @@ abilityObject.onUseAbility = function(player, target, ability)
     -- Increase Max HP and restore 80% missing if main job is MNK
     if player:getMainJob() == xi.job.MNK then
         local maxHPBoost = player:getHP() * 2
-
-        player:addStatusEffect(xi.effect.HP_BOOST, maxHPBoost, 1, duration)
-        local lostHP = player:getMaxHP() - player:getHP()
+        
+        player:addStatusEffect(xi.effect.MAX_HP_BOOST = player:getHP() * math.random(2, 3), maxHPBoost, 1, duration)
+        local lostHP = player:getHP() - player:getHP()
         local hpToRestore = math.floor(lostHP * 0.8)
         player:setHP(player:getHP() + hpToRestore)
     end

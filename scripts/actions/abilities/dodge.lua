@@ -13,12 +13,12 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
     -- Set default evasion increase and duration
-    local evasionIncrease = player:getMainLvl() * 5
+    local evasionIncrease = player:getMainLvl() * 2
     local evasionDuration = 120
     
     -- Adjust values if main job is MNK
     if player:getMainJob() == xi.job.MNK then
-        evasionIncrease = player:getMainLvl() * 10
+        evasionIncrease = player:getMainLvl() * 5
         evasionDuration = 240
         
         -- Add counter boost status effect

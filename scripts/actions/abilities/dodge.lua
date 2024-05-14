@@ -21,12 +21,9 @@ abilityObject.onUseAbility = function(player, target, ability)
         evasionIncrease = 100
         duration = 240
 
-        -- Increase Max HP and restore 80% missing HP if main job is MNK
-        local maxHPBoost =  player:getHP() * 2 
+        -- Double the player's maximum HP temporarily
+        local maxHPBoost = player:getMaxHP() * 2
         player:addStatusEffect(xi.effect.MAX_HP_BOOST, maxHPBoost, 1, duration)
-        local lostHP = player:getMaxHP() - player:getHP()
-        local hpToRestore = math.floor(lostHP * 0.8)
-        player:setHP(player:getHP() + hpToRestore)
     end
 
     -- Apply evasion boost

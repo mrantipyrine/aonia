@@ -28,7 +28,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     end
 
     -- Calculate HP restoration based on TP
-    hpRestore = math.floor(tp / 1000) * 0.3 * player:getMaxHP()
+    hpRestore = math.floor(tp / 1000) * 0.2 * player:getMaxHP()
     player:addHP(hpRestore)
 
     -- Restore HP to the player

@@ -16,14 +16,13 @@ abilityObject.onUseAbility = function(player, target, ability)
     
     if player:getMainJob() == xi.job.MNK then
         
-        evasionIncrease = player:getMainLvl() * 2
-        evasionDuration = 240
+        local counterIncrease = player:getMainJob() * 10
+        local evasionIncrease = player:getMainLvl() * 2
+        local duration = 240
 
-        player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
-        player:addStatusEffect(xi.effect.DEF, evasionIncrease, 3, evasionDuration, 0, 10, 1)
+        player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, duration, 0, 10, 1)
+        player:addStatusEffect(xi.effect.COUNTER_BOOST, counterIncrease, 3, duration, 0, 10, 1)
     end 
-
-    player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
 
     xi.job_utils.monk.useDodge(player, target, ability)
 end 

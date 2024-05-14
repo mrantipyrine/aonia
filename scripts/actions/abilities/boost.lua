@@ -16,24 +16,22 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.monk.useBoost(player, target, ability)
     
-    -- Restore 80% of lost HP
+    -- Restore HP based on job
+    local hpRestorePercent = player:getMainJob() == xi.job.MNK and math.random(30, 80) or 0
     local lostHP = player:getMaxHP() - player:getHP()
-    local hpToRestore = math.floor(lostHP * math.random(0.3, 0.8))
+    local hpToRestore = math.floor(lostHP * hpRestorePercent / 100)
+    player:setHP(player:getHP() + hpToRestore)
     
+    -- Increase TP
     local tpGain = math.random(100, 200)
-    
-    local strIncrease = 5
-    
-    if player:getMainJob() == xi.job.MNK then
-        strIncrease = 15
-        tpGain = math.random(500, 1500)
-        player:setHP(player:getHP() + hpToRestore)
-    end 
-
     player:addTP(tpGain)
     
-    player:addStatusEffect(xi.effect.STR_BOOST, strIncrease * 2, 3, duration, 0, 10, 1)
+    -- Increase STR
+    local strIncrease = player:getMainLvl() <= 4 and 1 or player:getMainJob() == xi.job.MNK and player:getMainLvl() / 2 or player:getMainLvl() / 4
     
+    -- Apply status effect
+    local duration = 180 -- 3 minutes in seconds
+    player:addStatusEffect(xi.effect.STR_BOOST, strIncrease * 2, 3, duration, 0, 10, 1)
 end
 
 return abilityObject

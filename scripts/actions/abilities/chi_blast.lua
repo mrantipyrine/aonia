@@ -13,14 +13,18 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
     
-    local regenAmount = 10
+    local regenAmount = player:getMainJob() * 2
     local regenDuration = 240
-   
+
+    -- Adds regen and regain 
     if player:getMainJob() == xi.job.MNK then
-        caster:addStatusEffect(xi.effect.REGEN, regenAmount, 3, regenDuration, 0, 10, 1)
+        local regainAmount = player:getMainJob() * 2
+        local regainDuration = 240
+        regenAmount = player:getMainJob() * 10
+        player:addStatusEffect(xi.effect.REGAIN, regainAmount, 3, regainDuration, 0, 10, 1)
+        player:addStatusEffect(xi.effect.REGEN, regenAmount, 3, regenDuration, 0, 10, 1)
     end 
  
-
     return xi.job_utils.monk.useChiBlast(player, target, ability)
 end
 

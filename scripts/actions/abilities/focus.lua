@@ -12,17 +12,23 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability)
-    -- Generate a random TP value between 1000 and 3000
-
+    -- Set default TP gain
     local tpGain = 250
-    local counterIncrease = 10
-    local counterDuration = 240 
-
+    
+    -- Determine triple attack based on main job level and if main job is MNK
+    local tripleAttack = player:getMainJob() == xi.job.MNK and player:getMainLvl() % 2 or (player:getMainLvl() >= 25 and 1 or player:getMainLvl() % 5)
+    
+    -- Increase TP gain and add status effect if main job is MNK
     if player:getMainJob() == xi.job.MNK then
+        -- this will increase with Focus of White Lotus 
         tpGain = 1000
+        local counterIncrease = player:getMainLvl() * 2
+        local counterDuration = player:getMainLvl() * 2
         player:addStatusEffect(xi.effect.COUNTER_BOOST, counterIncrease, 3, counterDuration, 0, 10, 1)
     end 
-    -- Grant TP to the player
+    
+    -- Add triple attack mod and grant TP to the player
+    player:addMod(xi.mod.TRIPLE_ATTACK, tripleAttack, 3, 30, 0, 10, 1)
     player:addTP(tpGain)
 end
 

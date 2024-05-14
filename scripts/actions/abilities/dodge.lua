@@ -23,7 +23,7 @@ abilityObject.onUseAbility = function(player, target, ability)
 
         -- Double the player's maximum HP temporarily
         local maxHPBoost =  player:getHP() * 4
-        player:addStatusEffect(xi.effect.MAX_HP_BOOST, 200, 1, duration)
+        player:addStatusEffect(xi.effect.MAX_HP_BOOST, 50, 1, duration)
     end
 
     -- Apply evasion boost

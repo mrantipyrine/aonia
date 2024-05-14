@@ -13,12 +13,12 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
     -- Set default evasion increase and duration
-    local evasionIncrease = player:getMainLvl() * 2
+    local evasionIncrease = player:getMainLvl()
     local evasionDuration = 120
     
     -- Adjust values if main job is MNK
     if player:getMainJob() == xi.job.MNK then
-        evasionIncrease = player:getMainLvl() * 5
+        evasionIncrease = player:getMainLvl() * 2
         evasionDuration = 240
         
         -- Add counter boost status effect
@@ -28,7 +28,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     end 
 
     -- Add evasion boost status effect
-    -- player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
+     player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
 
     -- Use the Dodge ability
     xi.job_utils.monk.useDodge(player, target, ability)

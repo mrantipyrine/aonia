@@ -10,24 +10,25 @@ abilityObject.onAbilityCheck = function(player, target, ability)
 end
 
 abilityObject.onUseAbility = function(player, target, ability, action)
-
-    --- If Mob has less than 10% HP there is a 10% to kill it
-    --- This only applies to mobs under level 80
-    if player:getMainJob() == xi.job.THF then
-        if target:getMainLvl() >= 80 then
-            if target:getHP() > 0.2 then
-                if math.random(0, 100) >= 20 then
-                    target:addHP(-target:getHP())
-                end
-            end
-        end
+    if player:getMainJob() ~= xi.job.THF then
+        return
     end
 
-    -- The Amount of HP and TP to Mug
+    local targetLevel = target:getMainLvl()
+
+    if targetLevel >= 80 then
+        return
+    end
+
+    local hpPercent = target:getHP() / target:getMaxHP()
+    if hpPercent > 0.2 and math.random(0, 100) >= 20 then
+        target:setHP(0)
+        return
+    end
+
     local hpSteal = math.random(300, 800)
     local tpSteal = math.random(1000, 1500)
 
-    -- If main job above 40 then more HP and TP 
     if player:getMainLvl() > 40 then
         hpSteal = math.random(500, 1100)
         tpSteal = math.random(1500, 2000)

@@ -21,8 +21,8 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     -- Adjust values if main job is MNK 
     if player:getMainJob() == xi.job.MNK then
-        attIncrease = player:getMainJob() * 10
-        attDuration = 240
+        accIncrease = player:getMainJob() * 10
+        accDuration = 240
         regainAmount = player:getMainJob() * 5
         regainDuration = 240
     end 
@@ -34,7 +34,7 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     -- Apply haste and attack increase effects
     player:addStatusEffect(xi.effect.REGAIN, regainAmount, 3, regainDuration, 0, 10, 1)
-    player:addMod(xi.mod.ATT, attIncrease, attDuration)
+    player:addMod(xi.mod.ACC, accIncrease, accDuration)
 
     -- Trigger Chakra ability and return its result
     return xi.job_utils.monk.useChakra(player, target, ability)

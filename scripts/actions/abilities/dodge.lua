@@ -19,9 +19,6 @@ abilityObject.onUseAbility = function(player, target, ability)
         evasionIncrease = player:getMainLvl() * 2
         evasionDuration = 240
 
-        local counterIncrease = player:getMainJob() * 50
-        local counterDuration = 240
-
         player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
         player:addStatusEffect(xi.effect.HASTE, evasionIncrease, 3, evasionDuration, 0, 10, 1)
     end 

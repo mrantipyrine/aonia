@@ -13,6 +13,7 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
 
+    -- Level depended att and haste increase 
     local attIncrease = player:getMainJob() * 5
     local attDuration = 120
     local hasteAmount = player:getMainJob() * 2

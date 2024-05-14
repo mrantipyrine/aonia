@@ -25,9 +25,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         params.str_wsc = 0.3 params.dex_wsc = 0.3
     end
     
-    local tpGain = math.random(5 * xi.player:getMainJob(), 20 * xi.player:getMainJob())
-    
-    player:addTP(tpGain)
+    player:addTP(math.random(10 * player:getMainJob(), 25 * player:getMainJob()))
     
     xi.job_utils.mnk.useBoost(player, target, ability)
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)

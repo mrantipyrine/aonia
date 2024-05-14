@@ -22,7 +22,7 @@ abilityObject.onUseAbility = function(player, target, ability)
         duration = 240
 
         -- Double the player's maximum HP temporarily
-        local maxHPBoost = player:getMaxHP()
+        local maxHPBoost = player:getMaxHP() / 4
         player:addStatusEffect(xi.effect.MAX_HP_BOOST, maxHPBoost, 1, duration)
     end
 

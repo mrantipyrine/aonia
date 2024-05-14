@@ -13,16 +13,13 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
     -- Increase evasion by 50 for 2 minutes
-
-    local evasionIncrease = player:getMainLvl() * 1 
-    local evasionDuration = 120
     
     if player:getMainJob() == xi.job.MNK then
         
         evasionIncrease = player:getMainLvl() * 2
         evasionDuration = 240
 
-        local counterIncrease = player:getMainJob() * 10
+        local counterIncrease = player:getMainJob() * 50
         local counterDuration = 240
 
         player:addStatusEffect(xi.effect.COUNTER_BOOST, counterIncrease, 3, counterDuration, 0, 10, 1)

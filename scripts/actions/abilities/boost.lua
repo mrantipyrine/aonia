@@ -28,8 +28,8 @@ abilityObject.onUseAbility = function(player, target, ability)
     local strIncrease = player:getMainLvl() <= 4 and 1 or player:getMainJob() == xi.job.MNK and player:getMainLvl() / 2 or player:getMainLvl() / 4
 
     -- Apply status effect
-    local duration = 180 -- 3 minutes in seconds
-    player:addStatusEffect(xi.effect.STR_BOOST, strIncrease * 2, 3, duration, 0, 10, 1)
+    local duration = 29-- 3 minutes in seconds
+    player:addStatusEffect(xi.effect.STR_BOOST, strIncrease, 3, duration, 0, 0, 0)
 end
 
 return abilityObject

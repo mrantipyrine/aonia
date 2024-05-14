@@ -22,7 +22,7 @@ abilityObject.onUseAbility = function(player, target, ability)
         local counterIncrease = player:getMainJob() * 50
         local counterDuration = 240
 
-        player:addStatusEffect(xi.effect.COUNTER_BOOST, counterIncrease, 3, counterDuration, 0, 10, 1)
+        player:addMod(xi.mod.DOUBLE_ATTACK, 10, 3, 120, 0, 10, 1)
     end 
 
     player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)

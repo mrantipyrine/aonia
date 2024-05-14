@@ -25,7 +25,8 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         params.str_wsc = 0.3 params.dex_wsc = 0.3
     end
     
-    local tpGain = math.random(100) >= 50 and math.random(500, 1500) or nil
+    10 * xi.player:getMainJob() 
+    local tpGain = math.random(100) >= 50 and math.random(10 * xi.player:getMainJob(), 25 * xi.player:getMainJob() ) or nil
     if tpGain then
         player:addTP(tpGain)
     end

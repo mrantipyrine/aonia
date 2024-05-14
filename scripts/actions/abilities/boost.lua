@@ -29,7 +29,7 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     -- Apply status effect
     local duration = 29-- 3 minutes in seconds
-    player:addStatusEffect(xi.effect.STR_BOOST, strIncrease, 3, duration, 0, 0, 0)
+    player:addStatusEffect(xi.effect.STR_BOOST, strIncrease, 0, duration, 0, 0, 0)
 end
 
 return abilityObject

@@ -28,7 +28,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     end 
 
     -- Add evasion boost status effect
-    player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
+    -- player:addStatusEffect(xi.effect.EVASION_BOOST, evasionIncrease, 3, evasionDuration, 0, 10, 1)
 
     -- Use the Dodge ability
     xi.job_utils.monk.useDodge(player, target, ability)

@@ -25,7 +25,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     player:addTP(player:getMainJob() == xi.job.MNK and math.random(700, 1400) or math.random(100, 700))
 
     -- Increase STR
-    local strIncrease = player:getMainLvl() <= 4 and 1 or player:getMainJob() == xi.job.MNK and player:getMainLvl() / 4 or player:getMainLvl() / 6
+    local strIncrease = player:getMainLvl() <= 8 and 1 or player:getMainJob() == xi.job.MNK and player:getMainLvl() / 6 or player:getMainLvl() / 8
 
     -- Apply status effect
     local duration = 19-- 3 minutes in seconds

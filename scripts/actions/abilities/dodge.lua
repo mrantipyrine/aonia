@@ -19,7 +19,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     
     if player:getMainJob() == xi.job.MNK then
         
-        evasionIncrease = getMainLvl() * 2
+        evasionIncrease = player:getMainLvl() * 2
         evasionDuration = 240
 
         local counterIncrease = player:getMainJob() * 10

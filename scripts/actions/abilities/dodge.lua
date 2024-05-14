@@ -18,7 +18,7 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     -- Increase evasion and duration if main job is MNK
     if player:getMainJob() == xi.job.MNK then
-        evasionIncrease = 30
+        evasionIncrease = 50
         duration = 240
 
         -- Double the player's maximum HP temporarily

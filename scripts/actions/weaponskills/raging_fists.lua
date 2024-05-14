@@ -25,11 +25,14 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         params.str_wsc = 0.3 params.dex_wsc = 0.3
     end
     
-    local tpGain = math.random(500, 1500)
-
+    if math.random(0, 100) >= 0.3 then 
+        local tpGain = math.random(500, 1500)
+    end 
+    
     -- Grant TP to the player
     player:addTP(tpGain)
 
+    xi.job_utils.mnk.useBoost(player, target, ability)
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
     return tpHits, extraHits, criticalHit, damage
 end

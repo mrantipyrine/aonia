@@ -21,6 +21,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     -- Increase TP gain and add status effect if main job is MNK
     if player:getMainJob() == xi.job.MNK then
         -- this will increase with Focus of White Lotus 
+        
         tpGain = 1000
         local counterIncrease = player:getMainLvl() * 2
         local counterDuration = player:getMainLvl() * 2

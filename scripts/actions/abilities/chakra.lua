@@ -16,24 +16,24 @@ abilityObject.onUseAbility = function(player, target, ability)
     -- Level depended att and haste increase 
     local attIncrease = player:getMainJob() * 5
     local attDuration = 120
-    local hasteAmount = player:getMainJob() * 2
-    local hasteDuration = 120
+    local regainAmount = player:getMainJob() * 2
+    local regainDuration = 120
 
-    -- Adjust values if main job is MNK
+    -- Adjust values if main job is MNK 
     if player:getMainJob() == xi.job.MNK then
         attIncrease = player:getMainJob() * 10
         attDuration = 240
-        hasteAmount = player:getMainJob() * 5
-        hasteDuration = 240
+        regainAmount = player:getMainJob() * 5
+        regainDuration = 240
     end 
     
-    -- Placeholder for when the Fist of Wu Tang is fully implemented
+    --Placeholder for when the Fist of Wu Tang is fully implemented
     --if math.random(0, 100) >= 10 then
     --    player:addStatusEffect(xi.effect.HUNDRED_FISTS, 3, 1, 10)
     --end 
 
     -- Apply haste and attack increase effects
-    player:addStatusEffect(xi.effect.HASTE, hasteAmount, 3, hasteDuration, 0, 10, 1)
+    player:addStatusEffect(xi.effect.REGAIN, regainAmount, 3, regainDuration, 0, 10, 1)
     player:addMod(xi.mod.ATT, attIncrease, attDuration)
 
     -- Trigger Chakra ability and return its result

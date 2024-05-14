@@ -14,7 +14,8 @@ abilityObject.onUseAbility = function(player, target, ability)
     regainAmount = math.random(10, 25)
     regainDuration = 60
 
-    player:addStatusEffect(xi.effect.REGAIN, regainAmount, 60, 0)
+    
+    player:addStatusEffect(xi.effect.REGAIN, regainAmount, regainDuration, 0)
 
     xi.job_utils.warrior.useAggressor(player, target, ability)
 end

@@ -24,7 +24,7 @@ abilityObject.onUseAbility = function(player, target, ability)
         -- Add counter boost status effect
         local counterIncrease = evasionIncrease
         local counterDuration = evasionDuration
-        player:addStatusEffect(xi.effect.COUNTER_BOOST, counterIncrease, 3, counterDuration, 0, 10, 1)
+        player:addStatusEffect(xi.effect.MARTIAL_ARTS, counterIncrease, 3, counterDuration, 0, 10, 1)
     end 
 
     -- Add evasion boost status effect

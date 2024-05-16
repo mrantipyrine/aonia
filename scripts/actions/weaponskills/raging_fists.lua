@@ -24,10 +24,10 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         params.ftpMod = { 1.0, 2.1875, 3.75 }
         params.str_wsc = 0.3 params.dex_wsc = 0.3
     end
-    
-    local tpGain = math.random(10 * xi.player:getMainJob(), 25 * xi.player:getMainJob())
 
-    player:addTP(tpGain)
+    player:addMod(xi.mod.TRIPLE_ATTACK, doubleAtt, 3, duration, 0, 10, 1)
+    player:addMod(xi.mod.TRIPLE_ATTACK_DMG, doubleAttdmg, 3, duration, 0, 10, 1)
+    player:addMod(xi.mod.ATT, attack, 3, duration, 0, 10, 1)
     
     xi.job_utils.mnk.useBoost(player, target, ability)
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)

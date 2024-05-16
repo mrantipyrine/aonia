@@ -26,11 +26,14 @@ abilityObject.onUseAbility = function(player, target, ability)
         local counterIncrease = player:getMainLvl() * 2
         local counterDuration = player:getMainLvl() * 2
         player:addStatusEffect(xi.effect.COUNTER_BOOST, counterIncrease, 3, counterDuration, 0, 10, 1)
+        player:addMod(xi.mod.TRIPLE_ATTACK, 30, 3, 300, 0, 10, 1)
+        
     end 
     
     -- Add triple attack mod and grant TP to the player
-    player:addMod(xi.mod.TRIPLE_ATTACK, 30, 3, 300, 0, 10, 1)
     player:addTP(tpGain)
+    
+    xi.job_utils.monk.useFocus(player, target, ability)
 end
 
 return abilityObject

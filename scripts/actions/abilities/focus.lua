@@ -32,7 +32,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     
     -- Add triple attack mod and grant TP to the player
     player:addTP(tpGain)
-    
+
     xi.job_utils.monk.useFocus(player, target, ability)
 end
 

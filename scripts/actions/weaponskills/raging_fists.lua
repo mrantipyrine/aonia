@@ -25,6 +25,11 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         params.str_wsc = 0.3 params.dex_wsc = 0.3
     end
 
+    local doubleAtt = player:getMainLvl() * 5
+    local doubleAttdmg = player:getMainLvl() * 10
+    local duration = 120 
+    local attack = player:getMainLvl() * 5
+    
     player:addMod(xi.mod.TRIPLE_ATTACK, doubleAtt, 3, duration, 0, 10, 1)
     player:addMod(xi.mod.TRIPLE_ATTACK_DMG, doubleAttdmg, 3, duration, 0, 10, 1)
     player:addMod(xi.mod.ATT, attack, 3, duration, 0, 10, 1)

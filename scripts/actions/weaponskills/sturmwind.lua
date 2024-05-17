@@ -34,8 +34,10 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         criticalHit = true
     end
 
-    local tpGain = math.random(300, 1500)
-    player:addTP(tpGain)
+    local duration = 120
+    
+    player:addStatusEffect(xi.effect.ENSTONE, 50, 0, duration)
+    local tpGain = math.random(300, 900)
 
     return tpHits, extraHits, criticalHit, damage
 end

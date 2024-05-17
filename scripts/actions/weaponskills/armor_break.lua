@@ -26,6 +26,12 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         params.str_wsc = 0.6 params.vit_wsc = 0.6
     end
 
+    local doubleAtt = 30
+    local duration = 120
+    local doubleAttdmg = 30
+    player:addMod(xi.mod.DOUBLE_ATTACK, doubleAtt, 3, duration, 0, 10, 1)
+    player:addMod(xi.mod.DOUBLE_ATTACK_DMG, doubleAttdmg, 3, duration, 0, 10, 1)
+
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
 
     if damage > 0 and not target:hasStatusEffect(xi.effect.DEFENSE_DOWN) then

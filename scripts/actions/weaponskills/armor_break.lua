@@ -30,7 +30,6 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     local duration = 120
     local doubleAttdmg = 30
     player:addMod(xi.mod.DOUBLE_ATTACK, doubleAtt, 3, duration, 0, 10, 1)
-    player:addMod(xi.mod.DOUBLE_ATTACK_DMG, doubleAttdmg, 3, duration, 0, 10, 1)
 
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
 

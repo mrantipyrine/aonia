@@ -13,10 +13,10 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
 
-    local evasionIncrease = xi.player:getMainLvl() * 5
+    local evasionIncrease = player:getMainLvl() * 5
     local evasionDuration = 240
 
-    local kickDmg = xi.player:getMainLvl() * 5
+    local kickDmg = xi.player:getMainLvl()
     local kickRate = xi.player:getMainLvl() * 5
     local kickDuration = 240
 

@@ -13,7 +13,7 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
     local doubleAtt = player:getMainLvl() * 5
-    local doubleAttdmg = player:getMainLvl() * 10
+    local doubleAttdmg = player:getMainLvl() / 2 
     local duration = 120 
     local attack = player:getMainLvl() * 5
     player:addMod(xi.mod.DOUBLE_ATTACK, doubleAtt, 3, duration, 0, 10, 1)

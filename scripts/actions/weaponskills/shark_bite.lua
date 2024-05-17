@@ -26,7 +26,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         params.dex_wsc = 0.4 params.agi_wsc = 0.4
     end
 
-    if math.random(0, 100) <= 30 then
+    if math.random(0, 100) >= 30 then
         player:addTP(1500)
     end
 

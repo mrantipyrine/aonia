@@ -25,11 +25,11 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     end
     
     -- Generate a random TP gain between 500 and 1500
-    local tpGain = math.random(300, 1500)
+    local tpGain = math.random(1000, 1500)
     player:addTP(tpGain)
 
     -- Apply Stoneskin for 2 minutes
-    local stoneskinDuration = 120 -- 2 minutes in seconds
+    local stoneskinDuration = 240 -- 2 minutes in seconds
     player:addStatusEffect(xi.effect.STONESKIN, 0, 3, stoneskinDuration, 0, 10, 1)
 
     -- Perform the physical attack

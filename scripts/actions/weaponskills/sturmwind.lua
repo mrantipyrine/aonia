@@ -29,7 +29,6 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
 
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
     
-    
     -- Check if critical hit occurs
     if math.random() < critChance then
         criticalHit = true

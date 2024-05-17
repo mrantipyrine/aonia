@@ -31,9 +31,9 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     end
 
     local duration = 120 
-    
-    player:delMod(xi.mod.QUAD_ATTACK, 10, 3, duration, 0, 10, 1)
-    player:delMod(xi.mod.QUAD_ATTACK_DMG, 10, 3, duration, 0, 10, 1)
+
+    player:addMod(xi.mod.QUAD_ATTACK, 10, 3, duration, 0, 10, 1)
+    player:addMod(xi.mod.QUAD_ATTACK_DMG, 10, 3, duration, 0, 10, 1)
     
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
     return tpHits, extraHits, criticalHit, damage

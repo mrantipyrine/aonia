@@ -8,20 +8,20 @@ local abilityObject = {}
 abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.warrior.useBerserk(player, target, ability)
 
-    strIncrease = math.random(10, 20)
-    accIncrease = math.random(30, 100)
+    vitIncrease = player:getMainJob() / 2
+    defIncrease = player:getMainLvl() / 2
 
     duration = 180
 
     -- Increase if WAR is main job
     if player:getMainJob() == xi.job.WAR then
-        strIncrease = strIncrease * 2
-        accIncrease = accIncrease * 2
+        vitIncrease = player:getMainJob()
+        defIncrease = player:getMainJob() * 2 
     end 
 
     -- Increase STR / Accg
-    player:addStatusEffect(xi.effect.STR_BOOST, strIncrease, 3, duration, 0, 10, 1)
-    player:addMod(xi.mod.ACC, accIncrease, 3, duration, 3, 10, 1)
+    player:addStatusEffect(xi.effect.VIT_BOOST, strIncrease, 3, duration, 0, 10, 1)
+    player:addMod(xi.mod.DEF, accIncrease, 3, duration, 3, 10, 1)
     
     -- Apply the Haste effect
    -- local regenDuration = 60 -- 1 minutes in seconds

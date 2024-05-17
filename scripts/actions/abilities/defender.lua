@@ -16,14 +16,10 @@ abilityObject.onUseAbility = function(player, target, ability)
     local regainDuration = 120
 
     if player:getMainJob() == xi.job.WAR then
-        maxHP = maxHP * 2
+        maxHP = maxHP * 0.3
         maxHPDuration = maxHPDuration * 2
     end
     
-
-    player:addStatusEffect(xi.mod.DEF, 100, 3, regainDuration, 0)
-    player:addStatusEffect(xi.effect.REGEN, regenAmount, 3, regenDuration, 0, 10, 1)
-
     -- Increase Max HP and Restore 80% missing  
     layer:addStatusEffect(xi.effect.MAX_HP_BOOST, maxHP, 1, maxHPDuration)
     

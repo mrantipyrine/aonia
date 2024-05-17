@@ -1,7 +1,6 @@
 -----------------------------------
 -- Ability: Defender
 -- Job: Warrior
--- Adds Max HP 
 -----------------------------------
 local abilityObject = {}
 
@@ -12,20 +11,22 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.warrior.useDefender(player, target, ability)
 
-    local regainAmount = 55
-    local regainDuration = 120
+    local maxHP = 55
+    local maxHPDuration = 120
 
     if player:getMainJob() == xi.job.WAR then
-        maxHP = maxHP * 0.3
+        maxHP = maxHP * 0.7
         maxHPDuration = maxHPDuration * 2
     end
     
     -- Increase Max HP and Restore 80% missing  
-    layer:addStatusEffect(xi.effect.MAX_HP_BOOST, maxHP, 1, maxHPDuration)
+    player:addStatusEffect(xi.effect.MAX_HP_BOOST, maxHP, 1, maxHPDuration)
     
     local lostHP = player:getMaxHP() - player:getHP()
     local hpToRestore = math.floor(lostHP * 0.8)
     player:setHP(player:getHP() + hpToRestore)
+
+    
 
 end
 

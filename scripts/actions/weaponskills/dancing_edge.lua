@@ -33,7 +33,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         player:addTP(1500)
     end
 
-    player:addStatusEffect(xi.effect.ENTHUNDER, 150, 0, duration)
+    player:addStatusEffect(xi.effect.ENTHUNDER, 25, 0, duration)
     target:addStatusEffect(xi.effect.EVASION_DOWN, 50, 0, duration)
 
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)

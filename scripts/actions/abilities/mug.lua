@@ -20,8 +20,8 @@ abilityObject.onUseAbility = function(player, target, ability, action)
         return
     end
 
-    local hpPercent = target:getHP() / target:getMaxHP()
-    if hpPercent > 0.2 and math.random(0, 100) >= 20 then
+    local hpPercent = target:getMaxHP() / target:getHP() 
+    if hpPercent > 0.2 and math.random(0, 100) <= 20 then
         target:setHP(0)
         return
     end

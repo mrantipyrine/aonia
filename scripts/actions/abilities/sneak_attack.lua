@@ -32,7 +32,7 @@ abilityObject.onUseAbility = function(player, target, ability)
         attIncrease = attDuration * 3
         dexIncrease = dexIncrease * 3
         evasionIncrease = evasionIncrease * 5
-        tpGain = tpGain * 3
+        tpGain = tpGain * 5
     end 
 
     player:addTP(tpGain)

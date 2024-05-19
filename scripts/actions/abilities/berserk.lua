@@ -16,7 +16,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     -- Increase Acc and Attk 
     if player:getMainJob() == xi.job.WAR then
         attIncrease = player:getMainLvl()
-        doubleAtt = player:getMainLvl() / 6
+        doubleAtt = player:getMainLvl() / 4
         doubleDmg = player:getMainLvl() / 6
         duration = 290
     end 

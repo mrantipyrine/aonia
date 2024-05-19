@@ -25,11 +25,11 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.6 params.vit_wsc = 0.6
     end
-
-    local doubleAtt = 30
-    local duration = 120
-    local doubleAttdmg = 30
-    player:addMod(xi.mod.DOUBLE_ATTACK, doubleAtt, 3, duration, 0, 10, 1)
+    local duration = 240
+    
+    player:addStatusEffect(xi.effect.ENFIRE, math.random(1, player:getMainLvl(), 0, duration)
+    local tpGain = math.random(300, 900)
+    player:addTP(tpGain)
 
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
 

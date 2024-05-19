@@ -17,7 +17,7 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     if player:getMainJob() == xi.job.WAR then
         accIncrease = player:getMainLvl() 
-        regainAmount = player:getMainLvl() / 4 
+        regainAmount = player:getMainLvl() / 3
         duration = 290
     end 
 

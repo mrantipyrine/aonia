@@ -16,7 +16,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     local defIncrease = player:getMainLvl() / 4
 
     if player:getMainJob() == xi.job.WAR then
-        maxHP = maxHP * 0.7
+        maxHP = maxHP * 0.8
         duration = 179
         defIncrease = player:getMainLvl()
         player:addStatusEffect(xi.effect.REGEN, player:getMainLvl() / 2 , 1, duration )
@@ -28,8 +28,6 @@ abilityObject.onUseAbility = function(player, target, ability)
     local lostHP = player:getMaxHP() - player:getHP()
     local hpToRestore = math.floor(lostHP * 0.8)
     player:setHP(player:getHP() + hpToRestore)
-
-    
 
 end
 

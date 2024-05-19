@@ -27,14 +27,13 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     end
 
     
-    local hpRestore = math.floor(tp / 1000) * 0.3 * player:getMaxHP()
+    local hpRestore = math.floor(tp / 500) * 0.3 * player:getMaxHP()
 
     local hasteDuration = 120 -- 2 minutes in seconds
     player:addStatusEffect(xi.effect.HASTE, 60, 3, hasteDuration, 0, 10, 1)
 
     player:addHP(hpRestore)
     
-
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
 
     if damage > 0 and not target:hasStatusEffect(xi.effect.EVASION_DOWN) then

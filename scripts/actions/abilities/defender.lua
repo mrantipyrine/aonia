@@ -19,7 +19,7 @@ abilityObject.onUseAbility = function(player, target, ability)
         maxHPDuration = maxHPDuration * 2
     end
     
-    player:addMod(xi.mod.DEF, 1000, 1, 120)
+    player:addMod(xi.mod.DEF, 250, 1, 120)
     -- Increase Max HP and Restore 80% missing  
     player:addStatusEffect(xi.effect.MAX_HP_BOOST, maxHP, 1, maxHPDuration)
     

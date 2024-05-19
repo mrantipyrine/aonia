@@ -27,7 +27,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     end
     local duration = 240
     
-    player:addStatusEffect(xi.effect.ENFIRE, math.random(1, player:getMainLvl(), 0, duration))
+    player:addStatusEffect(xi.effect.ENFIRE, math.random(1, player:getMainLvl()), 0, duration)
     local tpGain = math.random(300, 900)
     player:addTP(tpGain)
 

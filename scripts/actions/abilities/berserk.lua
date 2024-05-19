@@ -9,15 +9,15 @@ abilityObject.onUseAbility = function(player, target, ability)
     xi.job_utils.warrior.useBerserk(player, target, ability)
 
     local attIncrease = player:getMainLvl() / 2
-    local doubleAtt = player:getMainLvl() / 10
-    local doubleDmg = player:getMainLvl() / 10
+    local doubleAtt = player:getMainLvl() / 6
+    local doubleDmg = player:getMainLvl() / 6
     local duration = 180
 
     -- Increase Acc and Attk 
     if player:getMainJob() == xi.job.WAR then
         attIncrease = player:getMainLvl()
-        doubleAtt = player:getMainLvl() / 4
-        doubleDmg = player:getMainLvl() / 6
+        doubleAtt = player:getMainLvl() / 3
+        doubleDmg = player:getMainLvl() / 3
         duration = 290
     end 
 

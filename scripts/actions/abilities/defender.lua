@@ -19,7 +19,7 @@ abilityObject.onUseAbility = function(player, target, ability)
         maxHP = maxHP * 0.7
         duration = 179
         defIncrease = player:getMainLvl()
-        player:addStatusEffect(xi.effect.REGEN, player:getMainLvl() , 1, duration )
+        player:addStatusEffect(xi.effect.REGEN, player:getMainLvl() / 2 , 1, duration )
     end
 
     -- Increase Max HP and Restore 80% missing  

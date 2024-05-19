@@ -12,12 +12,12 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
     
     local accDuration = 180
-    local accIncrease = player:getMainLvl() / 4
-    local regainAmount = player:getMainLvl() /4 
+    local accIncrease = player:getMainLvl() / 6
+    local regainAmount = player:getMainLvl() / 6 
 
     if player:getMainJob() == xi.job.WAR then
         accIncrease = player:getMainLvl() 
-        regainAmount = player:getMainLvl()
+        regainAmount = player:getMainLvl() 
         duration = 290
     end 
 

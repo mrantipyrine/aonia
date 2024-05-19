@@ -24,7 +24,6 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     -- Increase Max HP and Restore 80% missing  
     player:addStatusEffect(xi.effect.MAX_HP_BOOST, maxHP, 1, duration)
-    player:addStatusEffect(xi.effect.MAX_HP_BOOST, maxHP, 1, duration)
 
     local lostHP = player:getMaxHP() - player:getHP()
     local hpToRestore = math.floor(lostHP * 0.8)

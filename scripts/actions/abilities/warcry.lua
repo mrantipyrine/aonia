@@ -11,14 +11,18 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
     
-    attDuration = 180
-    attIncrease = math.random(20, 50)
+    local accDuration = 180
+    local accIncrease = player:getMainLvl() / 4
+    local regainAmount = player:getMainLvl() /4 
 
     if player:getMainJob() == xi.job.WAR then
-        accIncrease = accIncrease * 2
+        accIncrease = player:getMainLvl() 
+        regainAmount = player:getMainLvl()
+        duration = 290
     end 
 
-    player:addMod(xi.mod.ATT, attIncrease, 3, attDuration, 3, 10, 1)
+    player:addMod(xi.mod.REGAIN, regainAmount, 3, duration, 0, 10, 1)
+    player:addMod(xi.mod.ACC, attIncrease, 3, attDuration, 3, 10, 1)
     
     return xi.job_utils.warrior.useWarcry(player, target, ability)
 end

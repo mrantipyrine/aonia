@@ -22,7 +22,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     end 
 
     player:addMod(xi.mod.REGAIN, regainAmount, 3, duration, 0, 10, 1)
-    player:addMod(xi.mod.ACC, attIncrease, 3, attDuration, 3, 10, 1)
+    player:addMod(xi.mod.ACC, accIncrease, 3, accDuration, 3, 10, 1)
     
     return xi.job_utils.warrior.useWarcry(player, target, ability)
 end

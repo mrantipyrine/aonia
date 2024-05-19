@@ -22,7 +22,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     end 
 
     -- Increase ATT + Double Attack 
-    player:addMod(xi.effect.ATT, attIncrease, 3, duration, 0, 10, 1)
+    player:addMod(xi.mod.ATT, attIncrease, 3, duration, 0, 10, 1)
     player:addMod(xi.mod.DOUBLE_ATTACK, doubleAtt, 3, duration, 0, 10, 1)
     player:addMod(xi.mod.DOUBLE_ATTACK_DMG, doubleDmg, 3, duration, 0, 10, 1)
     

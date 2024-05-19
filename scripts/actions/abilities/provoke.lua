@@ -24,9 +24,9 @@ abilityObject.onUseAbility = function(player, target, ability)
     -- Increase STR
     local vitIncrease = player:getMainLvl() <= 8 and 1 or player:getMainJob() == xi.job.WAR and player:getMainLvl() / 6 or player:getMainLvl() / 8
     
-    - 3 minutes in seconds
+    -- 3 minutes in seconds
     duration = 25
-    
+
     player:addStatusEffect(xi.effect.VIT_BOOST, vitIncrease, 0, duration, 0, 0, 0)
     player:addTP(tpGain)
 

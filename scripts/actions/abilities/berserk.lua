@@ -20,9 +20,9 @@ abilityObject.onUseAbility = function(player, target, ability)
         doubleDmg = player:getMainLvl() / 2
         duration = 290
     end 
-    
+
     -- Increase ATT + Double Attack 
-    player:addStatusEffect(xi.effect.ATT, attIncrease, 3, duration, 0, 10, 1)
+    player:addMod(xi.effect.ATT, attIncrease, 3, duration, 0, 10, 1)
     player:addMod(xi.mod.DOUBLE_ATTACK, doubleAtt, 3, duration, 0, 10, 1)
     player:addMod(xi.mod.DOUBLE_ATTACK_DMG, doubleDmg, 3, duration, 0, 10, 1)
     

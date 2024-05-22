@@ -11,7 +11,6 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
 
-
     local equippedWeaponType = player:getEquippedWeaponType()
     
     -- Check if the equipped weapon type is Greataxe (assuming 11 is Greataxe)
@@ -24,7 +23,7 @@ abilityObject.onUseAbility = function(player, target, ability)
 
     local attIncrease = player:getMainLvl()
 
-    if equippedWeaponType then 
+    if attack.weaponType == xi.skill.GREAT_AXE or xi.skill.GREAT_SWORD then 
         player:addMod(xi.mod.TRIPLE_ATTACK, player:getMainLvl(), 3, duration, 0, 10, 1)
         player:addMod(xi.mod.TRIPLE_ATTACK_DMG, player:getMainLvl() / 2 , 3, duration, 0, 10, 1)
         player:addStatusEffect(xi.effect.HASTE, 60, 3, duration, 0, 10, 1)

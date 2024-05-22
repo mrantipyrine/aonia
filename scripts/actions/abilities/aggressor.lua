@@ -15,7 +15,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     local attIncrease = player:getMainLvl()
     local duration = 180
 
-    if  xi.skill.GREAT_SWORD or xi.skill.GREAT_AXE then
+    if player:getWeaponSkillType(xi.slot.MAIN) == xi.skill.GREAT_AXE then
         player:addMod(xi.mod.TRIPLE_ATTACK, player:getMainLvl(), 3, duration, 0, 10, 1)
         player:addMod(xi.mod.TRIPLE_ATTACK_DMG, player:getMainLvl() / 2 , 3, duration, 0, 10, 1)
         player:addStatusEffect(xi.effect.HASTE, 60, 3, duration, 0, 10, 1)

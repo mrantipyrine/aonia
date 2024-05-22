@@ -35,8 +35,6 @@ abilityObject.onUseAbility = function(player, target, ability)
     end 
     
 
-    end 
-
     -- Increase ATT + Double Attack 
     player:addMod(xi.mod.ATT, attIncrease, 3, duration, 0, 10, 1)
 

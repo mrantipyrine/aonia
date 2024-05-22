@@ -11,16 +11,6 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
 
-    local equippedWeaponType = player:getEquippedWeaponType()
-    
-    -- Check if the equipped weapon type is Greataxe (assuming 11 is Greataxe)
-    if equippedWeaponType ~= 11 then
-
-        return 0, 0, false, 0 -- Return early if the player does not have a Greataxe equipped
-    end
-
-    local duration = 290
-
     local attIncrease = player:getMainLvl()
 
     if attack.weaponType == xi.skill.GREAT_AXE or xi.skill.GREAT_SWORD then 

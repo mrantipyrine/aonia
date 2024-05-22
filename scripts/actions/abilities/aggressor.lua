@@ -11,11 +11,11 @@ end
 
 abilityObject.onUseAbility = function(player, target, ability)
 
-    local tripleAtt = player:getMainLvl() / 4
-    local tripleAtt  = player:getMainLvl() / 4
-    local quadAttdmg  = player:getMainLvl() / 4
-    local quadAttdmg =  player:getMainLvl() /4
-    local accIncrease = player:getMainLvl()
+    --local tripleAtt = player:getMainLvl() / 4
+    --local tripleAttdmg  = player:getMainLvl() / 4
+    --local quadAtt  = player:getMainLvl() / 4
+    --local quadAttdmg =  player:getMainLvl() /4
+    --local accIncrease = player:getMainLvl()
     local attIncrease = player:getMainLvl()
     local duration = 180
 

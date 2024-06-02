@@ -16,10 +16,10 @@ spellObject.onSpellCast = function(caster, target, spell)
         effect = xi.effect.ENWATER
         power = math.random(1, mainLvl / 4)
     elseif mainJob == xi.job.BLM then
-        effect = xi.effect.AQUALVEIL
+        effect = xi.effect.AQUAVEIL
         power = math.random(1, mainLvl * 50)
     elseif subJob == xi.job.BLM then
-        effect = xi.effect.AQUALVEIL
+        effect = xi.effect.AQUAVEIL
         power = math.random(1, mainLvl / 4)
     else
         return

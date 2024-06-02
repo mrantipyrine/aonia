@@ -20,13 +20,13 @@ spellObject.onSpellCast = function(caster, target, spell)
 
     if mainJob == xi.job.RDM then
         effect = xi.effect.ENSTONE
-        power = math.random(1, mainLvl)
+        power = math.random(1, mainLvl*50)
     elseif subJob == xi.job.RDM then
         effect = xi.effect.ENSTONE
         power = math.random(1, mainLvl / 4)
     elseif mainJob == xi.job.BLM then
         effect = xi.effect.STONESKIN
-        power = math.random(1, mainLvl)
+        power = math.random(1, mainLvl*50)
     elseif subJob == xi.job.BLM then
         effect = xi.effect.STONESKIN
         power = math.random(1, mainLvl / 4)

@@ -20,13 +20,13 @@ spellObject.onSpellCast = function(caster, target, spell)
 
     if mainJob == xi.job.RDM then
         effect = xi.effect.ENSTONE
-        power = math.random(1, mainLvl*50)
+        power = math.random(1, mainLvl * 50)
     elseif subJob == xi.job.RDM then
         effect = xi.effect.ENSTONE
         power = math.random(1, mainLvl / 4)
     elseif mainJob == xi.job.BLM then
         effect = xi.effect.STONESKIN
-        power = math.random(1, mainLvl*50)
+        power = math.random(1, mainLvl * 50)
     elseif subJob == xi.job.BLM then
         effect = xi.effect.STONESKIN
         power = math.random(1, mainLvl / 4)
@@ -36,11 +36,14 @@ spellObject.onSpellCast = function(caster, target, spell)
 
     player:addStatusEffect(effect, power, 3, duration)
 
-    local result = xi.spells.damage.useDamageSpell(caster, target, spell)
+    
     
     if mainJob == xi.job.BLM and math.random() <= 0.99 then
-        xi.spells.damage.useDamageSpell(caster, target, spell)
-    end
+        return xi.spells.damage.useDamageSpell(caster, target, spell)
+        return xi.spells.damage.useDamageSpell(caster, target, spell)
+    else 
+        return xi.spells.damage.useDamageSpell(caster, target, spell)
+    end 
 end
 
 return spellObject

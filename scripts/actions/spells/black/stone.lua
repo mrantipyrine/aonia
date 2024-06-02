@@ -35,7 +35,12 @@ spellObject.onSpellCast = function(caster, target, spell)
     end
 
     player:addStatusEffect(effect, power, 3, duration, 0, 10, 1)
-    return xi.spells.damage.useDamageSpell(caster, target, spell)
+
+    local result = xi.spells.damage.useDamageSpell(caster, target, spell)
+    
+    if mainJob == xi.job.BLM and math.random() <= 0.90 then
+        xi.spells.damage.useDamageSpell(caster, target, spell)
+    end
 end
 
 return spellObject

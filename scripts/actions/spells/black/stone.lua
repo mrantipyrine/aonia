@@ -34,7 +34,7 @@ spellObject.onSpellCast = function(caster, target, spell)
         return
     end
 
-    player:addStatusEffect(effect, power, 3, duration, 0, 10, 1)
+    player:addStatusEffect(effect, power, 3, duration)
 
     local result = xi.spells.damage.useDamageSpell(caster, target, spell)
     

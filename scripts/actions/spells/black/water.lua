@@ -18,10 +18,10 @@ spellObject.onSpellCast = function(caster, target, spell)
 
     local effect
     local power
-    
+
     if mainJob == xi.job.RDM then
         effect = xi.effect.ENWATER
-        power = math.random(1, mainLvl * 50)
+        power = math.random(1, mainLvl)
     elseif subJob == xi.job.RDM then
         effect = xi.effect.ENWATER
         power = math.random(1, mainLvl / 4)

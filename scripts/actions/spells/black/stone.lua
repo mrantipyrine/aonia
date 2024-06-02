@@ -39,11 +39,12 @@ spellObject.onSpellCast = function(caster, target, spell)
     
     
     if mainJob == xi.job.BLM and math.random() <= 0.99 then
-        return xi.spells.damage.useDamageSpell(caster, target, spell)
-        return xi.spells.damage.useDamageSpell(caster, target, spell)
-    else 
-        return xi.spells.damage.useDamageSpell(caster, target, spell)
+       xi.spells.damage.useDamageSpell(caster, target, spell)
+       xi.spells.damage.useDamageSpell(caster, target, spell)
     end 
+
+    return xi.spells.damage.useDamageSpell(caster, target, spell)
+
 end
 
 return spellObject

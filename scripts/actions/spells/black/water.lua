@@ -9,6 +9,16 @@ end
 
 spellObject.onSpellCast = function(caster, target, spell)
 
+    local duration = 180
+    local player = caster -- Assuming 'caster' is the player object
+
+    local mainJob = player:getMainJob()
+    local subJob = player:getSubJob()
+    local mainLvl = player:getMainLvl()
+
+    local effect
+    local power
+    
     if mainJob == xi.job.RDM then
         effect = xi.effect.ENWATER
         power = math.random(1, mainLvl * 50)

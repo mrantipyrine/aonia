@@ -24,7 +24,16 @@ spellObject.onSpellCast = function(caster, target, spell)
 
     if mainJob == xi.job.RDM or subJob == xi.job.RDM then
         effect = xi.effect.ENAERO
-        power = isMagicJob and (mainLvl >= 50 and mainLvl * 4 or mainLvl * 2) or math.floor(mainLvl / 2)
+        if mainLvl <= 20 then 
+            power = mainLvl * 2
+        elseif mainLvl <= 40 then
+            power = mainLvl * 2.5
+        elseif mainLvl <= 60 then
+            power = mainLvl * 3
+        else 
+            power = mainLvl * 3.5 
+
+        -- power = isMagicJob and (mainLvl >= 50 and mainLvl * 4 or mainLvl * 2) or math.floor(mainLvl / 2)
 
         player:addStatusEffect(effect, power, 3, duration)
     end 

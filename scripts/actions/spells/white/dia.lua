@@ -52,10 +52,10 @@ spellObject.onSpellCast = function(caster, target, spell)
     local regenDuration = 120
     local regenAmount = 10
     local hasteDuration = 120
-    local hasteAmount = 20
+    local hasteAmount = 60
 
     if mainJob == xi.job.RDM or subJob == xi.job.RDM then 
-        caster:addStatusEffect(xi.effect.HASTE, hasteAmount, 3, hasteDuration, 0, 10, 1)  
+        player:addStatusEffect(xi.effect.HASTE, hasteAmount, 3, hasteDuration, 0, 10, 1)
     end 
     -- Add a 50% chance to cast regen
     if math.random() <= 0.50 then

@@ -13,6 +13,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     -- Fungus Hat 
     if equippedBody == 12485 then
         local dotdmg = 1 
+        local skillLvl = caster:getSkillLevel(xi.skill.DARK_MAGIC)
         if skillLvl > 80 then
             dotdmg = 10
         elseif skillLvl > 40 then

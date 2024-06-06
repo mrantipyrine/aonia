@@ -18,12 +18,17 @@ spellObject.onSpellCast = function(caster, target, spell)
 
     local effect, power
 
+    if mainJob == xi.job.RDM or xi.job.BLM or mainJob == xi.job.WHM then 
+        power = mainLvl * 50
+    else 
+        power = mainLvl / 4
+    end 
+
     if mainJob == xi.job.RDM or subJob == xi.job.RDM then
         effect = xi.effect.ENTHUNDER
-        power = math.random(1, mainJob == xi.job.RDM and mainLvl * 5 or mainLvl / 4)
-    elseif mainJob == xi.job.BLM or mainJob == xi.job.WHM or subJob == xi.job.BLM or subJob == xi.job.WHM then
+    end 
+    if mainJob == xi.job.BLM or mainJob == xi.job.WHM or mainJob == xi.job.RDM or subJob == xi.job.BLM or subJob == xi.job.WHM or subJob == xi.job.RDM then
         effect = xi.effect.SHOCK_SPIKES
-        power = math.random(1, mainJob == xi.job.BLM or mainJob == xi.job.WHM and mainLvl * 50 or mainLvl / 4)
     else
         return nil
     end

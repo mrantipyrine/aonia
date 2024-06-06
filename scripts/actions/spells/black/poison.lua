@@ -9,7 +9,7 @@ end
 
 spellObject.onSpellCast = function(caster, target, spell)
 
-    local equippedBody = caster:getEquipID(xi.slot.BODY)
+    local equippedBody = caster:getEquipID(xi.slot.HEAD)
     -- Fungus Hat 
     if equippedBody == 12485 then
         local duration = 60

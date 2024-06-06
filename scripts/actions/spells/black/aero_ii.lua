@@ -10,7 +10,7 @@ end
 spellObject.onSpellCast = function(caster, target, spell)
     local mainJob = caster:getMainJob()
     local subJob = caster:getSubJob()
-    local hasBuff = caster:hasStatusEffect(xi.effect.BLINKS)
+    local hasBuff = caster:hasStatusEffect(xi.effect.BLINK)
     local randomValue = math.random()
 
     -- 30% increased chance to triple cast if player has Shock Spikes. 

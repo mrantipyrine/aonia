@@ -1,5 +1,5 @@
 -----------------------------------
---   Spell: Poison
+-- Spell: Poison
 -----------------------------------
 local spellObject = {}
 
@@ -8,22 +8,25 @@ spellObject.onMagicCastingCheck = function(caster, target, spell)
 end
 
 spellObject.onSpellCast = function(caster, target, spell)
+    local duration = 120
+    local mainJob = caster:getMainJob()
+    local equippedHead = caster:getEquipID(xi.slot.HEAD)
+    local dotdmg
 
-    local equippedBody = caster:getEquipID(xi.slot.HEAD)
-    -- Fungus Hat 
-    if equippedBody == 12485 then
-        local dotdmg = 1 
-        local skillLvl = caster:getSkillLevel(xi.skill.DARK_MAGIC)
-        if skillLvl > 80 then
-            dotdmg = 10
-        elseif skillLvl > 40 then
-            dotdmg = 5
+    -- Check if Fungus Hat is equipped
+    if equippedHead == 12485 then
+        if mainJob == xi.job.BLM then
+            dotdmg = 20
+        elseif mainJob == xi.job.RDM then
+            dotdmg = 15
+        else
+            return nil
         end
+
         target:addStatusEffect(xi.effect.BIO, dotdmg, 3, duration, 0, 20, 3)
-    end 
+    end
 
     return xi.spells.enfeebling.useEnfeeblingSpell(caster, target, spell)
 end
-
 
 return spellObject

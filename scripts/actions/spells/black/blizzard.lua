@@ -21,15 +21,18 @@ spellObject.onSpellCast = function(caster, target, spell)
     -- Determine power based on main job and level
     local isMagicJob = mainJob == xi.job.RDM or mainJob == xi.job.BLM or mainJob == xi.job.WHM
     local isMagicSub = subJob == xi.job.RDM or subJob == xi.job.BLM or subJob == xi.job.WHM
-    local power = isMagicJob and (mainLvl >= 50 and mainLvl * 4 or mainLvl * 2) or math.floor(mainLvl / 2)
 
     if mainJob == xi.job.RDM or subJob == xi.job.RDM then
         effect = xi.effect.ENBLIZZARD
+        power = isMagicJob and (mainLvl >= 50 and mainLvl * 4 or mainLvl * 2) or math.floor(mainLvl / 2)
+
         player:addStatusEffect(effect, power, 3, duration)
     end 
     
     if isMagicJob or isMagicSub then 
         effect = xi.effect.ICE_SPIKES
+        power = isMagicJob and (mainLvl >= 50 and mainLvl * 8 or mainLvl * 6) or math.floor(mainLvl / 2)
+
         player:addStatusEffect(effect, power, 3, duration)
     else
         return nil

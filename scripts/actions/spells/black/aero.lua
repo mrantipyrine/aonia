@@ -32,7 +32,7 @@ spellObject.onSpellCast = function(caster, target, spell)
             power = mainLvl * 3
         else 
             power = mainLvl * 3.5 
-
+        end 
         -- power = isMagicJob and (mainLvl >= 50 and mainLvl * 4 or mainLvl * 2) or math.floor(mainLvl / 2)
 
         player:addStatusEffect(effect, power, 3, duration)

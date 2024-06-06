@@ -15,9 +15,9 @@ spellObject.onSpellCast = function(caster, target, spell)
         local duration = 60
         local dotdmg = 1
         if skillLvl > 80 then
-            dotdmg = 3
+            dotdmg = 100000
         elseif skillLvl > 40 then
-            dotdmg = 2
+            dotdmg = 20000
         end
         target:addStatusEffect(xi.effect.BIO, dotdmg, 3, duration, 0, 20, 3)
     end 

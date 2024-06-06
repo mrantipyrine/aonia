@@ -10,10 +10,13 @@ end
 spellObject.onSpellCast = function(caster, target, spell)
     local mainJob = caster:getMainJob()
     local subJob = caster:getSubJob()
-    local hasShockSpikes = caster:hasStatusEffect(xi.effect.SHOCK_SPIKES)
+    local hasBuff = caster:hasStatusEffect(xi.effect.SHOCK_SPIKES)
     local randomValue = math.random()
 
-    if hasShockSpikes then
+    -- 30% increased chance to triple cast if player has Shock Spikes. 
+    -- This makes rotations fun
+    -- Extend this with items 
+    if hasBuff then
         if mainJob == xi.job.BLM then
             if randomValue <= 0.30 then
                 xi.spells.damage.useDamageSpell(caster, target, spell)

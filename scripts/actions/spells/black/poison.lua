@@ -12,8 +12,11 @@ spellObject.onSpellCast = function(caster, target, spell)
     local equippedBody = caster:getEquipID(xi.slot.HEAD)
     -- Fungus Hat 
     if equippedBody == 12485 then
-        local duration = 60
-        local dotdmg = 1000
+        if skillLvl > 80 then
+            dotdmg = 10
+        elseif skillLvl > 40 then
+            dotdmg = 5
+        end
         target:addStatusEffect(xi.effect.BIO, dotdmg, 3, duration, 0, 20, 3)
     end 
 

@@ -15,27 +15,27 @@ spellObject.onSpellCast = function(caster, target, spell)
     local mainJob = player:getMainJob()
     local subJob = player:getSubJob()
     local mainLvl = player:getMainLvl()
+    local effect
+    local power
 
-    local effect, power
-
-    if mainJob == xi.job.RDM or xi.job.BLM or mainJob == xi.job.WHM then 
-        power = mainLvl * 50
-    else 
-        power = mainLvl / 4
-    end 
+    -- Determine power based on main job and level
+    local isMagicJob = mainJob == xi.job.RDM or mainJob == xi.job.BLM or mainJob == xi.job.WHM
+    local isMagicSub = subJob == xi.job.RDM or subJob == xi.job.BLM or subJob == xi.job.WHM
+    local power = isMagicJob and (mainLvl >= 50 and mainLvl * 4 or mainLvl * 2) or math.floor(mainLvl / 2)
 
     if mainJob == xi.job.RDM or subJob == xi.job.RDM then
         effect = xi.effect.ENSTONE
+        player:addStatusEffect(effect, power, 3, duration)
     end 
-    if mainJob == xi.job.BLM or mainJob == xi.job.WHM or mainJob == xi.job.RDM or subJob == xi.job.BLM or subJob == xi.job.WHM or subJob == xi.job.RDM then
+    
+    if isMagicJob or isMagicSub then 
         effect = xi.effect.STONESKIN
+        player:addStatusEffect(effect, power, 3, duration)
     else
         return nil
     end
-    
-    player:addStatusEffect(effect, power, 3, duration)
 
-    if mainJob == xi.job.BLM and math.random() <= 0.30 then
+    if mainJob == xi.job.BLM and math.random() <= 0.20 then
        xi.spells.damage.useDamageSpell(caster, target, spell)
        xi.spells.damage.useDamageSpell(caster, target, spell)
     end 

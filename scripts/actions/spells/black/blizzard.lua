@@ -15,22 +15,27 @@ spellObject.onSpellCast = function(caster, target, spell)
     local mainJob = player:getMainJob()
     local subJob = player:getSubJob()
     local mainLvl = player:getMainLvl()
+    local effect
+    local power
 
-    local effect, power
+    -- Determine power based on main job and level
+    local isMagicJob = mainJob == xi.job.RDM or mainJob == xi.job.BLM or mainJob == xi.job.WHM
+    local isMagicSub = subJob == xi.job.RDM or subJob == xi.job.BLM or subJob == xi.job.WHM
+    local power = isMagicJob and (mainLvl >= 50 and mainLvl * 4 or mainLvl * 2) or math.floor(mainLvl / 2)
 
     if mainJob == xi.job.RDM or subJob == xi.job.RDM then
         effect = xi.effect.ENBLIZZARD
-        power = math.random(1, mainJob == xi.job.RDM and mainLvl * 5 or mainLvl / 4)
-    elseif mainJob == xi.job.BLM or mainJob == xi.job.WHM or subJob == xi.job.BLM or subJob == xi.job.WHM then
-        effect = xi.effect.ICESPIKES
-        power = math.random(1, mainJob == xi.job.BLM or mainJob == xi.job.WHM and mainLvl * 50 or mainLvl / 4)
+        player:addStatusEffect(effect, power, 3, duration)
+    end 
+    
+    if isMagicJob or isMagicSub then 
+        effect = xi.effect.ICE_SPIKES
+        player:addStatusEffect(effect, power, 3, duration)
     else
         return nil
     end
-    
-    player:addStatusEffect(effect, power, 3, duration)
 
-    if mainJob == xi.job.BLM and math.random() <= 0.30 then
+    if mainJob == xi.job.BLM and math.random() <= 0.20 then
        xi.spells.damage.useDamageSpell(caster, target, spell)
        xi.spells.damage.useDamageSpell(caster, target, spell)
     end 

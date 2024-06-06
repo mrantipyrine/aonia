@@ -12,6 +12,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     local equippedBody = caster:getEquipID(xi.slot.HEAD)
     -- Fungus Hat 
     if equippedBody == 12485 then
+        local dotdmg = 1 
         if skillLvl > 80 then
             dotdmg = 10
         elseif skillLvl > 40 then

@@ -16,7 +16,7 @@ local equippedBody = caster:getEquipID(xi.slot.BODY)
 -- Fungus Hat 
 if equippedBody == 12485 then
     local duration = 60
-    local dotdmg = 100
+    local dotdmg = 1000
     target:addStatusEffect(xi.effect.BIO, dotdmg, 3, duration, 0, 20, 3)
 end 
 

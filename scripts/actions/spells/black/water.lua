@@ -24,14 +24,14 @@ spellObject.onSpellCast = function(caster, target, spell)
 
     if mainJob == xi.job.RDM or subJob == xi.job.RDM then
         effect = xi.effect.ENWATER
-        power = isMagicJob and (mainLvl >= 50 and mainLvl * 20 or mainLvl * 10) or math.floor(mainLvl / 2)
+        power = isMagicJob and (mainLvl >= 50 and mainLvl * 4 or mainLvl * 2) or math.floor(mainLvl / 2)
 
         player:addStatusEffect(effect, power, 3, duration)
     end 
     
     if isMagicJob or isMagicSub then 
         effect = xi.effect.AQUAVEIL
-        power = isMagicJob and (mainLvl >= 50 and mainLvl * 8 or mainLvl * 6) or math.floor(mainLvl / 2)
+        power = isMagicJob and (mainLvl >= 50 and mainLvl * 20 or mainLvl * 10) or math.floor(mainLvl / 2)
 
         player:addStatusEffect(effect, power, 3, duration)
     else

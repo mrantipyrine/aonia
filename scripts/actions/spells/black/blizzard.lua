@@ -38,7 +38,7 @@ spellObject.onSpellCast = function(caster, target, spell)
         return nil
     end
 
-    if mainJob == xi.job.BLM and math.random() <= 0.20 then
+    if mainJob == xi.job.BLM and math.random() <= 0.30 then
        xi.spells.damage.useDamageSpell(caster, target, spell)
        xi.spells.damage.useDamageSpell(caster, target, spell)
     end 

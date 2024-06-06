@@ -51,7 +51,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     end
 
     -- Do it!
-    target:addStatusEffect(xi.effect.BIO, dotdmg, 3, duration, 0, 10, 1)
+    target:addStatusEffect(xi.effect.BIO_III, dotdmg, 3, duration, 0, 10, 1)
     spell:setMsg(xi.msg.basic.MAGIC_DMG)
 
     -- Try to kill same tier Dia (default behavior)

@@ -10,7 +10,7 @@ end
 spellObject.onSpellCast = function(caster, target, spell)
 
     if equippedBody == 12485 then
-        xi.spells.enfeebling.useEnfeeblingSpell(caster, target, virus)
+        return xi.spells.damage.useDamageSpell(caster, target, thunder)
     end 
 
     return xi.spells.enfeebling.useEnfeeblingSpell(caster, target, spell)

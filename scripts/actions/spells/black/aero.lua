@@ -29,9 +29,9 @@ spellObject.onSpellCast = function(caster, target, spell)
         elseif mainLvl <= 40 then
             power = mainLvl * 2.5
         elseif mainLvl <= 60 then
-            power = mainLvl * 3
+            power = mainLvl * 2.75
         else 
-            power = mainLvl * 3.5 
+            power = mainLvl * 3
         end 
         -- power = isMagicJob and (mainLvl >= 50 and mainLvl * 4 or mainLvl * 2) or math.floor(mainLvl / 2)
 

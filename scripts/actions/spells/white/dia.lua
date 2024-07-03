@@ -60,7 +60,7 @@ spellObject.onSpellCast = function(caster, target, spell)
         caster:addStatusEffect(xi.effect.HASTE, hasteAmount, 3, hasteDuration, 0, 10, 1)
     end 
     -- Add a 50% chance to cast regen
-    if math.random() <= 0.50 then
+    if math.random() <= 0.70 then
         -- Adjust regen parameters as needed
 
         caster:addStatusEffect(xi.effect.REGEN, regenAmount, 3, regenDuration, 0, 10, 1)

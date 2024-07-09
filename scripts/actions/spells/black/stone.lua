@@ -21,7 +21,7 @@ spellObject.onSpellCast = function(caster, target, spell)
         caster:addStatusEffect(xi.effect.ENSTONE, power, 3, duration)
     end 
     
-    if caster then 
+    if (main == xi.job.RDM or main == xi.job.BLM or main == xi.job.WHM) or (sub == xi.job.RDM or sub == xi.job.BLM or sub == xi.job.WHM) then 
         caster:addStatusEffect(STONESKIN, power, 3, duration)
     end
 

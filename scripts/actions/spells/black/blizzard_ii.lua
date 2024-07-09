@@ -16,7 +16,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     local params = {}
     params.main = player:getMainJob()
     params.sub = player:getSubJob()
-    params.buffStatus = player:hasStatusEffect(xi.effect.ICE_SPIKES)
+    params.buffStatus = caster:hasStatusEffect(xi.effect.ICE_SPIKES)
     params.random = math.random()
 
     -- 30% increased chance to triple cast if player has Shock Spikes. 

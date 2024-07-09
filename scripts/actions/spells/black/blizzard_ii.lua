@@ -8,6 +8,9 @@ spellObject.onMagicCastingCheck = function(caster, target, spell)
 end
 
 spellObject.onSpellCast = function(caster, target, spell)
+    
+    local player = caster
+
     local main = player:getMainJob()
     local sub = player:getSubJob()
     local buffStatus = player:hasStatusEffect(xi.effect.ICE_SPIKES)

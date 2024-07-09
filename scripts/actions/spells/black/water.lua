@@ -18,11 +18,11 @@ spellObject.onSpellCast = function(caster, target, spell)
 
     -- RDM gets nice EN spell buff
     if main == xi.job.RDM or sub == xi.job.RDM then
-        player:addStatusEffect(xi.effect.ENWATER, power, 3, duration)
+        caster:addStatusEffect(xi.effect.ENWATER, power, 3, duration)
     end 
     
-    if caster then 
-        player:addStatusEffect(AQUAVEIL, power, 3, duration)
+    if (main == xi.job.RDM or main == xi.job.BLM or main == xi.job.WHM) or (sub == xi.job.RDM or sub == xi.job.BLM or sub == xi.job.WHM) then 
+        caster:addStatusEffect(AQUAVEIL, power, 3, duration)
     end
 
     -- Double DMG for BLM 

@@ -18,11 +18,11 @@ spellObject.onSpellCast = function(caster, target, spell)
 
     -- RDM gets nice EN spell buff
     if main == xi.job.RDM or sub == xi.job.RDM then
-        player:addStatusEffect(xi.effect.ENFIRE, power, 3, duration)
+        caster:addStatusEffect(xi.effect.ENFIRE, power, 3, duration)
     end 
     
     if caster then 
-        player:addStatusEffect(BLAZNG_SPIKES, power, 3, duration)
+        caster:addStatusEffect(BLAZNG_SPIKES, power, 3, duration)
     end
 
     -- Double DMG for BLM 

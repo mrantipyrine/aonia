@@ -13,7 +13,8 @@ spellObject.onSpellCast = function(caster, target, spell)
     local sub = player:getSubJob()
     local level = player:getMainLvl()
     local duration = 360 
-    local power = (level >= 50 and level * 4 or level * 2) or math.floor(level / 2) 
+    local power = 50
+    --local power = (level >= 50 and level * 4 or level * 2) or math.floor(level / 2) 
 
     -- RDM gets nice EN spell buff
     if main == xi.job.RDM or sub == xi.job.RDM then

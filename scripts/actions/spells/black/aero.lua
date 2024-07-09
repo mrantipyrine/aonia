@@ -14,15 +14,14 @@ spellObject.onSpellCast = function(caster, target, spell)
     local level = caster:getMainLvl()
     local duration = 360 
     local power = caster and (level >= 50 and level * 4 or level * 2) or math.floor(level / 2) 
-    local caster = (main == xi.job.RDM or main == xi.job.BLM or main == xi.job.WHM) or (sub == xi.job.RDM or sub == xi.job.BLM or sub == xi.job.WHM)
 
     -- RDM gets nice EN spell buff
     if main == xi.job.RDM or sub == xi.job.RDM then
-        caster:addStatusEffect(xi.effect.ENAERO, power, 3, duration)
+        player:addStatusEffect(xi.effect.ENAERO, power, 3, duration)
     end 
     
     if (main == xi.job.RDM or main == xi.job.BLM or main == xi.job.WHM) or (sub == xi.job.RDM or sub == xi.job.BLM or sub == xi.job.WHM) then 
-        caster:addStatusEffect(BLINK, power, 3, duration)
+        player:addStatusEffect(BLINK, power, 3, duration)
     end
 
     -- Double DMG for BLM 

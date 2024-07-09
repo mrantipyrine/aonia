@@ -21,7 +21,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     end 
     
     if (main == xi.job.RDM or main == xi.job.BLM or main == xi.job.WHM) or (sub == xi.job.RDM or sub == xi.job.BLM or sub == xi.job.WHM) then 
-        player:addStatusEffect(BLAZNG_SPIKES, power, 3, duration)
+        player:addStatusEffect(xi.effect.BLAZNG_SPIKES, power, 3, duration)
     end
 
     -- Double DMG for BLM 

@@ -1,5 +1,5 @@
 -----------------------------------
--- Spell: Thunder II
+-- Spell: Aero II
 -----------------------------------
 local spellObject = {}
 

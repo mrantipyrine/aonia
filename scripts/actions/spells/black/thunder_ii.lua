@@ -8,9 +8,9 @@ spellObject.onMagicCastingCheck = function(caster, target, spell)
 end
 
 spellObject.onSpellCast = function(caster, target, spell)
-    local mainJob = caster:getMainJob()
-    local subJob = caster:getSubJob()
-    local hasBuff = caster:hasStatusEffect(xi.effect.SHOCK_SPIKES)
+    local mainJob = player:getMainJob()
+    local subJob = player:getSubJob()
+    local hasBuff = player:hasStatusEffect(xi.effect.SHOCK_SPIKES)
     local randomValue = math.random()
 
     -- 30% increased chance to triple cast if player has Shock Spikes. 

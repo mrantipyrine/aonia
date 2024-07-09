@@ -28,9 +28,9 @@ spellObject.onSpellCast = function(caster, target, spell)
         if params.main == xi.job.BLM then
             if params.random <= 0.30 then
                 xi.spells.damage.useDamageSpell(caster, target, spell)
-                xi.spells.damage.useDamageSpell(caster, target, spell)
             end
         elseif params.random <= 0.10 then
+            xi.spells.damage.useDamageSpell(caster, target, spell)
             xi.spells.damage.useDamageSpell(caster, target, spell)
         end
     end

@@ -9,20 +9,20 @@ end
 
 spellObject.onSpellCast = function(caster, target, spell)
 
-    local main = player:getMainJob()
-    local sub = player:getSubJob()
-    local level = player:getMainLvl()
+    local main = caster:getMainJob()
+    local sub = caster:getSubJob()
+    local level = caster:getMainLvl()
     local duration = 360 
     local power = 50
     --local power = (level >= 50 and level * 4 or level * 2) or math.floor(level / 2) 
 
     -- RDM gets nice EN spell buff
     if main == xi.job.RDM or sub == xi.job.RDM then
-        player:addStatusEffect(xi.effect.ENSTONE, power, 3, duration)
+        caster:addStatusEffect(xi.effect.ENSTONE, power, 3, duration)
     end 
     
     if (main == xi.job.RDM or main == xi.job.BLM or main == xi.job.WHM) or (sub == xi.job.RDM or sub == xi.job.BLM or sub == xi.job.WHM) then 
-        player:addStatusEffect(xi.effect.STONESKIN, power, 3, duration)
+        caster:addStatusEffect(xi.effect.STONESKIN, power, 3, duration)
     end
 
     -- Double DMG for BLM 

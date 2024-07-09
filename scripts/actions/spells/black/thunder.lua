@@ -34,4 +34,4 @@ spellObject.onSpellCast = function(caster, target, spell)
     return xi.spells.damage.useDamageSpell(caster, target, spell)
 end
 
-return spellObjec
+return spellObject

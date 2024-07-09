@@ -13,7 +13,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     local sub = caster:getSubJob()
     local level = caster:getMainLvl()
     local duration = 360 
-    local power = 250
+    local power = 1000
     --(level >= 50 and level * 4 or level * 2) or math.floor(level / 2) 
     --local power = (level >= 50 and level * 4 or level * 2) or math.floor(level / 2) 
 

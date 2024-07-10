@@ -106,11 +106,11 @@ xi.settings.map =
     ALL_JOBS_WIDESCAN = true,
 
     -- Modifier to apply to player speed. 0 is the retail accurate default. Negative numbers will reduce it.
-    SPEED_MOD = 0,
+    SPEED_MOD = 3,
 
     -- Modifier to apply to mount speed. 0 is the retail accurate default. Negative numbers will reduce it.
     -- Note retail treats the mounted speed as double what it actually is.
-    MOUNT_SPEED_MOD = 0,
+    MOUNT_SPEED_MOD = 3,
 
     -- Modifier to apply to agro'd monster speed. 0 is the retail accurate default. Negative numbers will reduce it.
     MOB_SPEED_MOD = 0,
@@ -175,7 +175,7 @@ xi.settings.map =
     -- 1            = 1/2   (default, 75/37, 99/49)
     -- 2            = 2/3   (75/50, 99/66)
     -- 3            = equal (75/75, 99/99)
-    SUBJOB_RATIO = 1,
+    SUBJOB_RATIO = 2,
 
     -- Also adjust monsters subjob in ratio adjustments? 1 = true / 0 = false
     INCLUDE_MOB_SJ = false,

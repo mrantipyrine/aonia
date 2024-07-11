@@ -12,10 +12,11 @@ xi.settings = xi.settings or {}
 xi.settings.main =
 {
     -- Server name (not longer than 15 characters)
-    SERVER_NAME = "Aonia", 
+    SERVER_NAME = "Nameless",
 
     SERVER_MESSAGE =
-        "One day...it will be fun",
+        "Please visit https://github.com/LandSandBoat/server for the latest information on the project.\n" ..
+        "Thank you, and we hope you enjoy sailing the sands!",
 
     -- Setting to lock content more accurately to the expansions defined below.
     -- This generally results in a more accurate presentation of your selected expansions,
@@ -27,33 +28,33 @@ xi.settings.main =
     ENABLE_COP       = 1,
     ENABLE_TOAU      = 1,
     ENABLE_WOTG      = 1,
-    ENABLE_ACP       = 0,
-    ENABLE_AMK       = 0,
-    ENABLE_ASA       = 0,
-    ENABLE_ABYSSEA   = 0,
-    ENABLE_SOA       = 0,
+    ENABLE_ACP       = 1,
+    ENABLE_AMK       = 1,
+    ENABLE_ASA       = 1,
+    ENABLE_ABYSSEA   = 1,
+    ENABLE_SOA       = 1,
     ENABLE_ROV       = 1,
-    ENABLE_TVR       = 0,
-    ENABLE_VOIDWATCH = 0, -- Not an expansion, but has its own storyline. (Not Implemented)
+    ENABLE_TVR       = 1,
+    ENABLE_VOIDWATCH = 1, -- Not an expansion, but has its own storyline. (Not Implemented)
 
     -- FIELDS OF VALOR/Grounds of Valor settings
-    ENABLE_FIELD_MANUALS  = 0, -- Enables Fields of Valor
-    ENABLE_GROUNDS_TOMES  = 0, -- Enables Grounds of Valor
-    ENABLE_SURVIVAL_GUIDE = 0, -- Enables Survival Guides (Not Implemented)
-    REGIME_WAIT           = 0, -- Make people wait till 00:00 game time as in retail. If it's 0, there is no wait time.
+    ENABLE_FIELD_MANUALS  = 1, -- Enables Fields of Valor
+    ENABLE_GROUNDS_TOMES  = 1, -- Enables Grounds of Valor
+    ENABLE_SURVIVAL_GUIDE = 1, -- Enables Survival Guides (Not Implemented)
+    REGIME_WAIT           = 1, -- Make people wait till 00:00 game time as in retail. If it's 0, there is no wait time.
     FOV_REWARD_ALLIANCE   = 0, -- Allow Fields of Valor rewards while being a member of an alliance. (default retail behavior: 0)
-    GOV_REWARD_ALLIANCE   = 0, -- Allow Grounds of Valor rewards while being a member of an alliance. (default retail behavior: 1)
+    GOV_REWARD_ALLIANCE   = 1, -- Allow Grounds of Valor rewards while being a member of an alliance. (default retail behavior: 1)
 
     -- Daily points / Gobbie mystery box.
-    ENABLE_DAILY_TALLY = 0,  -- Allows acquisition of daily points for gobbie mystery box.
+    ENABLE_DAILY_TALLY = 1,  -- Allows acquisition of daily points for gobbie mystery box.
     DAILY_TALLY_AMOUNT = 10,
     DAILY_TALLY_LIMIT  = 50000,
     GOBBIE_BOX_MIN_AGE = 45, -- Minimum character age in days before a character can sign up for Gobbie Mystery Box
 
     -- Records of Eminence
-    ENABLE_ROE            = 0, -- Enable Records of Eminence
-    ENABLE_ROE_TIMED      = 0, -- Enable 4-hour timed records
-    ENABLE_EXCHANGE_LIMIT = 0, -- Enable Maximum limit of sparks spent per Week (default retail behavior: 1)
+    ENABLE_ROE            = 1, -- Enable Records of Eminence
+    ENABLE_ROE_TIMED      = 1, -- Enable 4-hour timed records
+    ENABLE_EXCHANGE_LIMIT = 1, -- Enable Maximum limit of sparks spent per Week (default retail behavior: 1)
 
     WEEKLY_EXCHANGE_LIMIT = 100000, -- Maximum amount of sparks/accolades that can be spent per week (default retail value: 100000)
 
@@ -67,7 +68,7 @@ xi.settings.main =
     ENABLE_MAGIAN_TRIALS = 1,
 
     -- VoidWalker
-    ENABLE_VOIDWALKER = 0,
+    ENABLE_VOIDWALKER = 1,
 
     -- Monstrosity (Heavily in development, use at your own risk!)
     ENABLE_MONSTROSITY               = 0,
@@ -102,16 +103,16 @@ xi.settings.main =
 
     -- CHARACTER CONFIG
     INITIAL_LEVEL_CAP              = 50, -- The initial level cap for new players.  There seems to be a hardcap of 255.
-    MAX_LEVEL                      = 75, -- Level max of the server, lowers the attainable cap by disabling Limit Break quests.
+    MAX_LEVEL                      = 99, -- Level max of the server, lowers the attainable cap by disabling Limit Break quests.
     NORMAL_MOB_MAX_LEVEL_RANGE_MIN = 0,  -- Lower Bound of Max Level Range for Normal Mobs (0 = Uncapped)
     NORMAL_MOB_MAX_LEVEL_RANGE_MAX = 0,  -- Upper Bound of Max Level Range for Normal Mobs (0 = Uncapped)
-    START_GIL                      = 1000000000, -- Amount of gil given to newly created characters.
-    START_INVENTORY                = 60, -- Starting inventory and satchel size.  Ignores values < 30.  Do not set above 80!
-    NEW_CHARACTER_CUTSCENE         = 0,  -- Set to 1 to enable opening cutscenes, 0 to disable.
+    START_GIL                      = 10, -- Amount of gil given to newly created characters.
+    START_INVENTORY                = 30, -- Starting inventory and satchel size.  Ignores values < 30.  Do not set above 80!
+    NEW_CHARACTER_CUTSCENE         = 1,  -- Set to 1 to enable opening cutscenes, 0 to disable.
     SUBJOB_QUEST_LEVEL             = 18, -- Minimum level to accept either subjob quest.  Set to 0 to start the game with subjobs unlocked.
     ADVANCED_JOB_LEVEL             = 30, -- Minimum level to accept advanced job quests.  Set to 0 to start the game with advanced jobs.
-    ALL_MAPS                       = 1,  -- Set to 1 to give starting characters all the maps.
-    UNLOCK_OUTPOST_WARPS           = 1,  -- Set to 1 to give starting characters all outpost warps.  2 to add Tu'Lia and Tavnazia.
+    ALL_MAPS                       = 0,  -- Set to 1 to give starting characters all the maps.
+    UNLOCK_OUTPOST_WARPS           = 0,  -- Set to 1 to give starting characters all outpost warps.  2 to add Tu'Lia and Tavnazia.
 
     SHOP_PRICE      = 1.000, -- Multiplies prices in NPC shops.
     GIL_RATE        = 1.000, -- Multiplies gil earned from quests.  Won't always display in game.
@@ -130,7 +131,7 @@ xi.settings.main =
     BLUE_POWER      = 1.000, -- Multiplies damage dealt by Blue Magic.
     DARK_POWER      = 1.000, -- Multiplies amount drained by Dark Magic.
     ITEM_POWER      = 1.000, -- Multiplies the effect of items such as Potions and Ethers.
-    WEAPON_SKILL_POWER  = 1.500, -- Multiplies damage dealt by Weapon Skills.
+    WEAPON_SKILL_POWER  = 1.000, -- Multiplies damage dealt by Weapon Skills.
 
     USE_ADOULIN_WEAPON_SKILL_CHANGES = true,  -- true/false. Change to toggle new Adoulin weapon skill damage calculations
     DISABLE_PARTY_EXP_PENALTY        = false, -- true/false.
@@ -216,11 +217,11 @@ xi.settings.main =
     -- SPELL SPECIFIC SETTINGS
     DIA_OVERWRITE                   = 1,     -- Set to 1 to allow Bio to overwrite same tier Dia.  Default is 1.
     BIO_OVERWRITE                   = 0,     -- Set to 1 to allow Dia to overwrite same tier Bio.  Default is 0.
-    STONESKIN_CAP                   = 700,   -- Soft cap for hp absorbed by stoneskin
+    STONESKIN_CAP                   = 350,   -- Soft cap for hp absorbed by stoneskin
     BLINK_SHADOWS                   = 2,     -- Number of shadows supplied by Blink spell
-    SPIKE_EFFECT_DURATION           = 500,   -- the duration of RDM, BLM spikes effects (not Reprisal)
-    ELEMENTAL_DEBUFF_DURATION       = 300,   -- base duration of elemental debuffs
-    AQUAVEIL_COUNTER                = 2,     -- Base amount of hits Aquaveil absorbs to prevent spell interrupts. Retail is 1.
+    SPIKE_EFFECT_DURATION           = 180,   -- the duration of RDM, BLM spikes effects (not Reprisal)
+    ELEMENTAL_DEBUFF_DURATION       = 120,   -- base duration of elemental debuffs
+    AQUAVEIL_COUNTER                = 1,     -- Base amount of hits Aquaveil absorbs to prevent spell interrupts. Retail is 1.
     ABSORB_SPELL_AMOUNT             = 8,     -- how much of a stat gets absorbed by DRK absorb spells - expected to be a multiple of 8.
     ABSORB_SPELL_TICK               = 9,     -- duration of 1 absorb spell tick
     SNEAK_INVIS_DURATION_MULTIPLIER = 1,     -- multiplies duration of sneak, invis, deodorize to reduce player torture. 1 = retail behavior.

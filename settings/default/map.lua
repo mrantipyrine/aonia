@@ -106,13 +106,13 @@ xi.settings.map =
     ALL_JOBS_WIDESCAN = true,
 
     -- Modifier to apply to player speed. 0 is the retail accurate default. Negative numbers will reduce it.
-    SPEED_MOD = 3,
+    SPEED_MOD = 0,
 
     -- Modifier to apply to mount speed. 0 is the retail accurate default. Negative numbers will reduce it.
     -- Note retail treats the mounted speed as double what it actually is.
-    MOUNT_SPEED_MOD = 3,
+    MOUNT_SPEED_MOD = 0,
 
-    -- Modifier to apply to agro'd monster speed. 0 is the retail accurate default. Negative numbers will reduce it.
+    -- This is an integer percentage. Modifier to apply to agro'd monster speed (i.e. while engaged in combat). 0 is the retail accurate default. Negative numbers will reduce ALL mobs's speed.
     MOB_SPEED_MOD = 0,
 
     -- Allows you to manipulate the constant multiplier in the skill-up rate formulas, having a potent effect on skill-up rates.
@@ -137,6 +137,9 @@ xi.settings.map =
 
     -- Amount of points allowed in crafts over the level defined above. Points are shared across all crafting skills. (Retail = 400; All skills can go to max = 3200)
     CRAFT_SPECIALIZATION_POINTS = 400,
+
+    -- Multiplier applied to high quality chance
+    CRAFT_HQ_CHANCE_MULTIPLIER = 1.0,
 
     -- Enables fishing. 0 = Disabled. 1 = Enable. ENABLE AT YOUR OWN RISK.
     FISHING_ENABLE = false,
@@ -175,7 +178,7 @@ xi.settings.map =
     -- 1            = 1/2   (default, 75/37, 99/49)
     -- 2            = 2/3   (75/50, 99/66)
     -- 3            = equal (75/75, 99/99)
-    SUBJOB_RATIO = 2,
+    SUBJOB_RATIO = 1,
 
     -- Also adjust monsters subjob in ratio adjustments? 1 = true / 0 = false
     INCLUDE_MOB_SJ = false,

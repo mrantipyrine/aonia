@@ -667,9 +667,9 @@ INSERT INTO `mob_skill_lists` VALUES ('Hydra',164,1836);
 INSERT INTO `mob_skill_lists` VALUES ('Imp',165,1709);
 INSERT INTO `mob_skill_lists` VALUES ('Imp',165,1710);
 INSERT INTO `mob_skill_lists` VALUES ('Imp',165,1711);
-INSERT INTO `mob_skill_lists` VALUES ('Imp',166,1709);
-INSERT INTO `mob_skill_lists` VALUES ('Imp',166,1710);
-INSERT INTO `mob_skill_lists` VALUES ('Imp',166,1711);
+INSERT INTO `mob_skill_lists` VALUES ('Zikko',166,1711);
+INSERT INTO `mob_skill_lists` VALUES ('Zikko',166,2003);
+INSERT INTO `mob_skill_lists` VALUES ('Zikko',166,2004);
 INSERT INTO `mob_skill_lists` VALUES ('Karakul',167,260);
 INSERT INTO `mob_skill_lists` VALUES ('Karakul',167,261);
 INSERT INTO `mob_skill_lists` VALUES ('Karakul',167,262);
@@ -737,8 +737,7 @@ INSERT INTO `mob_skill_lists` VALUES ('MamoolJa',176,1733);
 INSERT INTO `mob_skill_lists` VALUES ('MamoolJa',176,1734);
 INSERT INTO `mob_skill_lists` VALUES ('MamoolJa',176,1735);
 INSERT INTO `mob_skill_lists` VALUES ('MamoolJa',176,1736);
--- INSERT INTO `mob_skill_lists` VALUES ('MamoolJa',176,1737);
--- INSERT INTO `mob_skill_lists` VALUES ('MamoolJa',176,1738);
+INSERT INTO `mob_skill_lists` VALUES ('MamoolJa',176,1737);
 INSERT INTO `mob_skill_lists` VALUES ('MamoolJa',176,1839);
 INSERT INTO `mob_skill_lists` VALUES ('MamoolJa',176,1840);
 INSERT INTO `mob_skill_lists` VALUES ('MamoolJaMage',177,1920);
@@ -862,7 +861,7 @@ INSERT INTO `mob_skill_lists` VALUES ('Puk',198,1720);
 INSERT INTO `mob_skill_lists` VALUES ('Puk',198,1721);
 INSERT INTO `mob_skill_lists` VALUES ('Puk',198,1722);
 INSERT INTO `mob_skill_lists` VALUES ('Qiqirn',199,1725);
--- INSERT INTO `mob_skill_lists` VALUES ('Qiqirn',199,1726);
+INSERT INTO `mob_skill_lists` VALUES ('Qiqirn',199,1726);
 INSERT INTO `mob_skill_lists` VALUES ('Qiqirn',199,1727);
 INSERT INTO `mob_skill_lists` VALUES ('Qiqirn',199,1728);
 INSERT INTO `mob_skill_lists` VALUES ('Quadav',200,611);
@@ -3218,7 +3217,7 @@ INSERT INTO `mob_skill_lists` VALUES ('Tablilla',950,541); -- Gravity_Field
 INSERT INTO `mob_skill_lists` VALUES ('Vadleany',951,2182); -- Spiral_Spin
 INSERT INTO `mob_skill_lists` VALUES ('Waugyl',952,1720); -- Wind_Shear
 INSERT INTO `mob_skill_lists` VALUES ('Waugyl',952,1723); -- Ill_Wind
--- INSERT INTO `mob_skill_lists` VALUES ('Waugyl',952,1724); -- White_Wind
+INSERT INTO `mob_skill_lists` VALUES ('Waugyl',952,1724); -- White_Wind
 INSERT INTO `mob_skill_lists` VALUES ('Anemic_Aloysius',953,424); -- Full-Force_Blow
 INSERT INTO `mob_skill_lists` VALUES ('Anemic_Aloysius',953,425); -- Gastric_Bomb
 INSERT INTO `mob_skill_lists` VALUES ('Anemic_Aloysius',953,426); -- Sandspin
@@ -3620,7 +3619,7 @@ INSERT INTO `mob_skill_lists` VALUES ('TRUST_Prishe_II',1126,3235); -- Auroral U
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Prishe_II',1126,3236); -- Knuckle Sandwich
 INSERT INTO `mob_skill_lists` VALUES ('TRUST_Nashmeira_II',1127,3243); -- Imperial Authority
 -- INSERT INTO `mob_skill_lists` VALUES ('TRUST_Lilisette_II',1128,0);
--- INSERT INTO `mob_skill_lists` VALUES ('TRUST_Tenzen_II',1129,0);
+INSERT INTO `mob_skill_lists` VALUES ('TRUST_Tenzen_II',1129,3542); -- Oisoya
 -- INSERT INTO `mob_skill_lists` VALUES ('TRUST_Mumor_II',1130,0);
 -- INSERT INTO `mob_skill_lists` VALUES ('TRUST_Ingrid_II',1131,0);
 -- INSERT INTO `mob_skill_lists` VALUES ('TRUST_Arciela_II',1132,0);
@@ -3859,7 +3858,13 @@ INSERT INTO `mob_skill_lists` VALUES ('Gharial',2004,2101); -- demoralizing_roar
 
 INSERT INTO `mob_skill_lists` VALUES ('Draketrader_Zlodgodd',2005,733);
 
--- Next available ID: 2005
+INSERT INTO `mob_skill_lists` VALUES ('Snaggletooth_Peapuk',2006,1718);
+INSERT INTO `mob_skill_lists` VALUES ('Snaggletooth_Peapuk',2006,1720);
+INSERT INTO `mob_skill_lists` VALUES ('Snaggletooth_Peapuk',2006,1721);
+INSERT INTO `mob_skill_lists` VALUES ('Snaggletooth_Peapuk',2006,1722);
+INSERT INTO `mob_skill_lists` VALUES ('Snaggletooth_Peapuk',2006,1724);
+
+-- Next available ID: 2007
 
 -- ------------------------------------------------------------
 -- Start of Ambuscade section

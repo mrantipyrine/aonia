@@ -372,7 +372,7 @@ INSERT INTO `mob_skills` VALUES (355,99,'earth_pounder',1,15.0,2000,1500,4,0,0,0
 INSERT INTO `mob_skills` VALUES (356,100,'sharp_strike',0,7.0,2000,1500,1,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (357,825,'heavy_blow',0,7.0,2000,1500,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (358,826,'heavy_whisk',0,7.0,2000,1500,4,0,0,2,0,0,0);
--- INSERT INTO `mob_skills` VALUES (359,103,'bionic_boost',0,7.0,2000,1500,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (359,827,'bionic_boost',0,7.0,2000,1500,1,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (360,828,'flying_hip_press',1,7.0,2000,1500,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (361,829,'earth_shock',1,10.0,2000,1500,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (362,830,'double_claw',0,7.0,2000,1500,4,0,0,0,0,0,0);
@@ -1748,9 +1748,9 @@ INSERT INTO `mob_skills` VALUES (1731,1149,'forceful_blow',0,7.0,2000,1000,4,0,0
 INSERT INTO `mob_skills` VALUES (1732,1150,'somersault_kick',0,7.0,2000,1000,4,0,0,4,0,0,0);
 INSERT INTO `mob_skills` VALUES (1733,1151,'firespit',0,25.0,2000,1000,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (1734,1152,'warm-up',0,7.0,2000,1000,1,0,0,0,0,0,0);
-INSERT INTO `mob_skills` VALUES (1735,1153,'javelin_throw',0,7.0,2000,1500,4,0,0,0,0,0,0);
-INSERT INTO `mob_skills` VALUES (1736,1154,'axe_throw',0,7.0,2000,1500,4,0,0,0,0,0,0);
--- INSERT INTO `mob_skills` VALUES (1737,1155,'vorpal_blade',0,7.0,2000,1500,4,0,0,0,4,8,0);
+INSERT INTO `mob_skills` VALUES (1735,1153,'javelin_throw',0,15.0,2000,1500,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1736,1154,'axe_throw',0,15.0,2000,1500,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1737,1155,'vorpal_blade',0,7.0,2000,1500,4,0,0,0,4,8,0);
 INSERT INTO `mob_skills` VALUES (1738,1156,'pw_groundburst',0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (1739,1483,'.',0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (1740,1484,'.',0,7.0,2000,1500,4,0,0,0,0,0,0);
@@ -1938,7 +1938,7 @@ INSERT INTO `mob_skills` VALUES (1921,1265,'forceful_blow',0,7.0,2000,1000,4,0,0
 INSERT INTO `mob_skills` VALUES (1922,1266,'somersault_kick',0,7.0,2000,1000,4,0,0,4,0,0,0);
 INSERT INTO `mob_skills` VALUES (1923,1267,'firespit',0,30.0,2000,1000,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (1924,1268,'warm-up',0,7.0,2000,1500,1,0,0,0,0,0,0);
-INSERT INTO `mob_skills` VALUES (1925,1269,'stave_toss',0,7.0,2000,1500,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1925,1269,'stave_toss',0,15.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (1926,1270,'groundburst',0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (1927,1671,'.',0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (1928,1672,'.',0,7.0,2000,1500,4,0,0,0,0,0,0);
@@ -2016,8 +2016,8 @@ INSERT INTO `mob_skills` VALUES (1999,362,'hiden_sokyaku',0,7.0,2000,1500,4,0,0,
 INSERT INTO `mob_skills` VALUES (2000,363,'shiko_no_mitate',0,7.0,2000,1500,1,0,0,0,0,0,0); -- need correct animation & timings
 INSERT INTO `mob_skills` VALUES (2001,364,'happobarai',0,7.0,2000,1500,4,0,0,0,0,0,0);      -- need correct animation & timings
 INSERT INTO `mob_skills` VALUES (2002,354,'rinpyotosha',0,7.0,2000,1500,1,0,0,0,0,0,0);     -- need correct animation & timings
--- INSERT INTO `mob_skills` VALUES (2003,1181,'grating_tantara',0,7.0,2000,1500,4,0,0,0,0,0,0);
--- INSERT INTO `mob_skills` VALUES (2004,1182,'stifling_tantara',0,7.0,2000,1500,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (2003,1181,'grating_tantara',1,10.0,2000,1500,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (2004,1182,'stifling_tantara',1,10.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (2005,1157,'reward',0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (2006,1750,'azure_lore',0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (2007,1751,'wild_card',0,7.0,2000,1500,4,0,0,0,0,0,0);
@@ -2169,7 +2169,7 @@ INSERT INTO `mob_skills` VALUES (2152,1543,'aqua_fortis',1,15.0,2000,2000,4,0,0,
 INSERT INTO `mob_skills` VALUES (2153,1544,'regurgitation',0,7.0,2000,1000,4,0,0,3,0,0,0);
 INSERT INTO `mob_skills` VALUES (2154,1545,'delta_thrust',0,7.0,2000,1000,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (2155,1546,'torpefying_charge',1,10.0,2000,1000,4,0,0,0,0,0,0);
-INSERT INTO `mob_skills` VALUES (2156,1547,'grim_glower',4,10.0,2000,1500,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (2156,1547,'grim_glower',0,10.0,2000,1500,1,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (2157,1901,'calcifying_mist',0,7.0,2000,1500,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (2158,1567,'insipid_nip',0,7.0,2000,1500,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (2159,1568,'pandemic_nip',0,7.0,2000,1500,4,0,0,0,0,0,0);
@@ -2372,7 +2372,7 @@ INSERT INTO `mob_skills` VALUES (2343,1638,'di_glow',0,30.0,4000,0,4,8,0,0,0,0,0
 -- INSERT INTO `mob_skills` VALUES (2357,2101,'.',0,7.0,2000,1500,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (2359,1201,'strap_cutter',0,20.0,2000,1500,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (2360,1195,'wind_shear_znm',1,10.0,2000,1500,4,0,0,7,0,0,0);
-INSERT INTO `mob_skills` VALUES (2361,1269,'stave_toss',0,7.0,2000,1500,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (2361,1269,'stave_toss',0,15.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (2362,2106,'.',0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (2363,2107,'.',0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (2364,2108,'unblest_jambiya',0,7.0,2000,1500,4,0,0,0,0,0,0);
@@ -3553,7 +3553,7 @@ INSERT INTO `mob_skills` VALUES (3538,474,'null_blast',0,7.0,2000,1500,4,0,0,0,0
 INSERT INTO `mob_skills` VALUES (3539,1093,'hysteroanima',0,7.0,2000,0,1,4,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (3540,1094,'psychoanima',0,7.0,2000,0,1,4,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (3541,3285,'#1749',0,7.0,2000,1500,4,0,0,0,0,0,0);
-INSERT INTO `mob_skills` VALUES (3542,1042,'oisoya',0,7.0,2000,1500,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (3542,1042,'oisoya',0,15.0,2000,1500,4,0,0,0,13,10,0); -- Light/Distortion. Todo: verify Animation ID, this is copied from BCNM Tenzen.
 INSERT INTO `mob_skills` VALUES (3543,2033,'knuckle_sandwich',0,7.0,2000,1500,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (3544,1713,'whirling_edge',0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (3545,3289,'#1753',0,7.0,2000,1500,4,0,0,0,0,0,0);

@@ -1,5 +1,5 @@
 -----------------------------------
--- Spell: Water
+-- Spell: Thunder
 -----------------------------------
 local spellObject = {}
 
@@ -8,41 +8,25 @@ spellObject.onMagicCastingCheck = function(caster, target, spell)
 end
 
 spellObject.onSpellCast = function(caster, target, spell)
-    local duration = 180
-    local mainJob = caster:getMainJob()
-    local subJob = caster:getSubJob()
-    local mainLvl = caster:getMainLvl()
-    local effect, power
+    local main = caster:getMainJob()
+    local sub = caster:getSubJob()
+    local level = caster:getMainLvl()
+    local duration = 360 
+    local power = (level >= 50 and level * 4 or level * 2) or math.floor(level / 2) 
 
-    -- Determine power based on main job and level
-    local isMagicJob = mainJob == xi.job.RDM or mainJob == xi.job.BLM or mainJob == xi.job.WHM
-    local isMagicSub = subJob == xi.job.RDM or subJob == xi.job.BLM or subJob == xi.job.WHM
-
-    if mainJob == xi.job.RDM or subJob == xi.job.RDM then
-        effect = xi.effect.ENTHUNDER
-        power = isMagicJob and (mainLvl >= 50 and mainLvl * 4 or mainLvl * 2) or math.floor(mainLvl / 2)
-        caster:addStatusEffect(effect, power, 3, duration)
-    end
+    -- RDM gets nice EN spell buff
+    if main == xi.job.RDM or sub == xi.job.RDM then
+        caster:addStatusEffect(xi.effect.ENTHUNDER, power, 3, duration)
+    end 
     
-    if isMagicJob or isMagicSub then 
-        effect = xi.effect.SHOCK_SPIKES
-        power = isMagicJob and (mainLvl >= 50 and mainLvl * 4 or mainLvl * 2) or math.floor(mainLvl / 2)
-        caster:addStatusEffect(effect, power, 3, duration)
-    else
-        return nil
+    if (main == xi.job.RDM or main == xi.job.BLM or main == xi.job.WHM) or (sub == xi.job.RDM or sub == xi.job.BLM or sub == xi.job.WHM) then 
+        caster:addStatusEffect(xi.effect.SHOCK_SPIKES, power, 3, duration)
     end
 
-    -- 20% chance to double 
-    if caster:hasStatusEffect(xi.effect.SHOCK_SPIKES) then
-        local chance = math.random()
-        if mainJob == xi.job.BLM then
-            if chance <= 0.10 then
-                xi.spells.damage.useDamageSpell(caster, target, spell)
-                xi.spells.damage.useDamageSpell(caster, target, spell)
-            elseif chance <= 0.30 then
-                xi.spells.damage.useDamageSpell(caster, target, spell)
-            end
-        end
+    -- Double DMG for BLM 
+    if main == xi.job.BLM and math.random() <= 0.30 then
+       xi.spells.damage.useDamageSpell(caster, target, spell)
+       xi.spells.damage.useDamageSpell(caster, target, spell)
     end 
 
     return xi.spells.damage.useDamageSpell(caster, target, spell)

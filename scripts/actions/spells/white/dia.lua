@@ -49,23 +49,18 @@ spellObject.onSpellCast = function(caster, target, spell)
             target:addStatusEffect(xi.effect.DIA, 1 + dotBonus, 3, duration, 0, 10, 1)
     end
 
-    local regenDuration = 120
-    local regenAmount = 10
-    local hasteDuration = 120
-    local hasteAmount = 60
-    local mainJob = caster:getMainJob()
-    local subJob = caster:getSubJob()
+    local main = caster:getMainJob()
+    local sub = caster:getSubJob()
+    local level = caster:getMainLvl()
+    local duration = 120
+    local power = (level >= 50 and level * 4 or level * 2) or math.floor(level / 2) 
 
-    if mainJob == xi.job.RDM or subJob == xi.job.RDM then 
-        caster:addStatusEffect(xi.effect.HASTE, hasteAmount, 3, hasteDuration, 0, 10, 1)
+    if main == xi.job.RDM or sub == xi.job.RDM then 
+        caster:addStatusEffect(xi.effect.HASTE, power, 3, duration, 0, 10, 1)
     end 
-    -- Add a 50% chance to cast regen
-    if math.random() <= 0.70 then
-        -- Adjust regen parameters as needed
 
-        caster:addStatusEffect(xi.effect.REGEN, regenAmount, 3, regenDuration, 0, 10, 1)
-    end
-
+    caster:addStatusEffect(xi.effect.REGEN, power, 3, duration, 0, 10, 1)
+    
     return final
 end
 

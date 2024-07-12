@@ -220,6 +220,7 @@ INSERT INTO `traits` VALUES (18,'dual wield',6,83,1,259,10,'ABYSSEA',0);
 INSERT INTO `traits` VALUES (18,'dual wield',6,90,2,259,15,'ABYSSEA',0);
 INSERT INTO `traits` VALUES (18,'dual wield',6,98,3,259,25,'ABYSSEA',0);
 INSERT INTO `traits` VALUES (18,'dual wield',13,10,1,259,10,NULL,0);
+INSERT INTO `traits` VALUES (18,'dual wield',6,1,1,259,10,NULL,0);
 INSERT INTO `traits` VALUES (18,'dual wield',13,25,2,259,15,NULL,0);
 INSERT INTO `traits` VALUES (18,'dual wield',13,45,3,259,25,NULL,0);
 INSERT INTO `traits` VALUES (18,'dual wield',13,65,4,259,30,NULL,0);

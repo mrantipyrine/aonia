@@ -29,17 +29,23 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
         target:addStatusEffect(xi.effect.POISON, 1, 0, duration)
     end
 
-    hpRestore = math.floor(tp / 1000) * 0.9 * player:getMaxHP()
+    local hp = math.floor(tp / 1000) * 0.9 * player:getMaxHP()
+    local main = player:getMainJob()
+    local tp = math.random(1000, 2000)
+    local haste = (level >= 50 and level * 4 or level * 2) or math.floor(level / 2)
+    local duration = 120 
 
-    player:addHP(hpRestore)
-
-    -- Restore HP to the player
-   
+    if main == xi.job.THF then
+        player:addStatusEffect(xi.effect.HASTE, haste, 3, duration, 0, 10, 1)   
+    end      
     if math.random() <= 0.5 then
-        player:addTP(1500)
+        player:addTP(tp)
     end
 
+    player:addHP(hp)
+    
     return tpHits, extraHits, criticalHit, damage
 end
 
 return weaponskillObject
+~                                

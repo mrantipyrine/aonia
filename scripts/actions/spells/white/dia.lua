@@ -57,10 +57,14 @@ spellObject.onSpellCast = function(caster, target, spell)
     local power = (level >= 50 and level * 4 or level * 2) or math.floor(level / 2) 
     
     if main == xi.job.RDM or sub == xi.job.RDM then
-        caster:addStatusEffect(xi.effect.HASTE, power, 3, duration)
-    end 
-
-    caster:addStatusEffect(xi.effect.REGEN, power, 3, duration, 0, 10, 1)
+        if not caster:hasStatusEffect(xi.effect.HASTE) then
+            caster:addStatusEffect(xi.effect.HASTE, power, 3, duration)
+        end
+    end
+    
+    if not caster:hasStatusEffect(xi.effect.REGEN) then
+        caster:addStatusEffect(xi.effect.REGEN, power, 3, duration, 0, 10, 1)
+    end
     
     return final
 end

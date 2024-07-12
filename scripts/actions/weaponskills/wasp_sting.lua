@@ -32,12 +32,16 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     local hp = math.floor(tp / 1000) * 0.9 * player:getMaxHP()
     local main = player:getMainJob()
     local tp = math.random(1000, 2000)
+    local level = caster:getMainLvl()
     local haste = (level >= 50 and level * 4 or level * 2) or math.floor(level / 2)
     local duration = 120 
 
     if main == xi.job.THF then
-        player:addStatusEffect(xi.effect.HASTE, haste, 3, duration, 0, 10, 1)   
+        if not player:hasStatusEffect(xi.effect.HASTE) then
+            player:addStatusEffect(xi.effect.HASTE, haste, 3, duration)
+        end
     end      
+
     if math.random() <= 0.5 then
         player:addTP(tp)
     end
